@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e3a8a">
+
+    <!-- SEO Meta Tags -->
+    <title>Dr. Azzeddine Reghais | Hydrogeologist & Researcher | University of Jijel</title>
+    <meta name="description" content="Dr. Azzeddine Reghais - PhD in Hydrogeology at the University of Jijel, Algeria. Researcher specializing in GIS, Remote Sensing, and Machine Learning applied to water resources and geochemistry.">
+    <meta name="author" content="Dr. Azzeddine Reghais">
+    <meta name="keywords" content="Azzeddine Reghais, Hydrogeology, GIS, Remote Sensing, Machine Learning, Water Resources, CoDA, Jijel University, Algeria, Research">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dr. Azzeddine Reghais | Hydrogeologist & Researcher">
+    <meta property="og:description" content="Researcher at Jijel University specializing in GIS, Remote Sensing, and Machine Learning applied to water resources.">
+    <meta property="og:image" content="assets/img/profile.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/profile.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe',
+                            300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6',
+                            600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af',
+                            900: '#1e3a8a', 950: '#172554'
+                        },
+                        accent: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Cairo', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Essential Scripts for early setup -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/i18n.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 selection:bg-primary-500 selection:text-white min-h-screen flex flex-col transition-colors duration-300">
+
+    <!-- Skip to content link (accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-900 focus:text-white focus:rounded-lg" data-i18n="skip-content">Skip to main content</a>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl font-bold text-primary-900 dark:text-primary-400 flex items-center gap-2" aria-label="Home">
+                        <i class="fa-solid fa-graduation-cap text-primary-600 dark:text-primary-400 text-2xl" aria-hidden="true"></i>
+                        <span class="font-extrabold tracking-tight" data-i18n="dr-title">Dr. Azzeddine Reghais</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8 items-center" aria-label="Main navigation">
+                    <div class="flex items-center space-x-5 lg:space-x-6">
+                        <a href="#about" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-about">About</a>
+                        <a href="#interests" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-interests">Interests</a>
+                        <a href="#projects" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-projects">Projects</a>
+                        <a href="#publications" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-publications">Publications</a>
+                        <a href="#awards" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-awards">Awards</a>
+                        <a href="#blog" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-blog">Blog</a>
+                        <a href="#students" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-students">Student Portal</a>
+                        <a href="#accounts" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-profiles">Profiles</a>
+                        <a href="#contact" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-contact">Contact</a>
+                    </div>
+                </nav>
+
+                <!-- Action Controls: i18n & Theme Toggles -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <!-- Language Switcher Group -->
+                    <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+                        <button onclick="setLanguage('en')" class="lang-toggle-btn px-2.5 py-1 text-xs font-bold rounded-lg transition-all" data-lang="en">EN</button>
+                        <button onclick="setLanguage('ar')" class="lang-toggle-btn px-2.5 py-1 text-xs font-bold rounded-lg transition-all" data-lang="ar">عربي</button>
+                    </div>
+
+                    <!-- Theme Toggle Button -->
+                    <button onclick="toggleTheme()" class="theme-toggle-btn text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 p-2 rounded-xl bg-slate-100 dark:bg-slate-800 transition-all" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-sun text-lg hidden" aria-hidden="true"></i>
+                        <i class="fa-solid fa-moon text-lg" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Header Menu Button -->
+                <div class="flex items-center gap-3 lg:hidden">
+                    <button onclick="toggleTheme()" class="theme-toggle-btn text-slate-600 dark:text-slate-300 p-2 rounded-lg bg-slate-100 dark:bg-slate-800 transition-all" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-sun text-base hidden" aria-hidden="true"></i>
+                        <i class="fa-solid fa-moon text-base" aria-hidden="true"></i>
+                    </button>
+
+                    <button id="mobileMenuBtn" class="text-slate-600 dark:text-slate-300 hover:text-primary-900 focus:outline-none p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
+                        <i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark text-xl hidden" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 px-4 pt-2 pb-4 space-y-3">
+            <div class="flex flex-col space-y-2">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-about">About</a>
+                <a href="#interests" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-interests">Interests</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-projects">Projects</a>
+                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-publications">Publications</a>
+                <a href="#awards" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-awards">Awards</a>
+                <a href="#blog" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-blog">Blog</a>
+                <a href="#students" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-students">Student Portal</a>
+                <a href="#accounts" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-profiles">Profiles</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-contact">Contact</a>
+            </div>
+
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800">
+                <span class="text-xs font-semibold text-slate-500" data-i18n="language-label">Language / اللغة</span>
+                <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg">
+                    <button onclick="setLanguage('en')" class="lang-toggle-btn px-3 py-1 text-xs font-bold rounded-md" data-lang="en">EN</button>
+                    <button onclick="setLanguage('ar')" class="lang-toggle-btn px-3 py-1 text-xs font-bold rounded-md" data-lang="ar">عربي</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="flex-grow">
+
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-br from-primary-950 via-primary-900 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-white py-20 sm:py-28 overflow-hidden">
+            <canvas id="hydroCanvas" class="absolute inset-0 pointer-events-none w-full h-full z-0 opacity-40" aria-hidden="true"></canvas>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary-400/10 via-transparent to-transparent" aria-hidden="true"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-4 flex justify-center lg:justify-end fade-in-up">
+                        <div class="relative group">
+                            <div class="absolute -inset-1.5 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" aria-hidden="true"></div>
+                            <div class="relative bg-slate-900 p-2 rounded-full w-64 h-64 sm:w-72 sm:h-72 overflow-hidden flex items-center justify-center">
+                                <img src="assets/img/profile.png" alt="Portrait of Dr. Azzeddine Reghais" class="rounded-full w-full h-full object-cover shadow-2xl transition-transform duration-500 group-hover:scale-105" loading="eager">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-8 text-center lg:text-left fade-in-up">
+                        <div class="space-y-6">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary-500/15 text-primary-300 border border-primary-400/20">
+                                <i class="fa-solid fa-droplet mr-1.5 text-primary-400" aria-hidden="true"></i> <span data-i18n="hero-droplet">Hydrological Sciences</span>
+                            </span>
+                            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight" data-i18n="hero-tagline">Dr. Azzeddine Reghais</h1>
+                            <p class="text-xl sm:text-2xl text-primary-200 font-light max-w-2xl leading-relaxed" data-i18n="phd-sub">PhD in Hydrogeology</p>
+                            <p class="text-base text-slate-300 max-w-2xl leading-relaxed" data-i18n="hero-desc">
+                                Researcher at Jijel University, Algeria. Specializing in high-tech applications of <strong>GIS</strong>, <strong>Remote Sensing</strong>, and <strong>Machine Learning</strong> in water resources, hydrogeochemical processes, and slope stability.
+                            </p>
+
+                            <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                                <a href="#publications" class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-xl text-slate-900 bg-accent-400 hover:bg-accent-500 shadow-lg shadow-accent-500/20 hover:shadow-accent-500/35 transition-all">
+                                    <i class="fa-solid fa-book-open mr-2" aria-hidden="true"></i> <span data-i18n="hero-view-pub">View Publications</span>
+                                </a>
+                                <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-slate-700 text-sm font-medium rounded-xl text-white hover:bg-slate-800 hover:border-slate-600 transition-all">
+                                    <i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i> <span data-i18n="hero-contact-me">Contact Me</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wave-container" aria-hidden="true">
+                <div class="wave-animation"></div>
+                <div class="wave-animation"></div>
+                <div class="wave-animation"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="space-y-8 fade-in-up">
+                    <div class="text-center space-y-2">
+                        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="about-title">About Me</h2>
+                        <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    </div>
+                    <div class="prose prose-lg text-slate-600 dark:text-slate-300 mx-auto leading-relaxed space-y-4">
+                        <p class="text-lg" data-i18n="about-p1">I hold a <strong>PhD in Hydrogeology</strong> from <strong>Jijel University, Algeria</strong>. My academic journey is strongly grounded in sub-surface water sciences and ground mechanical stability.</p>
+                        <p class="text-lg" data-i18n="about-p2">My primary research interests lie at the intersection of modern technology and geoscience. Currently, I am deeply focused on applying <strong>Geographic Information Systems (GIS)</strong> and <strong>Machine Learning (ML)</strong> models to tackle environmental and hydrological challenges. My recent works explore:</p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-400">
+                            <li data-i18n="about-li1">Compositional Data Analysis (CoDA) for advanced hydrochemical modeling.</li>
+                            <li data-i18n="about-li2">Remote Sensing (RS) data integration in arid and semi-arid terrain assessments.</li>
+                            <li data-i18n="about-li3">Predictive Modeling of water resources contamination and geochemical evolution.</li>
+                            <li data-i18n="about-li4">Slope Stability & Landslide Analysis for infrastructure hazard reduction.</li>
+                        </ul>
+                        <p class="text-lg" data-i18n="about-p3">Proficient in data-science tools including <strong>R</strong> and <strong>Python</strong>, I strive to advance scientific methodologies, deliver robust water resource assessments, and contribute actively to global water security and geological hazard mitigation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Profiles Section -->
+        <section id="accounts" class="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="profiles-title">Academic & Research Networks</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-md mx-auto" data-i18n="profiles-desc">Connect with me on major international research databases and scientific networks.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto stagger-children">
+                    <a href="https://scholar.google.com/citations?user=ovT7Ao4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="academic-btn group bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-primary-300 dark:hover:border-primary-700">
+                        <div class="space-y-6">
+                            <div class="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-950/40 flex items-center justify-center text-blue-600 dark:text-blue-400 text-3xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300" aria-hidden="true">
+                                <i class="ai ai-google-scholar"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 transition-colors">Google Scholar</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="scholar-desc">Track citations, view full indexes of my peer-reviewed journal papers, and read research metrics.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-blue-600 dark:text-blue-400 font-semibold text-sm pt-6 border-t border-slate-50 dark:border-slate-800">
+                            <span data-i18n="scholar-btn">View Scholar Profile</span>
+                            <i class="fa-solid fa-arrow-right-long group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.researchgate.net/profile/Azzeddine-Reghais" target="_blank" rel="noopener noreferrer" class="academic-btn group bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-teal-300 dark:hover:border-teal-700">
+                        <div class="space-y-6">
+                            <div class="w-16 h-16 rounded-2xl bg-teal-50 dark:bg-teal-950/40 flex items-center justify-center text-teal-600 dark:text-teal-400 text-3xl group-hover:bg-teal-600 group-hover:text-white transition-all duration-300" aria-hidden="true">
+                                <i class="ai ai-researchgate"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-teal-600 transition-colors">ResearchGate</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="rg-desc">Access preprints, full-texts, ask scientific questions, and collaborate with co-authors directly.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-teal-600 dark:text-teal-400 font-semibold text-sm pt-6 border-t border-slate-50 dark:border-slate-800">
+                            <span data-i18n="rg-btn">View ResearchGate</span>
+                            <i class="fa-solid fa-arrow-right-long group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://orcid.org/0000-0002-4968-9529" target="_blank" rel="noopener noreferrer" class="academic-btn group bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-lime-400 dark:hover:border-lime-700">
+                        <div class="space-y-6">
+                            <div class="w-16 h-16 rounded-2xl bg-lime-50 dark:bg-lime-950/40 flex items-center justify-center text-lime-600 dark:text-lime-400 text-3xl group-hover:bg-lime-600 group-hover:text-white transition-all duration-300" aria-hidden="true">
+                                <i class="ai ai-orcid"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-lime-600 transition-colors">ORCID iD</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="orcid-desc">Verified international researcher record linking my authorship across publishers and organizations.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-lime-600 dark:text-lime-400 font-semibold text-sm pt-6 border-t border-slate-50 dark:border-slate-800">
+                            <span data-i18n="orcid-btn">View ORCID Record</span>
+                            <i class="fa-solid fa-arrow-right-long group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Interests Section -->
+        <section id="interests" class="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="interests-title">Research & Methodological Focus</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
+                    <div class="interest-card bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-950/40 text-primary-600 dark:text-primary-400 flex items-center justify-center text-xl" aria-hidden="true"><i class="fa-solid fa-droplet"></i></div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="interest1-title">Hydrogeology & Water Chemistry</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="interest1-desc">Studying groundwater circulation, aquifer vulnerability, pollution hazard mapping, and hydrogeochemical mineralisation processes.</p>
+                    </div>
+
+                    <div class="interest-card bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl" aria-hidden="true"><i class="fa-solid fa-calculator"></i></div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="interest2-title">Compositional Data Analysis (CoDA)</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="interest2-desc">Using log-ratio transformations to accurately model geochemical signatures and close-sum relative datasets in water and soils.</p>
+                    </div>
+
+                    <div class="interest-card bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl" aria-hidden="true"><i class="fa-solid fa-brain"></i></div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="interest3-title">Machine Learning & Data Science</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="interest3-desc">Applying advanced algorithms (Random Forest, SVM, PCA) in Python and R for predictive environmental modeling and classification.</p>
+                    </div>
+
+                    <div class="interest-card bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl" aria-hidden="true"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="interest4-title">GIS & Remote Sensing (RS)</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="interest4-desc">Integrating spatial analysis, satellite imagery, morphometrics, and DEM models to explore basins and soil conservation priority zones.</p>
+                    </div>
+
+                    <div class="interest-card bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl" aria-hidden="true"><i class="fa-solid fa-mountain"></i></div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="interest5-title">Geotechnical & Slope Stability</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="interest5-desc">Analyzing mechanical stresses in geological slopes, studying landslide triggers, and supporting safe civil infrastructure design.</p>
+                    </div>
+
+                    <div class="interest-card bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-950/40 text-teal-600 dark:text-teal-400 flex items-center justify-center text-xl" aria-hidden="true"><i class="fa-solid fa-seedling"></i></div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="interest6-title">Soil & Water Conservation</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="interest6-desc">Developing multidisciplinary frameworks to mitigate erosion, manage runoff, and sustain agricultural water demands in arid basins.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects / Research Section -->
+        <section id="projects" class="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="projects-title">Research Projects</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-xl mx-auto" data-i18n="projects-subtitle">Ongoing and completed research initiatives applying GIS, ML and hydrogeochemistry to real-world water and terrain problems.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
+
+                    <article class="project-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="project-thumb" aria-hidden="true">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="project-tag">Hydrogeology</span>
+                                <span class="project-tag">CoDA</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2" data-i18n="proj1-title">Aquifer Geochemistry via CoDA-PCA</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="proj1-desc">Advanced compositional data analysis pipeline for geochemical signature detection in arid-zone aquifers, published in the Journal of African Earth Sciences.</p>
+                            <a href="https://doi.org/10.1016/j.jafrearsci.2023.105162" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-primary-700 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-300 transition-colors">
+                                <span data-i18n="proj1-btn">Read publication</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #059669, #064e3b);" aria-hidden="true">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="project-tag">GIS</span>
+                                <span class="project-tag">Remote Sensing</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2" data-i18n="proj2-title">Soil & Water Conservation, Naama Basin</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="proj2-desc">Integrating morphometric analysis, WSA, PCA and CoDA-PCA to prioritize soil and water conservation zones in the Southwest of Algeria.</p>
+                            <a href="https://doi.org/10.1007/s10661-024-13433-0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-primary-700 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-300 transition-colors">
+                                <span data-i18n="proj1-btn">Read publication</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #d97706, #78350f);" aria-hidden="true">
+                            <i class="fa-solid fa-mountain"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="project-tag">Geotechnics</span>
+                                <span class="project-tag">Slope Stability</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2" data-i18n="proj3-title">RN 77 Landslide Investigation, Texenna</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="proj3-desc">Slope stability and landslide investigation on RN 77 at PK 23+100 in the Texenna municipality (Jijel, Algeria), studying structural faults and mechanical triggers.</p>
+                            <span class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-slate-500 dark:text-slate-400">
+                                <i class="fa-solid fa-file-invoice" aria-hidden="true"></i> <span data-i18n="proj3-badge">Conference paper, 2022</span>
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="project-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #6366f1, #3730a3);" aria-hidden="true">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2" data-i18n="proj4-title">Predictive Modeling of Groundwater Quality</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="proj4-desc">Applying Random Forest, SVM and PCA in Python and R to build predictive models of contamination and hydrochemical evolution in arid basins.</p>
+                            <span class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-slate-500 dark:text-slate-400">
+                                <i class="fa-solid fa-flask" aria-hidden="true"></i> <span data-i18n="proj4-badge">Ongoing research</span>
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="project-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #0d9488, #134e4a);" aria-hidden="true">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="project-tag">Wetlands</span>
+                                <span class="project-tag">Irrigation</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2" data-i18n="proj5-title">Mediterranean Wetland Water Quality</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="proj5-desc">Hydrogeochemical processes controlling surface water quality for irrigation in a Mediterranean wetland ecosystem in Northeast Algeria.</p>
+                            <a href="https://doi.org/10.1007/s10661-024-13019-w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-primary-700 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-300 transition-colors">
+                                <span data-i18n="proj1-btn">Read publication</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #7c3aed, #4c1d95);" aria-hidden="true">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="project-tag">International</span>
+                                <span class="project-tag">Saudi Arabia</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2" data-i18n="proj6-title">Wadi Ranyah Groundwater Assessment</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="proj6-desc">International collaboration on groundwater quality assessment using revised classical diagrams and compositional data analysis in Saudi Arabia.</p>
+                            <a href="https://doi.org/10.1016/j.jksus.2024.103463" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-primary-700 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-300 transition-colors">
+                                <span data-i18n="proj1-btn">Read publication</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="pub-title">Scientific Publications & Peer-Reviewed Articles</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-xl mx-auto" data-i18n="pub-desc">A selection of my peer-reviewed journal articles, conference papers, and active scientific contributions.</p>
+                </div>
+
+                <div class="max-w-5xl mx-auto space-y-6 stagger-children">
+                    <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="space-y-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span data-i18n="pub1-type">Journal Article — 2024</span></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub1-title">A novel comprehensive approach to soil and water conservation: integrating morphometric analysis, WSA, PCA, and CoDA-PCA in the Naama sub-basins case study, Southwest of Algeria</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub1-contrib"><span class="font-medium">Contributors:</span> Moussaoui T, Derdour A, Abdelkarim B, Said B, Hosni A, Reghais A, de-Los-Santos MB.</p>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub1-journal"><span class="font-bold">Journal:</span> Environmental Monitoring and Assessment | Springer</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <a href="https://doi.org/10.1007/s10661-024-13433-0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.1007/s10661-024-13433-0</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="space-y-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span data-i18n="pub2-type">Journal Article — 2024</span></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub2-title">Groundwater quality assessment using revised classical diagrams and compositional data analysis (CoDa): Case study of Wadi Ranyah, Saudi Arabia</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub2-contrib"><span class="font-medium">Contributors:</span> Drouiche Abdelmalek, Reghais Azzeddine, Ahmed Mohamed, Zahi Faouzi, Wael F. Galal, Saad S. Alarifi, Musaab A.A. Mohammed.</p>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub2-journal"><span class="font-bold">Journal:</span> Journal of King Saud University - Science | Elsevier</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <a href="https://doi.org/10.1016/j.jksus.2024.103463" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.1016/j.jksus.2024.103463</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="space-y-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span data-i18n="pub3-type">Journal Article — 2024</span></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub3-title">Hydrogeochemical processes controlling surface water quality for irrigation in a Mediterranean wetland ecosystem, Northeast Algeria</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub3-contrib"><span class="font-medium">Contributors:</span> Faouzi Zahi, Abdelmalek Drouiche, Fethi Medjani, Reghais Azzeddine, Mohamed Djidel.</p>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub3-journal"><span class="font-bold">Journal:</span> Environmental Monitoring and Assessment | Springer</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <a href="https://doi.org/10.1007/s10661-024-13019-w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.1007/s10661-024-13019-w</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="space-y-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span data-i18n="pub4-type">Journal Article — 2024</span></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub4-title">Hydrochemical analysis and groundwater quality assessment for irrigation in the Remila Plain, Khenchela, Northeast Algeria</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub4-contrib"><span class="font-medium">Contributors:</span> Bezai Abderrahim, Nafaa Brinis, Azzeddine Reghais, Samir Djenba, Khadidja Bouzid.</p>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub4-journal"><span class="font-bold">Journal:</span> Geomatics, Landmanagement and Landscape</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <a href="https://doi.org/10.15576/GLL/2024.3.03" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.15576/GLL/2024.3.03</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="space-y-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span data-i18n="pub5-type">Journal Article — 2023</span></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub5-title">Compositional data analysis (CoDA) and geochemical signatures of the terminal complex aquifer in an arid zone (northeastern Algeria)</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub5-contrib"><span class="font-medium">Contributors:</span> Reghais Azzeddine, Drouiche Abdelmalek.</p>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub5-journal"><span class="font-bold">Journal:</span> Journal of African Earth Sciences | Elsevier</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <a href="https://doi.org/10.1016/j.jafrearsci.2023.105162" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.1016/j.jafrearsci.2023.105162</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="space-y-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800"><i class="fa-solid fa-users mr-1" aria-hidden="true"></i> <span data-i18n="pub6-type">Conference Paper & Presentation &mdash; 2022</span></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-indigo-600 transition-colors" data-i18n="pub6-title">Slope stability and landslide investigation on RN 77 at PK 23+100 (Texenna municipality, Jijel)</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub6-desc">The studied landslide is located in the municipality of Texenna, 25 km southeast of the wilaya of Jijel, Algeria. Focuses on structural faults and mechanical triggers.</p>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 pt-1" data-i18n="pub6-contrib"><span class="font-medium">Contributors:</span> Abdelhamid Khedidja, Brahim Lecheheb, Azzeddine Reghais.</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i> <span data-i18n="pub6-badge">Texenna Project</span></span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="https://scholar.google.com/citations?user=ovT7Ao4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-900 dark:bg-primary-600 hover:bg-primary-800 dark:hover:bg-primary-500 text-white font-semibold text-sm rounded-xl shadow-md transition-all">
+                        <span data-i18n="pub-scholar-btn">See full bibliography on Google Scholar</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Certifications Section -->
+        <section id="awards" class="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="awards-title">Awards, Certifications & Education</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-md mx-auto" data-i18n="awards-desc">Academic milestones, scientific certifications, and professional recognitions.</p>
+                </div>
+
+                <div class="timeline fade-in-up">
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-100 dark:bg-primary-950/40 text-primary-700 dark:text-primary-400 w-fit">
+                                    <i class="fa-solid fa-graduation-cap mr-1.5" aria-hidden="true"></i> <span data-i18n="award1-tag">PhD Degree</span>
+                                </span>
+                                <span class="text-xs font-semibold text-slate-500">2020</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award1-title">PhD in Hydrogeology</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award1-desc">University of Jijel, Algeria &mdash; Geological Engineering Laboratory (LGG)</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 w-fit">
+                                    <i class="fa-solid fa-award mr-1.5" aria-hidden="true"></i> <span data-i18n="award2-tag">Recognition</span>
+                                </span>
+                                <span class="text-xs font-semibold text-slate-500">2024</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award2-title">Peer Reviewer &mdash; Springer & Elsevier</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award2-desc">Active peer reviewer for international journals in hydrogeology and environmental sciences.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 w-fit">
+                                    <i class="fa-solid fa-certificate mr-1.5" aria-hidden="true"></i> <span data-i18n="award3-tag">Certification</span>
+                                </span>
+                                <span class="text-xs font-semibold text-slate-500">2023</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award3-title">Advanced GIS & Remote Sensing</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award3-desc">Certified proficiency in QGIS, ArcGIS, Google Earth Engine, and satellite imagery processing.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-400 w-fit">
+                                    <i class="fa-solid fa-code mr-1.5" aria-hidden="true"></i> <span data-i18n="award4-tag">Skills</span>
+                                </span>
+                                <span class="text-xs font-semibold text-slate-500">Ongoing</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award4-title">Data Science with R & Python</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award4-desc">Continuous learning in scientific computing: Random Forest, SVM, PCA, and CoDA methods.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <p class="text-sm text-slate-500 dark:text-slate-400 italic text-center">
+                                <i class="fa-solid fa-plus mr-1.5" aria-hidden="true"></i> <span data-i18n="awards-more">More certifications and awards will be added here.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog / Articles Section -->
+        <section id="blog" class="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="blog-title">Blog & Articles</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-md mx-auto" data-i18n="blog-desc">Thoughts on hydrogeology, data science in geoscience, and open science.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
+
+                    <article class="blog-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="blog-thumb" aria-hidden="true">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-xs font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider" data-i18n="blog1-tag">Methodology</span>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mt-2 mb-3" data-i18n="blog1-title">Why CoDA matters in geochemistry</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="blog1-desc">A gentle introduction to compositional data analysis (log-ratio transformations) and why classical PCA can mislead geochemists working with closed-sum datasets.</p>
+                            <div class="flex items-center justify-between mt-4 text-xs text-slate-500 dark:text-slate-400">
+                                <span><i class="fa-regular fa-calendar mr-1" aria-hidden="true"></i> <span data-i18n="blog-coming-soon">Coming soon</span></span>
+                                <span><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> <span data-i18n="blog1-time">6 min read</span></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="blog-thumb" style="background: linear-gradient(135deg, #0f172a, #059669);" aria-hidden="true">
+                            <i class="fa-solid fa-satellite"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider" data-i18n="blog2-tag">Remote Sensing</span>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mt-2 mb-3" data-i18n="blog2-title">Practical satellite indices for arid basins</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="blog2-desc">A short field-oriented tour of NDVI, NDWI and salinity indices, with case-based tips for interpreting them in Algerian semi-arid catchments.</p>
+                            <div class="flex items-center justify-between mt-4 text-xs text-slate-500 dark:text-slate-400">
+                                <span><i class="fa-regular fa-calendar mr-1" aria-hidden="true"></i> <span data-i18n="blog-coming-soon">Coming soon</span></span>
+                                <span><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> <span data-i18n="blog2-time">8 min read</span></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="blog-thumb" style="background: linear-gradient(135deg, #0f172a, #6366f1);" aria-hidden="true">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider" data-i18n="blog3-tag">Data Science</span>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mt-2 mb-3" data-i18n="blog3-title">R vs. Python for hydro data pipelines</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="blog3-desc">When to reach for R (statistics, robust plotting) and when to prefer Python (ML, automation) in day-to-day hydrogeological data work.</p>
+                            <div class="flex items-center justify-between mt-4 text-xs text-slate-500 dark:text-slate-400">
+                                <span><i class="fa-regular fa-calendar mr-1" aria-hidden="true"></i> <span data-i18n="blog-coming-soon">Coming soon</span></span>
+                                <span><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> <span data-i18n="blog3-time">5 min read</span></span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="text-center text-sm text-slate-500 dark:text-slate-400 mt-10 fade-in-up"><i class="fa-solid fa-pen-nib mr-1.5" aria-hidden="true"></i> <span data-i18n="blog-more">New articles are being prepared. Stay tuned!</span></p>
+            </div>
+        </section>
+
+        <!-- Student Portal Section -->
+        <section id="students" class="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300 student-portal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="portal-title">Student Portal</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-xl mx-auto" data-i18n="portal-desc">Access class schedules, download academic materials, and book academic guidance and office hour slots.</p>
+                </div>
+
+                <div class="max-w-5xl mx-auto bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+                    <!-- Nav Tabs -->
+                    <div class="flex flex-wrap border-b border-slate-200 dark:border-slate-800 mb-8 gap-2">
+                        <button id="tabScheduleBtn" onclick="switchPortalTab('schedule')" class="portal-tab-btn px-4 py-2.5 text-sm font-semibold border-b-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400" data-i18n="portal-schedule-tab">Lecture Schedule</button>
+                        <button id="tabFilesBtn" onclick="switchPortalTab('files')" class="portal-tab-btn px-4 py-2.5 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200" data-i18n="portal-files-tab">Lecture Files</button>
+                        <button id="tabBookingBtn" onclick="switchPortalTab('booking')" class="portal-tab-btn px-4 py-2.5 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200" data-i18n="portal-booking-tab">Appointment Booking</button>
+                    </div>
+
+                    <!-- Tab 1: Lecture Schedule -->
+                    <div id="portal-schedule" class="portal-tab-content space-y-6">
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+                            <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800 text-sm">
+                                <thead class="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-4 font-semibold text-left" data-i18n="portal-course-header">Course</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold text-left" data-i18n="portal-level-header">Level</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold text-left" data-i18n="portal-day-header">Day</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold text-left" data-i18n="portal-time-header">Time</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold text-left" data-i18n="portal-room-header">Classroom</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300">
+                                    <tr>
+                                        <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-100" data-i18n="course-hydro">Advanced Hydrogeology</td>
+                                        <td class="px-6 py-4" data-i18n="level-m1">Master 1</td>
+                                        <td class="px-6 py-4" data-i18n="day-sun">Sunday</td>
+                                        <td class="px-6 py-4" dir="ltr">08:30 - 10:00</td>
+                                        <td class="px-6 py-4">Salle 04 (LGG)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-100" data-i18n="course-gis">Applied GIS & RS in Water Resources</td>
+                                        <td class="px-6 py-4" data-i18n="level-m1">Master 1</td>
+                                        <td class="px-6 py-4" data-i18n="day-mon">Monday</td>
+                                        <td class="px-6 py-4" dir="ltr">10:15 - 11:45</td>
+                                        <td class="px-6 py-4">Labo SIG</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-100" data-i18n="course-geotech">Geological Hazards & Slope Stability</td>
+                                        <td class="px-6 py-4" data-i18n="level-m2">Master 2</td>
+                                        <td class="px-6 py-4" data-i18n="day-tue">Tuesday</td>
+                                        <td class="px-6 py-4" dir="ltr">13:00 - 14:30</td>
+                                        <td class="px-6 py-4">Salle d'études</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-100" data-i18n="course-chem">Hydrogeochemistry & Water Quality</td>
+                                        <td class="px-6 py-4" data-i18n="level-m2">Master 2</td>
+                                        <td class="px-6 py-4" data-i18n="day-wed">Wednesday</td>
+                                        <td class="px-6 py-4" dir="ltr">08:30 - 10:00</td>
+                                        <td class="px-6 py-4">Amphi B</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Lecture Files -->
+                    <div id="portal-files" class="portal-tab-content hidden space-y-6">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="files-title">Course Lecture & Resource Center</h3>
+
+                        <!-- Interactive simulated file drag zone -->
+                        <div id="fileDragZone" class="file-drag-zone rounded-2xl p-8 text-center cursor-pointer bg-white dark:bg-slate-900 border-2 border-dashed">
+                            <i class="fa-solid fa-cloud-arrow-up text-primary-500 text-4xl mb-4" aria-hidden="true"></i>
+                            <p class="text-sm font-semibold text-slate-700 dark:text-slate-200" data-i18n="files-upload-drag">Drag & drop files here or click to upload</p>
+                            <p class="text-xs text-slate-400 mt-1 mb-4" data-i18n="files-upload-info">Simulate adding custom lectures or materials (PDF, DOCX, ZIP)</p>
+                            <button class="px-4 py-2 bg-primary-100 dark:bg-primary-950/40 text-primary-700 dark:text-primary-300 font-bold text-xs rounded-xl hover:bg-primary-200 transition-all" data-i18n="files-upload-btn">Browse Files</button>
+                            <input type="file" id="fileSelectorInput" class="hidden" multiple>
+                        </div>
+
+                        <!-- Dynamic list of available materials -->
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+                            <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800 text-sm">
+                                <thead class="bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300">
+                                    <tr>
+                                        <th class="px-6 py-4 font-semibold text-left" data-i18n="files-name-col">File Name</th>
+                                        <th class="px-6 py-4 font-semibold text-left" data-i18n="files-size-col">Size</th>
+                                        <th class="px-6 py-4 font-semibold text-left" data-i18n="files-type-col">Type</th>
+                                        <th class="px-6 py-4 font-semibold text-center" data-i18n="files-action-col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lectureFilesListBody" class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+                                    <!-- Dynamic or default items inserted via js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Appointment Booking -->
+                    <div id="portal-booking" class="portal-tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2" data-i18n="booking-title">Book an Appointment</h3>
+                            <p class="text-xs text-slate-400 mb-6" data-i18n="booking-desc">Reserve a slot for academic advising, thesis revision, or office hours.</p>
+
+                            <form id="portalBookingForm" class="space-y-4" novalidate>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="form-label" for="pb-name"><span data-i18n="booking-student-name">Student Name</span> <span class="required" aria-hidden="true">*</span></label>
+                                        <input class="form-input" id="pb-name" type="text" required placeholder="Your full name" data-i18n-placeholder="booking-placeholder-name">
+                                    </div>
+                                    <div>
+                                        <label class="form-label" for="pb-email"><span data-i18n="booking-student-email">Student Email</span> <span class="required" aria-hidden="true">*</span></label>
+                                        <input class="form-input" id="pb-email" type="email" required placeholder="student@univ-jijel.dz" data-i18n-placeholder="booking-placeholder-email">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div class="sm:col-span-1">
+                                        <label class="form-label" for="pb-purpose"><span data-i18n="booking-select-course">Select Purpose</span> <span class="required" aria-hidden="true">*</span></label>
+                                        <select class="form-select dark:bg-slate-800 dark:border-slate-700" id="pb-purpose" required>
+                                            <option value="advising" data-i18n="purpose-advising">Academic Advising / Office Hours</option>
+                                            <option value="thesis" data-i18n="purpose-thesis">Master/PhD Thesis Revision</option>
+                                            <option value="exam" data-i18n="purpose-exam">Exam Review & Grades</option>
+                                        </select>
+                                    </div>
+                                    <div class="sm:col-span-1">
+                                        <label class="form-label" id="pb-date-label" for="pb-date"><span data-i18n="booking-select-date">Select Date</span> <span class="required" aria-hidden="true">*</span></label>
+                                        <input class="form-input" id="pb-date" type="date" required>
+                                    </div>
+                                    <div class="sm:col-span-1">
+                                        <label class="form-label" for="pb-slot"><span data-i18n="booking-select-slot">Time Slot</span> <span class="required" aria-hidden="true">*</span></label>
+                                        <select class="form-select dark:bg-slate-800 dark:border-slate-700" id="pb-slot" required>
+                                            <option value="09:00 - 09:30">09:00 - 09:30</option>
+                                            <option value="09:30 - 10:00">09:30 - 10:00</option>
+                                            <option value="10:00 - 10:30">10:00 - 10:30</option>
+                                            <option value="11:00 - 11:30">11:00 - 11:30</option>
+                                            <option value="14:00 - 14:30">14:00 - 14:30</option>
+                                            <option value="14:30 - 15:00">14:30 - 15:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="form-label" for="pb-details" data-i18n="booking-purpose">Advising / Purpose Details</label>
+                                    <textarea class="form-textarea" id="pb-details" placeholder="Brief explanation of guidance needed..." data-i18n-placeholder="booking-placeholder-details" style="min-height:90px;"></textarea>
+                                </div>
+
+                                <div id="portalBookingFormMessage" class="form-message" role="status" aria-live="polite"></div>
+
+                                <button type="submit" class="form-submit w-full" data-i18n="booking-submit-btn">Confirm Booking</button>
+                            </form>
+                        </div>
+
+                        <!-- Active bookings persistence list -->
+                        <div class="lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm flex flex-col">
+                            <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 mb-4" data-i18n="booking-active-title">Your Active Bookings</h3>
+                            <div id="activeBookingsContainer" class="space-y-3 flex-grow overflow-y-auto max-h-[340px]">
+                                <!-- Active slots dynamically created and rendered -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="contact-title">Get in Touch</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-md mx-auto" data-i18n="contact-desc">Interested in collaboration, joint research proposals, or consultation? Reach out directly.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+                    <!-- Left: Contact Info Card -->
+                    <div class="bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-3xl p-8 shadow-sm fade-in-up">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-6" data-i18n="contact-info-title">Contact Information</h3>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-950/40 text-primary-600 dark:text-primary-400 flex items-center justify-center text-xl flex-shrink-0" aria-hidden="true"><i class="fa-solid fa-building-columns"></i></div>
+                                <div class="space-y-1">
+                                    <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-i18n="contact-inst-label">Institution</h4>
+                                    <p class="text-slate-800 dark:text-slate-200 font-semibold" data-i18n="contact-inst-val">University of Jijel</p>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="contact-inst-desc">Geological Engineering Laboratory (LGG), BP 98, Ouled Aissa, Jijel, Algeria</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl flex-shrink-0" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="space-y-1">
+                                    <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-i18n="contact-email-label">Email</h4>
+                                    <p class="text-slate-800 dark:text-slate-200 font-semibold"><a href="mailto:azzeddine.reghais@gmail.com" class="hover:text-emerald-600 transition-colors">azzeddine.reghais@gmail.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl flex-shrink-0" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
+                                <div class="space-y-1">
+                                    <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-i18n="contact-phone-label">Phone / WhatsApp</h4>
+                                    <p class="text-slate-800 dark:text-slate-200 font-semibold"><a href="tel:+213668261708" class="hover:text-amber-600 transition-colors" dir="ltr">+213 (0) 668 26 17 08</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-sm fade-in-up">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2" data-i18n="contact-form-title">Send a Message</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6" data-i18n="contact-form-desc">Fill in the form below and I will get back to you as soon as possible.</p>
+
+                        <form id="contactForm" class="contact-form space-y-4" action="mailto:azzeddine.reghais@gmail.com" method="POST" novalidate>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="form-group">
+                                    <label class="form-label" for="cf-name"><span data-i18n="form-name">Name</span> <span class="required" aria-hidden="true">*</span></label>
+                                    <input class="form-input" id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Your full name" data-i18n-placeholder="form-placeholder-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="cf-email"><span data-i18n="form-email">Email</span> <span class="required" aria-hidden="true">*</span></label>
+                                    <input class="form-input" id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" data-i18n-placeholder="form-placeholder-email">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="cf-subject" data-i18n="form-subject">Subject</label>
+                                <input class="form-input" id="cf-subject" name="subject" type="text" placeholder="e.g., Research collaboration" data-i18n-placeholder="form-placeholder-subject">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="cf-message"><span data-i18n="form-message">Message</span> <span class="required" aria-hidden="true">*</span></label>
+                                <textarea class="form-textarea" id="cf-message" name="message" required placeholder="Tell me about your project, question, or collaboration idea..." data-i18n-placeholder="form-placeholder-message"></textarea>
+                            </div>
+
+                            <!-- Honeypot field to reduce spam -->
+                            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+
+                            <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+                            <button type="submit" class="form-submit">
+                                <span class="btn-text inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> <span data-i18n="form-submit">Send Message</span>
+                                </span>
+                                <span class="btn-spinner hidden inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> <span data-i18n="form-submit-loading">Sending...</span>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <p class="text-white font-bold text-lg" data-i18n="footer-dr">Dr. Azzeddine Reghais</p>
+                    <p class="text-xs text-slate-500 mt-1">&copy; <span id="currentYear"></span> <span data-i18n="footer-rights">All rights reserved. Professional Academic Profile.</span></p>
+                </div>
+
+                <div class="flex gap-6 text-xl" aria-label="Academic profiles">
+                    <a href="https://scholar.google.com/citations?user=ovT7Ao4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" title="Google Scholar" aria-label="Google Scholar profile"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
+                    <a href="https://www.researchgate.net/profile/Azzeddine-Reghais" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" title="ResearchGate" aria-label="ResearchGate profile"><i class="ai ai-researchgate" aria-hidden="true"></i></a>
+                    <a href="https://orcid.org/0000-0002-4968-9529" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" title="ORCID iD" aria-label="ORCID profile"><i class="ai ai-orcid" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript (Interactive setup & execution) -->
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

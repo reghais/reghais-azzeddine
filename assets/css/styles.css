@@ -1,0 +1,591 @@
+/* ==========================================================================
+   Dr. Azzeddine Reghais - Academic Portfolio
+   Custom Styles - Phase 1 & 3: Modern Design, Dark Mode & RTL Support
+   ========================================================================== */
+
+/* CSS Custom Properties - Design Tokens */
+:root {
+  /* Primary academic palette - Deep Blue */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+
+  /* Accent - Warm Gold */
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+
+  /* Shadows */
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 12px 24px -8px rgba(15, 23, 42, 0.12), 0 6px 12px -4px rgba(15, 23, 42, 0.06);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Typography */
+body {
+  font-family: 'Inter', 'Cairo', system-ui, -apple-system, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* Accessibility: focus states */
+*:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* ==========================================================================
+   RTL Styles & Adjustments
+   ========================================================================== */
+html[dir="rtl"] {
+  font-family: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Reverse timeline layout & margins under RTL */
+html[dir="rtl"] .timeline {
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
+html[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 0.5rem;
+}
+
+html[dir="rtl"] .timeline-dot {
+  left: auto;
+  right: -1.75rem;
+}
+
+@media (min-width: 768px) {
+  html[dir="rtl"] .timeline {
+    padding-right: 2.5rem;
+    padding-left: 0;
+  }
+
+  html[dir="rtl"] .timeline::before {
+    right: 0.75rem;
+    left: auto;
+  }
+
+  html[dir="rtl"] .timeline-dot {
+    right: -2rem;
+    left: auto;
+  }
+}
+
+/* Reverse horizontal publication-card slide on hover under RTL */
+html[dir="rtl"] .publication-card:hover {
+  transform: translateX(-4px);
+}
+
+/* RTL navigation items space utility correction */
+html[dir="rtl"] .md\:flex.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+html[dir="rtl"] .space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* ==========================================================================
+   Academic Cards - Enhanced Hover Effects
+   ========================================================================== */
+.academic-btn {
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.academic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.05), transparent);
+  transition: left 0.6s ease;
+}
+
+.academic-btn:hover::before {
+  left: 100%;
+}
+
+.academic-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Interest Cards */
+.interest-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.interest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Publication Cards */
+.publication-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.publication-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-color: #bfdbfe;
+}
+
+/* ==========================================================================
+   Wave Animation (Hero Section Bottom)
+   ========================================================================== */
+.wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-animation {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" fill="%23f8fafc" opacity=".15"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.61,31.51,25.26,51.81,59.22,79.52,86.09,41,39.75,101.9,64.12,159.4,49.23,45.47-11.77,81.33-47.58,119.54-72.93,37.25-24.72,78-36.1,121.14-35.1,51.57,1.2,100,24,142.1,54.75,25.07,18.3,48.65,39.5,74.5,53.9V0Z" fill="%23f8fafc" opacity=".35"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c180-32,361-90,542.83-42.57,61,16,120,39,181.34,42.57V0Z" fill="%23f8fafc"></path></svg>') repeat-x;
+  position: absolute;
+  bottom: 0;
+  width: 3200px;
+  height: 70px;
+  animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave-animation:nth-of-type(2) {
+  bottom: 4px;
+  animation: wave 14s cubic-bezier(0.36, 0.45, 0.63, 0.53) reverse infinite;
+  opacity: 0.6;
+}
+
+.wave-animation:nth-of-type(3) {
+  bottom: 8px;
+  animation: wave 9s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  opacity: 0.3;
+}
+
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-1600px); }
+}
+
+/* Wave alignment correction under dark mode */
+.dark .wave-animation {
+  opacity: 0.05;
+}
+
+/* ==========================================================================
+   Scroll-Triggered Fade In Animations
+   ========================================================================== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.stagger-children.is-visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(2) { transition-delay: 0.1s;  opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(4) { transition-delay: 0.2s;  opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(6) { transition-delay: 0.3s;  opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   Mobile Menu
+   ========================================================================== */
+#mobileMenu {
+  transition: max-height var(--transition-base), opacity var(--transition-base);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+#mobileMenu.is-open {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* Header scroll behavior */
+header.is-scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   Reduced motion preference
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .wave-animation {
+    animation: none;
+  }
+}
+
+/* Responsive Refinements */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 4rem;
+  }
+}
+
+/* ==========================================================================
+   Projects Cards
+   ========================================================================== */
+.project-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-card .project-thumb {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-900));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card .project-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 60%);
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
+}
+
+.dark .project-tag {
+  background: rgba(30, 58, 138, 0.4);
+  color: #93c5fd;
+}
+
+/* ==========================================================================
+   Awards Timeline
+   ========================================================================== */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-primary-500), var(--color-accent-400));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.75rem;
+  top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--color-primary-600);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--color-primary-200);
+  transition: transform var(--transition-fast);
+}
+
+.dark .timeline-dot {
+  border-color: #0f172a;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.4);
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.2);
+  background: var(--color-accent-500);
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    padding-left: 2.5rem;
+  }
+
+  .timeline::before {
+    left: 0.75rem;
+  }
+
+  .timeline-dot {
+    left: -2rem;
+  }
+}
+
+/* ==========================================================================
+   Blog Cards
+   ========================================================================== */
+.blog-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.blog-card .blog-thumb {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+}
+
+/* ==========================================================================
+   Contact Form
+   ========================================================================== */
+.contact-form .form-group {
+  position: relative;
+}
+
+.contact-form .form-input,
+.contact-form .form-textarea,
+.student-portal .form-input,
+.student-portal .form-select,
+.student-portal .form-textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #0f172a;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.dark .contact-form .form-input,
+.dark .contact-form .form-textarea,
+.dark .student-portal .form-input,
+.dark .student-portal .form-select,
+.dark .student-portal .form-textarea {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.contact-form .form-input:focus,
+.contact-form .form-textarea:focus,
+.student-portal .form-input:focus,
+.student-portal .form-select:focus,
+.student-portal .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.contact-form .form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form .form-label,
+.student-portal .form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.dark .contact-form .form-label,
+.dark .student-portal .form-label {
+  color: #cbd5e1;
+}
+
+.contact-form .form-label .required,
+.student-portal .form-label .required {
+  color: #dc2626;
+  margin-left: 2px;
+}
+
+.contact-form .form-submit,
+.student-portal .form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--color-primary-900);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.dark .contact-form .form-submit,
+.dark .student-portal .form-submit {
+  background: var(--color-primary-600);
+}
+
+.dark .contact-form .form-submit:hover,
+.dark .student-portal .form-submit:hover {
+  background: var(--color-primary-500);
+}
+
+.contact-form .form-submit:hover,
+.student-portal .form-submit:hover {
+  background: var(--color-primary-800);
+  transform: translateY(-1px);
+}
+
+.contact-form .form-submit:disabled,
+.student-portal .form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-message {
+  padding: 0.875rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: none;
+}
+
+.form-message.is-visible {
+  display: block;
+}
+
+.form-message.is-success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.dark .form-message.is-success {
+  background: rgba(6, 95, 70, 0.2);
+  color: #a7f3d0;
+  border-color: rgba(6, 95, 70, 0.4);
+}
+
+.form-message.is-error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.dark .form-message.is-error {
+  background: rgba(153, 27, 27, 0.2);
+  color: #fecaca;
+  border-color: rgba(153, 27, 27, 0.4);
+}
+
+/* ==========================================================================
+   Student Portal Custom Elements
+   ========================================================================== */
+.portal-tab-btn {
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.file-drag-zone {
+  border: 2px dashed #cbd5e1;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.dark .file-drag-zone {
+  border-color: #475569;
+}
+
+.file-drag-zone.dragover {
+  border-color: var(--color-primary-500);
+  background-color: var(--color-primary-50);
+}
+
+.dark .file-drag-zone.dragover {
+  background-color: rgba(30, 58, 138, 0.2);
+}
+
+/* Print-friendly styles */
+@media print {
+  header, footer, #mobileMenu, canvas, .wave-container {
+    display: none !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}

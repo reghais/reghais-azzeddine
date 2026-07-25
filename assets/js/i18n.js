@@ -1,0 +1,483 @@
+/* ==========================================================================
+   Dr. Azzeddine Reghais - Academic Portfolio
+   i18n Translation & RTL Management - Phase 3
+   ========================================================================== */
+
+const translations = {
+  en: {
+    "nav-about": "About",
+    "nav-interests": "Interests",
+    "nav-projects": "Projects",
+    "nav-publications": "Publications",
+    "nav-awards": "Awards",
+    "nav-blog": "Blog",
+    "nav-profiles": "Profiles",
+    "nav-contact": "Contact",
+    "nav-students": "Student Portal",
+    "dr-title": "Dr. Azzeddine Reghais",
+    "phd-sub": "PhD in Hydrogeology",
+    "hero-droplet": "Hydrological Sciences",
+    "hero-tagline": "Dr. Azzeddine Reghais",
+    "hero-desc": "Researcher at Jijel University, Algeria. Specializing in high-tech applications of <strong>GIS</strong>, <strong>Remote Sensing</strong>, and <strong>Machine Learning</strong> in water resources, hydrogeochemical processes, and slope stability.",
+    "hero-view-pub": "View Publications",
+    "hero-contact-me": "Contact Me",
+    "about-title": "About Me",
+    "about-p1": "I hold a <strong>PhD in Hydrogeology</strong> from <strong>Jijel University, Algeria</strong>. My academic journey is strongly grounded in sub-surface water sciences and ground mechanical stability.",
+    "about-p2": "My primary research interests lie at the intersection of modern technology and geoscience. Currently, I am deeply focused on applying <strong>Geographic Information Systems (GIS)</strong> and <strong>Machine Learning (ML)</strong> models to tackle environmental and hydrological challenges. My recent works explore:",
+    "about-li1": "Compositional Data Analysis (CoDA) for advanced hydrochemical modeling.",
+    "about-li2": "Remote Sensing (RS) data integration in arid and semi-arid terrain assessments.",
+    "about-li3": "Predictive Modeling of water resources contamination and geochemical evolution.",
+    "about-li4": "Slope Stability & Landslide Analysis for infrastructure hazard reduction.",
+    "about-p3": "Proficient in data-science tools including <strong>R</strong> and <strong>Python</strong>, I strive to advance scientific methodologies, deliver robust water resource assessments, and contribute actively to global water security and geological hazard mitigation.",
+    "profiles-title": "Academic & Research Networks",
+    "profiles-desc": "Connect with me on major international research databases and scientific networks.",
+    "scholar-desc": "Track citations, view full indexes of my peer-reviewed journal papers, and read research metrics.",
+    "scholar-btn": "View Scholar Profile",
+    "rg-desc": "Access preprints, full-texts, ask scientific questions, and collaborate with co-authors directly.",
+    "rg-btn": "View ResearchGate",
+    "orcid-desc": "Verified international researcher record linking my authorship across publishers and organizations.",
+    "orcid-btn": "View ORCID Record",
+    "interests-title": "Research & Methodological Focus",
+    "interest1-title": "Hydrogeology & Water Chemistry",
+    "interest1-desc": "Studying groundwater circulation, aquifer vulnerability, pollution hazard mapping, and hydrogeochemical mineralisation processes.",
+    "interest2-title": "Compositional Data Analysis (CoDA)",
+    "interest2-desc": "Using log-ratio transformations to accurately model geochemical signatures and close-sum relative datasets in water and soils.",
+    "interest3-title": "Machine Learning & Data Science",
+    "interest3-desc": "Applying advanced algorithms (Random Forest, SVM, PCA) in Python and R for predictive environmental modeling and classification.",
+    "interest4-title": "GIS & Remote Sensing (RS)",
+    "interest4-desc": "Integrating spatial analysis, satellite imagery, morphometrics, and DEM models to explore basins and soil conservation priority zones.",
+    "interest5-title": "Geotechnical & Slope Stability",
+    "interest5-desc": "Analyzing mechanical stresses in geological slopes, studying landslide triggers, and supporting safe civil infrastructure design.",
+    "interest6-title": "Soil & Water Conservation",
+    "interest6-desc": "Developing multidisciplinary frameworks to mitigate erosion, manage runoff, and sustain agricultural water demands in arid basins.",
+    "projects-title": "Research Projects",
+    "projects-subtitle": "Ongoing and completed research initiatives applying GIS, ML and hydrogeochemistry to real-world water and terrain problems.",
+    "proj1-title": "Aquifer Geochemistry via CoDA-PCA",
+    "proj1-desc": "Advanced compositional data analysis pipeline for geochemical signature detection in arid-zone aquifers, published in the Journal of African Earth Sciences.",
+    "proj1-btn": "Read publication",
+    "proj2-title": "Soil & Water Conservation, Naama Basin",
+    "proj2-desc": "Integrating morphometric analysis, WSA, PCA and CoDA-PCA to prioritize soil and water conservation zones in the Southwest of Algeria.",
+    "proj3-title": "RN 77 Landslide Investigation, Texenna",
+    "proj3-desc": "Slope stability and landslide investigation on RN 77 at PK 23+100 in the Texenna municipality (Jijel, Algeria), studying structural faults and mechanical triggers.",
+    "proj3-badge": "Conference paper, 2022",
+    "proj4-title": "Predictive Modeling of Groundwater Quality",
+    "proj4-desc": "Applying Random Forest, SVM and PCA in Python and R to build predictive models of contamination and hydrochemical evolution in arid basins.",
+    "proj4-badge": "Ongoing research",
+    "proj5-title": "Mediterranean Wetland Water Quality",
+    "proj5-desc": "Hydrogeochemical processes controlling surface water quality for irrigation in a Mediterranean wetland ecosystem in Northeast Algeria.",
+    "proj6-title": "Wadi Ranyah Groundwater Assessment",
+    "proj6-desc": "International collaboration on groundwater quality assessment using revised classical diagrams and compositional data analysis in Saudi Arabia.",
+    "pub-title": "Scientific Publications & Peer-Reviewed Articles",
+    "pub-desc": "A selection of my peer-reviewed journal articles, conference papers, and active scientific contributions.",
+    "pub1-type": "Journal Article — 2024",
+    "pub1-title": "A novel comprehensive approach to soil and water conservation: integrating morphometric analysis, WSA, PCA, and CoDA-PCA in the Naama sub-basins case study, Southwest of Algeria",
+    "pub1-contrib": "Contributors: Moussaoui T, Derdour A, Abdelkarim B, Said B, Hosni A, Reghais A, de-Los-Santos MB.",
+    "pub1-journal": "Journal: Environmental Monitoring and Assessment | Springer",
+    "pub2-type": "Journal Article — 2024",
+    "pub2-title": "Groundwater quality assessment using revised classical diagrams and compositional data analysis (CoDa): Case study of Wadi Ranyah, Saudi Arabia",
+    "pub2-contrib": "Contributors: Drouiche Abdelmalek, Reghais Azzeddine, Ahmed Mohamed, Zahi Faouzi, Wael F. Galal, Saad S. Alarifi, Musaab A.A. Mohammed.",
+    "pub2-journal": "Journal: Journal of King Saud University - Science | Elsevier",
+    "pub3-type": "Journal Article — 2024",
+    "pub3-title": "Hydrogeochemical processes controlling surface water quality for irrigation in a Mediterranean wetland ecosystem, Northeast Algeria",
+    "pub3-contrib": "Contributors: Faouzi Zahi, Abdelmalek Drouiche, Fethi Medjani, Reghais Azzeddine, Mohamed Djidel.",
+    "pub3-journal": "Journal: Environmental Monitoring and Assessment | Springer",
+    "pub4-type": "Journal Article — 2024",
+    "pub4-title": "Hydrochemical analysis and groundwater quality assessment for irrigation in the Remila Plain, Khenchela, Northeast Algeria",
+    "pub4-contrib": "Contributors: Bezai Abderrahim, Nafaa Brinis, Azzeddine Reghais, Samir Djenba, Khadidja Bouzid.",
+    "pub4-journal": "Journal: Geomatics, Landmanagement and Landscape",
+    "pub5-type": "Journal Article — 2023",
+    "pub5-title": "Compositional data analysis (CoDA) and geochemical signatures of the terminal complex aquifer in an arid zone (northeastern Algeria)",
+    "pub5-contrib": "Contributors: Reghais Azzeddine, Drouiche Abdelmalek.",
+    "pub5-journal": "Journal: Journal of African Earth Sciences | Elsevier",
+    "pub6-type": "Conference Paper & Presentation — 2022",
+    "pub6-title": "Slope stability and landslide investigation on RN 77 at PK 23+100 (Texenna municipality, Jijel)",
+    "pub6-desc": "The studied landslide is located in the municipality of Texenna, 25 km southeast of the wilaya of Jijel, Algeria. Focuses on structural faults and mechanical triggers.",
+    "pub6-contrib": "Contributors: Abdelhamid Khedidja, Brahim Lecheheb, Azzeddine Reghais.",
+    "pub6-badge": "Texenna Project",
+    "pub-scholar-btn": "See full bibliography on Google Scholar",
+    "awards-title": "Awards, Certifications & Education",
+    "awards-desc": "Academic milestones, scientific certifications, and professional recognitions.",
+    "award1-tag": "PhD Degree",
+    "award1-title": "PhD in Hydrogeology",
+    "award1-desc": "University of Jijel, Algeria — Geological Engineering Laboratory (LGG)",
+    "award2-tag": "Recognition",
+    "award2-title": "Peer Reviewer — Springer & Elsevier",
+    "award2-desc": "Active peer reviewer for international journals in hydrogeology and environmental sciences.",
+    "award3-tag": "Certification",
+    "award3-title": "Advanced GIS & Remote Sensing",
+    "award3-desc": "Certified proficiency in QGIS, ArcGIS, Google Earth Engine, and satellite imagery processing.",
+    "award4-tag": "Skills",
+    "award4-title": "Data Science with R & Python",
+    "award4-desc": "Continuous learning in scientific computing: Random Forest, SVM, PCA, and CoDA methods.",
+    "awards-more": "More certifications and awards will be added here.",
+    "blog-title": "Blog & Articles",
+    "blog-desc": "Thoughts on hydrogeology, data science in geoscience, and open science.",
+    "blog1-tag": "Methodology",
+    "blog1-title": "Why CoDA matters in geochemistry",
+    "blog1-desc": "A gentle introduction to compositional data analysis (log-ratio transformations) and why classical PCA can mislead geochemists working with closed-sum datasets.",
+    "blog1-time": "6 min read",
+    "blog2-tag": "Remote Sensing",
+    "blog2-title": "Practical satellite indices for arid basins",
+    "blog2-desc": "A short field-oriented tour of NDVI, NDWI and salinity indices, with case-based tips for interpreting them in Algerian semi-arid catchments.",
+    "blog2-time": "8 min read",
+    "blog3-tag": "Data Science",
+    "blog3-title": "R vs. Python for hydro data pipelines",
+    "blog3-desc": "When to reach for R (statistics, robust plotting) and when to prefer Python (ML, automation) in day-to-day hydrogeological data work.",
+    "blog3-time": "5 min read",
+    "blog-more": "New articles are being prepared. Stay tuned!",
+    "blog-coming-soon": "Coming soon",
+    "contact-title": "Get in Touch",
+    "contact-desc": "Interested in collaboration, joint research proposals, or consultation? Reach out directly.",
+    "contact-info-title": "Contact Information",
+    "contact-inst-label": "Institution",
+    "contact-inst-val": "University of Jijel",
+    "contact-inst-desc": "Geological Engineering Laboratory (LGG), BP 98, Ouled Aissa, Jijel, Algeria",
+    "contact-email-label": "Email",
+    "contact-phone-label": "Phone / WhatsApp",
+    "contact-form-title": "Send a Message",
+    "contact-form-desc": "Fill in the form below and I will get back to you as soon as possible.",
+    "form-name": "Name",
+    "form-email": "Email",
+    "form-subject": "Subject",
+    "form-message": "Message",
+    "form-submit": "Send Message",
+    "form-submit-loading": "Sending...",
+    "form-placeholder-name": "Your full name",
+    "form-placeholder-email": "you@example.com",
+    "form-placeholder-subject": "e.g., Research collaboration",
+    "form-placeholder-message": "Tell me about your project, question, or collaboration idea...",
+    "footer-rights": "All rights reserved. Professional Academic Profile.",
+    "footer-dr": "Dr. Azzeddine Reghais",
+
+    // Student Portal
+    "portal-title": "Student Portal",
+    "portal-desc": "Access class schedules, download academic materials, and book academic guidance and office hour slots.",
+    "portal-schedule-tab": "Lecture Schedule",
+    "portal-files-tab": "Lecture Files",
+    "portal-booking-tab": "Appointment Booking",
+    "portal-course-header": "Course",
+    "portal-day-header": "Day",
+    "portal-time-header": "Time",
+    "portal-room-header": "Classroom",
+    "portal-level-header": "Level",
+
+    // Courses Data
+    "course-hydro": "Advanced Hydrogeology",
+    "course-gis": "Applied GIS & RS in Water Resources",
+    "course-geotech": "Geological Hazards & Slope Stability",
+    "course-chem": "Hydrogeochemistry & Water Quality",
+    "level-m1": "Master 1",
+    "level-m2": "Master 2",
+    "day-sun": "Sunday",
+    "day-mon": "Monday",
+    "day-tue": "Tuesday",
+    "day-wed": "Wednesday",
+    "day-thu": "Thursday",
+
+    // Files Upload
+    "files-title": "Course Lecture & Resource Center",
+    "files-upload-drag": "Drag & drop files here or click to upload",
+    "files-upload-btn": "Browse Files",
+    "files-upload-info": "Simulate adding custom lectures or materials (PDF, DOCX, ZIP)",
+    "files-name-col": "File Name",
+    "files-size-col": "Size",
+    "files-type-col": "Type",
+    "files-action-col": "Action",
+    "files-download-btn": "Download",
+    "files-no-files": "No materials uploaded yet.",
+
+    // Booking Form
+    "booking-title": "Book an Appointment",
+    "booking-desc": "Reserve a slot for academic advising, thesis revision, or office hours.",
+    "booking-student-name": "Student Name",
+    "booking-student-email": "Student Email",
+    "booking-select-course": "Select Course / Purpose",
+    "booking-select-date": "Select Date",
+    "booking-select-slot": "Available Time Slot",
+    "booking-purpose": "Advising / Purpose Details",
+    "booking-submit-btn": "Confirm Booking",
+    "booking-active-title": "Your Active Bookings",
+    "booking-no-bookings": "No active bookings registered.",
+    "booking-cancel": "Cancel",
+    "booking-success-msg": "Appointment booked successfully!",
+    "booking-error-msg": "Please fill out all required fields.",
+    "booking-placeholder-name": "Your full name",
+    "booking-placeholder-email": "student@univ-jijel.dz",
+    "booking-placeholder-details": "Brief explanation of guidance needed...",
+    "purpose-advising": "Academic Advising / Office Hours",
+    "purpose-thesis": "Master/PhD Thesis Revision",
+    "purpose-exam": "Exam Review & Grades"
+  },
+  ar: {
+    "nav-about": "من أنا",
+    "nav-interests": "الاهتمامات البحثية",
+    "nav-projects": "المشاريع",
+    "nav-publications": "المنشورات",
+    "nav-awards": "الشهادات والجوائز",
+    "nav-blog": "المدونة",
+    "nav-profiles": "الملفات الأكاديمية",
+    "nav-contact": "اتصل بي",
+    "nav-students": "بوابة الطلاب",
+    "dr-title": "د. عز الدين رغيس",
+    "phd-sub": "دكتوراه في الهيدروجيولوجيا (علم المياه الجوفية)",
+    "hero-droplet": "العلوم الهيدرولوجية",
+    "hero-tagline": "الدكتور عز الدين رغيس",
+    "hero-desc": "باحث بجامعة جيجل، الجزائر. متخصص في التطبيقات التقنية المتقدمة لـ <strong>نظم المعلومات الجغرافية (GIS)</strong>، <strong>الاستشعار عن بعد</strong>، و<strong>التعلم الآلي</strong> في الموارد المائية، العمليات الهيدروجيومائية، واستقرار المنحدرات.",
+    "hero-view-pub": "عرض المنشورات العلمية",
+    "hero-contact-me": "اتصل بي",
+    "about-title": "نبذة عني",
+    "about-p1": "أنا حاصل على شهادة <strong>الدكتوراه في الهيدروجيولوجيا</strong> من <strong>جامعة جيجل، الجزائر</strong>. ترتكز مسيرتي الأكاديمية بقوة على علوم المياه الجوفية والاستقرار الميكانيكي للأرض.",
+    "about-p2": "تتركز اهتماماتي البحثية الأساسية عند تقاطع التكنولوجيا الحديثة وعلوم الأرض. في الوقت الحالي، أركز بشكل عميق على تطبيق <strong>نظم المعلومات الجغرافية (GIS)</strong> ونماذج <strong>التعلم الآلي (ML)</strong> لمعالجة التحديات البيئية والهيدرولوجية. تتناول أعمالي الأخيرة ما يلي:",
+    "about-li1": "تحليل البيانات التركيبية (CoDA) لنمذجة هيدروكيميائية متقدمة.",
+    "about-li2": "تكامل بيانات الاستشعار عن بعد (RS) في تقييمات المناطق القاحلة وشبه القاحلة.",
+    "about-li3": "النمذجة التنبؤية لتلوث الموارد المائية والتطور الجيوكيميائي.",
+    "about-li4": "استقرار المنحدرات وتحليل الانزلاقات الأرضية للحد من مخاطر البنية التحتية.",
+    "about-p3": "متمكن من أدوات علم البيانات بما في ذلك لغتي <strong>R</strong> و <strong>Python</strong>، وأسعى جاهداً لتطوير المنهجيات العلمية، وتقديم تقييمات قوية للموارد المائية، والمساهمة الفعالة في الأمن المائي العالمي والحد من المخاطر الجيولوجية.",
+    "profiles-title": "الشبكات العلمية والأكاديمية",
+    "profiles-desc": "تواصل معي على كبرى قواعد البيانات البحثية والشبكات العلمية الدولية.",
+    "scholar-desc": "تتبع الاستشهادات العلمية، واطلع على الفهارس الكاملة لأبحاثي المحكمة، والمؤشرات البحثية.",
+    "scholar-btn": "ملف Google Scholar",
+    "rg-desc": "الوصول إلى الأبحاث بنصوصها الكاملة، طرح الأسئلة العلمية، والتواصل والتعاون المباشر مع الباحثين.",
+    "rg-btn": "ملف ResearchGate",
+    "orcid-desc": "السجل الدولي المعتمد للباحثين لربط مؤلفاتي عبر مختلف دور النشر والمؤسسات العالمية.",
+    "orcid-btn": "سجل ORCID iD",
+    "interests-title": "مجالات التركيز المنهجي والبحثي",
+    "interest1-title": "الهيدروجيولوجيا وكيمياء المياه",
+    "interest1-desc": "دراسة حركة المياه الجوفية، حساسية طبقات المياه الجوفية للتلوث، خرائط مخاطر التلوث، وعمليات التمعدن الهيدروجيومائي.",
+    "interest2-title": "تحليل البيانات التركيبية (CoDA)",
+    "interest2-desc": "استخدام تحويلات نسبة اللوغاريتم لنمذجة البصمات الجيوكيميائية بدقة ومجموعات البيانات المغلقة في المياه والتربة.",
+    "interest3-title": "التعلم الآلي وعلم البيانات",
+    "interest3-desc": "تطبيق الخوارزميات المتقدمة (Random Forest, SVM, PCA) في بيئات Python و R للنمذجة البيئية التنبؤية والتصنيف.",
+    "interest4-title": "نظم المعلومات الجغرافية والاستشعار عن بعد",
+    "interest4-desc": "دمج التحليل المكاني، صور الأقمار الصناعية، القياسات المورفومترية، ونماذج الارتفاع الرقمية (DEM) لاستكشاف الأحواض والمناطق ذات الأولوية لحفظ التربة.",
+    "interest5-title": "الجيوتقنية واستقرار المنحدرات",
+    "interest5-desc": "تحليل الإجهادات الميكانيكية في المنحدرات الجيولوجية، دراسة محفزات الانزلاق الأرضي، ودعم التصميم الآمن للبنية التحتية المدنية.",
+    "interest6-title": "حفظ التربة والمياه",
+    "interest6-desc": "تطوير أطر عمل متعددة التخصصات للتخفيف من حدة التعرية، وإدارة الجريان السطحي، وتلبية الاحتياجات المائية الزراعية المستدامة في الأحواض الجافة.",
+    "projects-title": "المشاريع البحثية",
+    "projects-subtitle": "المبادرات البحثية الجارية والمكتملة التي تطبق نظم المعلومات الجغرافية والتعلم الآلي والكيمياء المائية على مشاكل المياه والتضاريس الحقيقية.",
+    "proj1-title": "كيمياء المياه الجوفية عبر CoDA-PCA",
+    "proj1-desc": "خط تحليل بيانات تركيبية متقدم للكشف عن البصمات الجيوكيميائية في طبقات المياه الجوفية في المناطق القاحلة، نُشر في مجلة علوم الأرض الأفريقية.",
+    "proj1-btn": "قراءة البحث المحكم",
+    "proj2-title": "حفظ التربة والمياه في حوض النعامة",
+    "proj2-desc": "دمج التحليل المورفومتري، وWSA، وPCA، وCoDA-PCA لتحديد أولويات مناطق حفظ التربة والمياه في جنوب غرب الجزائر.",
+    "proj3-title": "دراسة انزلاق الطريق الوطني رقم 77 بتكسانة",
+    "proj3-desc": "استقصاء استقرار المنحدرات والانزلاقات الأرضية على الطريق الوطني رقم 77 في بلدية تكسانة (جيجل، الجزائر)، مع دراسة الفوالق الهيكلية والمحفزات الميكانيكية.",
+    "proj3-badge": "ورقة مؤتمر علمي، 2022",
+    "proj4-title": "النمذجة التنبؤية لجودة المياه الجوفية",
+    "proj4-desc": "تطبيق خوارزميات Random Forest و SVM و PCA في Python و R لبناء نماذج تنبؤية للتلوث والتطور الهيدروكيميائي في الأحواض الجافة.",
+    "proj4-badge": "بحث مستمر",
+    "proj5-title": "جودة مياه الأراضي الرطبة في البحر الأبيض المتوسط",
+    "proj5-desc": "العمليات الهيدروجيوكيميائية التي تتحكم في جودة المياه السطحية للري في نظام بيئي للأراضي الرطبة المتوسطية في شمال شرق الجزائر.",
+    "proj6-title": "تقييم المياه الجوفية في وادي رنية",
+    "proj6-desc": "تعاون دولي في تقييم جودة المياه الجوفية باستخدام المخططات الكلاسيكية المنقحة وتحليل البيانات التركيبية في المملكة العربية السعودية.",
+    "pub-title": "المنشورات العلمية والمقالات المحكّمة",
+    "pub-desc": "نخبة من الأبحاث المنشورة في المجلات العلمية الدولية المحكمة، وأوراق المؤتمرات، والمساهمات العلمية النشطة.",
+    "pub1-type": "مقالة علمية محكّمة — 2024",
+    "pub1-title": "منهج شامل وجديد لحفظ التربة والمياه: دمج التحليل المورفومتري، وWSA، وPCA، وCoDA-PCA في دراسة حالة الأحواض الفرعية بالنعامة، جنوب غرب الجزائر",
+    "pub1-contrib": "المساهمون: موساوي ت، دردور أ، عبد الكريم ب، سعيد ب، حسني أ، رغيس ع، دي لوس سانتوس م ب.",
+    "pub1-journal": "المجلة: الرصد والتقييم البيئي (Environmental Monitoring and Assessment) | دار النشر: Springer",
+    "pub2-type": "مقالة علمية محكّمة — 2024",
+    "pub2-title": "تقييم جودة المياه الجوفية باستخدام الرسوم البيانية الكلاسيكية المنقحة وتحليل البيانات التركيبية (CoDa): دراسة حالة وادي رنية، المملكة العربية السعودية",
+    "pub2-contrib": "المساهمون: درويش عبد المالك، رغيس عز الدين، أحمد محمد، زاهي فوزي، وائل ف. جلال، سعد س. العريفي، مصعب أ. أ. محمد.",
+    "pub2-journal": "المجلة: مجلة جامعة الملك سعود - العلوم | دار النشر: Elsevier",
+    "pub3-type": "مقالة علمية محكّمة — 2024",
+    "pub3-title": "العمليات الهيدروجيوكيمائية المتحكمة في جودة المياه السطحية للري في نظام بيئي للمناطق الرطبة في البحر الأبيض المتوسط، شمال شرق الجزائر",
+    "pub3-contrib": "المساهمون: زاهي فوزي، درويش عبد المالك، مجاني فتحي، رغيس عز الدين، دجيدل محمد.",
+    "pub3-journal": "المجلة: الرصد والتقييم البيئي | دار النشر: Springer",
+    "pub4-type": "مقالة علمية محكّمة — 2024",
+    "pub4-title": "التحليل الهيدروكيميائي وتقييم جودة المياه الجوفية لأغراض الري في سهل الرميلة، خنشلة، شمال شرق الجزائر",
+    "pub4-contrib": "المساهمون: بيزاي عبد الرحيم، برينيس نافع، رغيس عز الدين، دجنبا سمير، بوزيد خديجة.",
+    "pub4-journal": "المجلة: الجيوماتكس، إدارة الأراضي والمناظر الطبيعية",
+    "pub5-type": "مقالة علمية محكّمة — 2023",
+    "pub5-title": "تحليل البيانات التركيبية (CoDA) والبصمات الجيوكيميائية لطبقة المياه الجوفية للمجمع النهائي في منطقة قاحلة (شمال شرق الجزائر)",
+    "pub5-contrib": "المساهمون: رغيس عز الدين، درويش عبد المالك.",
+    "pub5-journal": "المجلة: مجلة علوم الأرض الأفريقية (Journal of African Earth Sciences) | دار النشر: Elsevier",
+    "pub6-type": "ورقة مؤتمر وعرض علمي — 2022",
+    "pub6-title": "استقصاء استقرار المنحدرات والانهيارات الأرضية على الطريق الوطني رقم 77 في النقطة الكيلومترية 23+100 (بلدية تكسانة، جيجل)",
+    "pub6-desc": "يقع الانزلاق الأرضي المدروس في بلدية تكسانة، على بعد 25 كلم جنوب شرق ولاية جيجل، الجزائر. يركز البحث على الفوالق الهيكلية والمحفزات الميكانيكية.",
+    "pub6-contrib": "المساهمون: عبد الحميد خديجة، براهيم لشحب، رغيس عز الدين.",
+    "pub6-badge": "مشروع تكسانة",
+    "pub-scholar-btn": "عرض قائمة المؤلفات الكاملة على Google Scholar",
+    "awards-title": "الجوائز والشهادات والمؤهلات العلمية",
+    "awards-desc": "المحطات الأكاديمية البارزة، والشهادات العلمية والتقديرات المهنية.",
+    "award1-tag": "شهادة الدكتوراه",
+    "award1-title": "دكتوراه في الهيدروجيولوجيا",
+    "award1-desc": "جامعة جيجل، الجزائر — مختبر الهندسة الجيولوجية (LGG)",
+    "award2-tag": "تقدير علمي",
+    "award2-title": "مُحكّم علمي معتمد — Springer & Elsevier",
+    "award2-desc": "مشارك نشط في تقييم وتحكيم الأبحاث العلمية في المجلات الدولية المتخصصة في المياه والبيئة.",
+    "award3-tag": "شهادة تخصص",
+    "award3-title": "الاستشعار عن بعد ونظم المعلومات الجغرافية المتقدمة",
+    "award3-desc": "شهادة كفاءة معتمدة في QGIS و ArcGIS و Google Earth Engine ومعالجة الصور الفضائية.",
+    "award4-tag": "مهارات تقنية",
+    "award4-title": "علوم البيانات باستخدام R و Python",
+    "award4-desc": "تطوير مستمر للمهارات في الحوسبة العلمية: خوارزميات الغابات العشوائية، SVM ، تحليل المكونات الرئيسية (PCA) وأساليب CoDA.",
+    "awards-more": "سيتم إضافة المزيد من الشهادات والجوائز الأكاديمية هنا مستقبلاً.",
+    "blog-title": "المدونة والمقالات",
+    "blog-desc": "أفكار ورؤى حول علم المياه الجوفية، وعلم البيانات في علوم الأرض، والعلوم المفتوحة.",
+    "blog1-tag": "منهجية علمية",
+    "blog1-title": "لماذا تهمنا أساليب CoDA في الجيومياه الجوفية؟",
+    "blog1-desc": "مقدمة مبسطة لتحليل البيانات التركيبية (تحويلات نسبة اللوغاريتم) ولماذا يمكن لـ PCA التقليدي أن يضلل الباحثين عند التعامل مع عينات المياه المغلقة المجموع.",
+    "blog1-time": "قراءة في 6 دقائق",
+    "blog2-tag": "استشعار عن بعد",
+    "blog2-title": "مؤشرات فضائية عملية للأحواض الجافة",
+    "blog2-desc": "جولة ميدانية موجزة حول مؤشرات NDVI و NDWI والملوحة، مع نصائح عملية لتفسيرها وتطبيقها في مستجمعات الأمطار شبه القاحلة بالجزائر.",
+    "blog2-time": "قراءة في 8 دقائق",
+    "blog3-tag": "علوم البيانات",
+    "blog3-title": "R مقابل Python لمعالجة بيانات الجيومياه",
+    "blog3-desc": "متى يجب عليك اللجوء إلى لغة R (للإحصاء، والمخططات القوية) ومتى تفضل استخدام Python (للتعلم الآلي، والأتمتة) في العمل اليومي.",
+    "blog3-time": "قراءة في 5 دقائق",
+    "blog-more": "يتم حالياً إعداد مقالات وبحوث جديدة. انتظرونا قريباً!",
+    "blog-coming-soon": "قريباً جداً",
+    "contact-title": "اتصل بي وتواصل معي",
+    "contact-desc": "هل أنت مهتم بالتعاون الأكاديمي، أو تقديم مقترحات بحثية مشتركة، أو الاستشارات؟ اتصل بي مباشرة.",
+    "contact-info-title": "معلومات الاتصال المباشر",
+    "contact-inst-label": "المؤسسة الجامعية",
+    "contact-inst-val": "جامعة جيجل",
+    "contact-inst-desc": "مخبر الهندسة الجيولوجية (LGG)، ص.ب 98، أولاد عيسى، جيجل، الجزائر",
+    "contact-email-label": "البريد الإلكتروني",
+    "contact-phone-label": "الهاتف / واتساب",
+    "contact-form-title": "أرسل رسالة مباشرة",
+    "contact-form-desc": "املأ النموذج أدناه وسأقوم بالرد عليك في أقرب وقت ممكن.",
+    "form-name": "الاسم الكامل",
+    "form-email": "البريد الإلكتروني",
+    "form-subject": "الموضوع",
+    "form-message": "الرسالة أو الاستفسار",
+    "form-submit": "إرسال الرسالة",
+    "form-submit-loading": "جاري الإرسال...",
+    "form-placeholder-name": "اسمك الكامل المكتوب",
+    "form-placeholder-email": "yourname@example.com",
+    "form-placeholder-subject": "مثال: تعاون بحثي في الموارد المائية",
+    "form-placeholder-message": "يرجى كتابة تفاصيل مشروعك أو سؤالك أو مقترح التعاون هنا...",
+    "footer-rights": "جميع الحقوق محفوظة. الملف الأكاديمي والمهني الرسمي.",
+    "footer-dr": "الدكتور عز الدين رغيس",
+
+    // Student Portal
+    "portal-title": "بوابة الطلاب الأكاديمية",
+    "portal-desc": "الوصول لجدول المحاضرات الأسبوعي، تحميل الملفات والمراجع الأكاديمية، وحجز مواعيد الساعات المكتبية والإرشادية.",
+    "portal-schedule-tab": "جدول المحاضرات",
+    "portal-files-tab": "ملفات ومحاضرات المواد",
+    "portal-booking-tab": "حجز المواعيد والاستشارات",
+    "portal-course-header": "المادة / المقياس",
+    "portal-day-header": "اليوم",
+    "portal-time-header": "التوقيت",
+    "portal-room-header": "القاعة / المدرج",
+    "portal-level-header": "المستوى الدراسي",
+
+    // Courses Data
+    "course-hydro": "هيدروجيولوجيا متقدمة",
+    "course-gis": "تطبيقات GIS والاستشعار عن بعد في الموارد المائية",
+    "course-geotech": "المخاطر الجيولوجية واستقرار المنحدرات",
+    "course-chem": "الهيدروجيوكيمياء وجودة المياه الجوفية",
+    "level-m1": "ماستر 1",
+    "level-m2": "ماستر 2",
+    "day-sun": "الأحد",
+    "day-mon": "الإثنين",
+    "day-tue": "الثلاثاء",
+    "day-wed": "الأربعاء",
+    "day-thu": "الخميس",
+
+    // Files Upload
+    "files-title": "مركز تحميل ملفات المحاضرات والمراجع",
+    "files-upload-drag": "اسحب الملفات وأسقطها هنا أو اضغط للاختيار والتحميل",
+    "files-upload-btn": "تصفح الملفات",
+    "files-upload-info": "محاكاة إضافة ملفات محاضرات مخصصة (بصيغ PDF, DOCX, ZIP) تظهر في القائمة أدناه",
+    "files-name-col": "اسم الملف",
+    "files-size-col": "الحجم",
+    "files-type-col": "النوع",
+    "files-action-col": "الإجراء",
+    "files-download-btn": "تحميل",
+    "files-no-files": "لا توجد ملفات مرفوعة حالياً.",
+
+    // Booking Form
+    "booking-title": "حجز موعد إرشاد أكاديمي",
+    "booking-desc": "احجز موعداً مخصصاً للإرشاد الأكاديمي، مراجعة مذكرات التخرج، أو الساعات المكتبية.",
+    "booking-student-name": "اسم الطالب",
+    "booking-student-email": "البريد الإلكتروني للطالب",
+    "booking-select-course": "اختر الغرض من المقابلة",
+    "booking-select-date": "اختر التاريخ المناسب",
+    "booking-select-slot": "الفترات الزمنية المتاحة",
+    "booking-purpose": "تفاصيل إضافية / موضوع الاستشارة",
+    "booking-submit-btn": "تأكيد حجز الموعد",
+    "booking-active-title": "حجوزاتك الحالية النشطة",
+    "booking-no-bookings": "ليس لديك أي حجوزات نشطة حالياً.",
+    "booking-cancel": "إلغاء الحجز",
+    "booking-success-msg": "تم حجز الموعد بنجاح واهتمام!",
+    "booking-error-msg": "يرجى ملء جميع الحقول المطلوبة بشكل صحيح.",
+    "booking-placeholder-name": "اسمك الثلاثي الكامل",
+    "booking-placeholder-email": "student@univ-jijel.dz",
+    "booking-placeholder-details": "اكتب لمحة بسيطة وموجزة عن موضوع الاستشارة الأكاديمية...",
+    "purpose-advising": "إرشاد أكاديمي / ساعات مكتبية",
+    "purpose-thesis": "مراجعة مذكرة التخرج (ماستر / دكتوراه)",
+    "purpose-exam": "مراجعة أوراق الامتحانات والنقاط"
+  }
+};
+
+function initLanguage() {
+  const savedLang = localStorage.getItem('portfolio-lang') || 'en';
+  setLanguage(savedLang);
+}
+
+function setLanguage(lang) {
+  localStorage.setItem('portfolio-lang', lang);
+  const isRtl = lang === 'ar';
+
+  // Set HTML attributes
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+
+  // Add or remove RTL typography and font adjustments
+  if (isRtl) {
+    document.body.classList.add('rtl-active');
+    document.body.style.fontFamily = "'Cairo', 'Inter', system-ui, -apple-system, sans-serif";
+  } else {
+    document.body.classList.remove('rtl-active');
+    document.body.style.fontFamily = "'Inter', 'Cairo', system-ui, -apple-system, sans-serif";
+  }
+
+  // Update translatable strings with data-i18n
+  const transElements = document.querySelectorAll('[data-i18n]');
+  transElements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      // Handle nodes with inner HTML structure carefully or plain text
+      const textValue = translations[lang][key];
+      if (textValue.includes('<strong>') || textValue.includes('<em>') || textValue.includes('&mdash;') || textValue.includes('&copy;')) {
+        el.innerHTML = textValue;
+      } else {
+        el.textContent = textValue;
+      }
+    }
+  });
+
+  // Update translatable placeholders
+  const transPlaceholders = document.querySelectorAll('[data-i18n-placeholder]');
+  transPlaceholders.forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[lang] && translations[lang][key]) {
+      el.setAttribute('placeholder', translations[lang][key]);
+    }
+  });
+
+  // Toggle active visual state in switcher controls
+  document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+    const btnLang = btn.getAttribute('data-lang');
+    if (btnLang === lang) {
+      btn.classList.add('bg-primary-100', 'text-primary-700', 'dark:bg-primary-950/40', 'dark:text-primary-300');
+      btn.classList.remove('text-slate-600', 'dark:text-slate-300');
+    } else {
+      btn.classList.remove('bg-primary-100', 'text-primary-700', 'dark:bg-primary-950/40', 'dark:text-primary-300');
+      btn.classList.add('text-slate-600', 'dark:text-slate-300');
+    }
+  });
+
+  // Custom event trigger for other scripts (e.g. updating schedules or calendar)
+  const event = new CustomEvent('languageChanged', { detail: { lang, isRtl } });
+  document.dispatchEvent(event);
+}
+
+// Global hook
+window.initLanguage = initLanguage;
+window.setLanguage = setLanguage;
+window.translations = translations;
