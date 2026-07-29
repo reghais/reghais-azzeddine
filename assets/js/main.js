@@ -222,6 +222,35 @@
      Student Portal System: Schedule, Files & Appointments
      ------------------------------------------------------------------------ */
 
+  // Switch Conference Tabs (Separating International & National)
+  window.switchConfTab = function (tabId) {
+    // Hide all conference contents
+    document.querySelectorAll('.conf-tab-content').forEach(content => {
+      content.classList.add('hidden');
+    });
+
+    // Remove active styles from conference buttons
+    const btnInt = document.getElementById('tabConfIntBtn');
+    const btnNat = document.getElementById('tabConfNatBtn');
+
+    if (btnInt && btnNat) {
+      btnInt.className = "w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
+      btnNat.className = "w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
+    }
+
+    // Show active content
+    const selectedContent = document.getElementById('conf-' + tabId);
+    if (selectedContent) {
+      selectedContent.classList.remove('hidden');
+    }
+
+    // Apply active style
+    const activeBtn = document.getElementById(tabId === 'international' ? 'tabConfIntBtn' : 'tabConfNatBtn');
+    if (activeBtn) {
+      activeBtn.className = "w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all bg-white dark:bg-slate-900 text-primary-700 dark:text-primary-300 shadow-sm";
+    }
+  };
+
   // Switch Portal Tabs
   window.switchPortalTab = function (tabId) {
     // Hide all tab contents
@@ -501,6 +530,166 @@
     });
   }
 
+  // Research Slideshow controller
+  let currentSlideIdx = 0;
+  const slides = document.querySelectorAll('.research-slide');
+  const slideDots = document.querySelectorAll('.slide-dot');
+
+  window.goToSlide = function (idx) {
+    if (!slides || slides.length === 0) return;
+    currentSlideIdx = (idx + slides.length) % slides.length;
+
+    slides.forEach((slide, sIdx) => {
+      if (sIdx === currentSlideIdx) {
+        slide.classList.remove('opacity-0', 'pointer-events-none');
+        slide.classList.add('opacity-100');
+      } else {
+        slide.classList.add('opacity-0', 'pointer-events-none');
+        slide.classList.remove('opacity-100');
+      }
+    });
+
+    slideDots.forEach((dot, dIdx) => {
+      if (dIdx === currentSlideIdx) {
+        dot.className = "slide-dot w-2 h-2 rounded-full bg-primary-600 dark:bg-primary-400 transition-all cursor-pointer";
+      } else {
+        dot.className = "slide-dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all cursor-pointer";
+      }
+    });
+  };
+
+  window.nextSlide = function () {
+    goToSlide(currentSlideIdx + 1);
+  };
+
+  window.prevSlide = function () {
+    goToSlide(currentSlideIdx - 1);
+  };
+
+  // Auto rotate slides every 5 seconds
+  let slideInterval = setInterval(nextSlide, 5000);
+
+  // Clear interval if user interacts
+  const slideContainer = document.querySelector('.lg\\:col-span-5');
+  if (slideContainer) {
+    slideContainer.addEventListener('click', () => {
+      clearInterval(slideInterval);
+    });
+  }
+
+  // Fetch publications and metrics from OpenAlex API using ORCID: 0000-0002-4968-9529
+  async function loadOpenAlexData() {
+    const orcid = '0000-0002-4968-9529';
+    const authorUrl = `https://api.openalex.org/authors/https://orcid.org/${orcid}`;
+    const worksUrl = `https://api.openalex.org/works?filter=author.orcid:${orcid}&sort=publication_year:desc,cited_by_count:desc`;
+
+    try {
+      // 1. Fetch Author Metrics
+      const authorRes = await fetch(authorUrl);
+      if (authorRes.ok) {
+        const authorData = await authorRes.json();
+        const citations = authorData.cited_by_count || 134;
+        const hIndex = (authorData.summary_stats && authorData.summary_stats.h_index) || 7;
+        const i10Index = (authorData.summary_stats && authorData.summary_stats.i10_index) || 6;
+        const worksCount = authorData.works_count || 12;
+
+        document.getElementById('stat-citations').textContent = citations + '+';
+        document.getElementById('stat-hindex').textContent = hIndex;
+        document.getElementById('stat-i10index').textContent = i10Index;
+        document.getElementById('stat-works').textContent = worksCount;
+      }
+    } catch (e) {
+      console.warn("Failed to fetch author metrics from OpenAlex, using default fallbacks.", e);
+    }
+
+    try {
+      // 2. Fetch Works (Publications)
+      const worksRes = await fetch(worksUrl);
+      if (worksRes.ok) {
+        const worksData = await worksRes.json();
+        if (worksData.results && worksData.results.length > 0) {
+          renderDynamicPublications(worksData.results);
+        }
+      }
+    } catch (e) {
+      console.warn("Failed to fetch works from OpenAlex, using static list.", e);
+    }
+  }
+
+  function renderDynamicPublications(works) {
+    const pubListContainer = document.getElementById('publications-list');
+    if (!pubListContainer) return;
+
+    pubListContainer.innerHTML = '';
+    const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+
+    works.forEach((work, idx) => {
+      const article = document.createElement('article');
+      article.className = 'publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm fade-in-up';
+
+      const title = work.title;
+      const year = work.publication_year;
+      const journal = (work.primary_location && work.primary_location.source && work.primary_location.source.display_name) || 'Scientific Journal';
+
+      // Extract authors
+      let authorsList = 'Azzeddine Reghais';
+      if (work.authorships && work.authorships.length > 0) {
+        authorsList = work.authorships.map(a => a.author.display_name).join(', ');
+      }
+
+      // Check Open Access status
+      const isOA = work.open_access && work.open_access.is_oa;
+      const oaUrl = work.open_access && work.open_access.oa_url;
+      const doi = work.doi || `https://doi.org/${work.id.split('/').pop()}`;
+
+      let buttonsHtml = '';
+      if (isOA && oaUrl) {
+        buttonsHtml += `
+          <a href="${oaUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+            <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i>
+            <span data-i18n="download-oa">${currentLang === 'ar' ? 'تحميل ورقة مفتوحة المصدر' : 'Download Open Access'}</span>
+          </a>
+        `;
+      }
+
+      buttonsHtml += `
+        <a href="${doi}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all">
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          <span>DOI Link</span>
+        </a>
+      `;
+
+      // Citations count
+      const citations = work.cited_by_count || 0;
+      const citationBadge = citations > 0 ? `
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50">
+          <i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> ${citations} ${currentLang === 'ar' ? 'اقتباس' : 'Citations'}
+        </span>
+      ` : '';
+
+      article.innerHTML = `
+        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800">
+                <i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i>
+                <span>${currentLang === 'ar' ? 'مقالة علمية محكّمة' : 'Journal Article'} — ${year}</span>
+              </span>
+              ${citationBadge}
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">${title}</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400"><span class="font-medium">${currentLang === 'ar' ? 'المساهمون:' : 'Contributors:'}</span> ${authorsList}</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 italic"><span class="font-bold">${currentLang === 'ar' ? 'المجلة:' : 'Journal:'}</span> ${journal}</p>
+          </div>
+          <div class="flex-shrink-0 flex flex-wrap gap-2">
+            ${buttonsHtml}
+          </div>
+        </div>
+      `;
+      pubListContainer.appendChild(article);
+    });
+  }
+
   // Re-render components if language selection changes
   document.addEventListener('languageChanged', () => {
     renderFiles();
@@ -510,5 +699,6 @@
   // Run initial renders
   renderFiles();
   renderBookings();
+  loadOpenAlexData();
 
 })();
