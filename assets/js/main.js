@@ -577,6 +577,197 @@
     });
   }
 
+  // Conferences Dynamic Render
+  const internationalConferences = [
+    {
+      title_en: "Risk assessment of Heavy Metals in the Complex Terminal aquifer data from biskra, south-est Algeria",
+      title_ar: "تقييم مخاطر المعادن الثقيلة في بيانات طبقة المياه الجوفية الطرفية المعقدة من بسكرة، جنوب شرق الجزائر",
+      contrib_en: "Azzeddine REGHAIS, Abdelmalek DROUICHE, Zahi FAOUZI",
+      contrib_ar: "عز الدين رغيس، عبد المالك درويش، زاهي فوزي",
+      venue_en: "VI International Symposium on Biosphere Safety and Environmental Safety, Budapest, Hungary (2022)",
+      venue_ar: "الندوة الدولية السادسة حول سلامة الغلاف الجوي والسلامة البيئية، بودابست، المجر (2022)",
+      url: "https://kti.rkk.uni-obuda.hu/vi-international-2022-symposium-biosphere-on-online-safety-environmental/"
+    },
+    {
+      title_en: "Evaluation of the salinity of groundwater used in irrigation and its risks on agricultural areas: Region of El Ghrous (Biskra, Algeria)",
+      title_ar: "تقييم ملوحة المياه الجوفية المستخدمة في الري ومخاطرها على المناطق الزراعية: منطقة الغروس (بسكرة، الجزائر)",
+      contrib_en: "Azzeddine REGHAIS, Abdelmalek DROUICHE, Zahi FAOUZI",
+      contrib_ar: "عز الدين رغيس، عبد المالك درويش، زاهي فوزي",
+      venue_en: "Published / Presented in Larhyss Journal Symposium, Biskra, Algeria (2021)",
+      venue_ar: "منشور ومقدم في ندوة مجلة لارهيس، بسكرة، الجزائر (2021)",
+      url: "https://lab.univ-biskra.dz/Larhyss/index.php/larhyssjournal"
+    },
+    {
+      title_en: "Evaluation of groundwater quality by heavy metal contamination indices (Biskra, north-east Algeria)",
+      title_ar: "تقييم جودة المياه الجوفية باستخدام مؤشرات تلوث المعادن الثقيلة (بسكرة، شمال شرق الجزائر)",
+      contrib_en: "Azzeddine REGHAIS, Abdelmalek DROUICHE, Zahi FAOUZI",
+      contrib_ar: "عز الدين رغيس، عبد المالك درويش، زاهي فوزي",
+      venue_en: "Presented at Khenchela University Scientific Conference, Algeria (2022)",
+      venue_ar: "مقدم في المؤتمر العلمي لجامعة خنشلة، الجزائر (2022)",
+      url: "https://univ-khenchela.com/"
+    },
+    {
+      title_en: "Contribution à l'étude du dimensionnement des périmètres de protection du Lac du Barrage de Fontaine des Gazelles (Wilaya Biskra, sud-est Algérien)",
+      title_ar: "المساهمة في دراسة أبعاد محيطات حماية بحيرة سد نافورة الغزلان (ولاية بسكرة، الجنوب الشرقي الجزائري)",
+      contrib_en: "Azzeddine REGHAIS, Abdelmalek DROUICHE, etc.",
+      contrib_ar: "عز الدين رغيس، عبد المالك درويش، إلخ.",
+      venue_en: "Presented at Batna 2 University Conference, Algeria (2020)",
+      venue_ar: "مقدم في مؤتمر جامعة باتنة 2، الجزائر (2020)",
+      url: "https://univ-batna2.dz"
+    },
+    {
+      title_en: "Assessment of groundwater quality through heavy metal contamination indices in Biskra, North-East Algeria",
+      title_ar: "تقييم جودة المياه الجوفية من خلال مؤشرات تلوث المعادن الثقيلة في بسكرة، شمال شرق الجزائر",
+      contrib_en: "Azzeddine REGHAIS, Abdelmalek DROUICHE, etc.",
+      contrib_ar: "عز الدين رغيس، عبد المالك درويش، إلخ.",
+      venue_en: "El Oued University Symposium, Algeria (2023)",
+      venue_ar: "ندوة جامعة الوادي، الجزائر (2023)",
+      url: "https://shorturl.at/72QZ2"
+    },
+    {
+      title_en: "Assessment of the groundwater agricultural pollution risk: a case of a semi-arid region (Batna-East Algeria)",
+      title_ar: "تقييم مخاطر التلوث الزراعي للمياه الجوفية: حالة منطقة شبه قاحلة (باتنة - شرق الجزائر)",
+      contrib_en: "Azzeddine REGHAIS, etc.",
+      contrib_ar: "عز الدين رغيس، إلخ.",
+      venue_en: "MEDGU Annual Meeting, Barcelona, Catalonia, Spain (2024)",
+      venue_ar: "الاجتماع السنوي لـ MEDGU، برشلونة، كاتالونيا، إسبانيا (2024)",
+      url: "https://2024.medgu.org/index.php?p=welcome"
+    },
+    {
+      title_en: "Geochemical controlling mechanisms and groundwater quality of the Terminal Complex aquifer in Biskra region, Northeastern Algeria",
+      title_ar: "آليات التحكم الجيوكيميائية وجودة المياه الجوفية لطبقة المياه الجوفية الطرفية المعقدة في منطقة بسكرة، شمال شرق الجزائر",
+      contrib_en: "Azzeddine REGHAIS, Abdelmalek DROUICHE, etc.",
+      contrib_ar: "عز الدين رغيس، عبد المالك درويش، إلخ.",
+      venue_en: "Presented at Blida University Symposium, Algeria (2024)",
+      venue_ar: "مقدم في ندوة جامعة البليدة، الجزائر (2024)",
+      url: "https://shorturl.at/OXIQ9"
+    }
+  ];
+
+  const nationalConferences = [
+    {
+      title_en: "Landslide of the RN 77, PK 23+100, commune of Texenna (Wilaya of Jijel, Algeria): stability and comfort",
+      title_ar: "انزلاق التربة على الطريق الوطني 77، النقطة الكيلومترية 23+100، بلدية تكسانة (ولاية جيجل، الجزائر): الاستقرار والراحة والميكانيكا المطبقة",
+      contrib_en: "Abdelhamid Khedidja, Brahim Lecheheb, Azzeddine Reghais",
+      contrib_ar: "عبد الحميد خديجة، براهيم لشحب، عز الدين رغيس",
+      venue_en: "Presented at University Center of Mila, Algeria (2020)",
+      venue_ar: "مقدم في المركز الجامعي بميلة، الجزائر (2020)",
+      url: "http://www.centre-univ-mila.dz/?lang=en"
+    },
+    {
+      title_en: "Niveaux de salinité et risques associés dans les eaux souterraines utilisées pour l'irrigation",
+      title_ar: "مستويات الملوحة والمخاطر المصاحبة لها في المياه الجوفية المستخدمة في الري",
+      contrib_en: "Azzeddine Reghais, etc.",
+      contrib_ar: "عز الدين رغيس، إلخ.",
+      venue_en: "National Seminar at University of Jijel, Algeria (2024)",
+      venue_ar: "الملتقى الوطني بجامعة جيجل، الجزائر (2024)",
+      url: "https://2u.pw/vI2md"
+    },
+    {
+      title_en: "Assessment of groundwater salinity levels used for irrigation purpose and the corresponding risks: A case study of the El-Ghrous region",
+      title_ar: "تقييم مستويات ملوحة المياه الجوفية المستخدمة لأغراض الري والمخاطر المقابلة لها: دراسة حالة لمنطقة الغروس",
+      contrib_en: "Azzeddine Reghais, Abdelmalek Drouiche, etc.",
+      contrib_ar: "عز الدين رغيس، عبد المالك درويش، إلخ.",
+      venue_en: "Presented at University of Oum El Bouaghi, Algeria (2024)",
+      venue_ar: "مقدم في جامعة أم البواقي، الجزائر (2024)",
+      url: "https://www.univ-oeb.dz/vrlex/en/2024/9451/"
+    },
+    {
+      title_en: "Groundwater Quality Assessment for Sustainable Drinking Water and Irrigation in the Remila Plain, Northeastern Khenchela",
+      title_ar: "تقييم جودة المياه الجوفية لمياه الشرب والري المستدامين في سهل الرميلة، شمال شرق خنشلة",
+      contrib_en: "Azzeddine Reghais, etc.",
+      contrib_ar: "عز الدين رغيس، إلخ.",
+      venue_en: "Presented at University of Batna 2, Algeria (2025)",
+      venue_ar: "مقدم في جامعة باتنة 2، الجزائر (2025)",
+      url: "https://shorturl.at/ndCgS"
+    },
+    {
+      title_en: "The impact of climatic conditions on water quality indexes in arid regions of agricultural areas",
+      title_ar: "تأثير الظروف المناخية على مؤشرات جودة المياه في المناطق القاحلة بالمساحات الزراعية",
+      contrib_en: "Azzeddine Reghais, Abdelmalek Drouiche, etc.",
+      contrib_ar: "عز الدين رغيس، عبد المالك درويش، إلخ.",
+      venue_en: "National Seminar at University Center of Mila, Algeria (2024)",
+      venue_ar: "الملتقى الوطني بالمركز الجامعي بميلة، الجزائر (2024)",
+      url: "https://www.centre-univ-mila.dz"
+    }
+  ];
+
+  function renderConferences() {
+    const intList = document.getElementById('international-conferences-list');
+    const natList = document.getElementById('national-conferences-list');
+    const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+
+    if (intList) {
+      intList.innerHTML = '';
+      internationalConferences.forEach(conf => {
+        const title = currentLang === 'ar' ? conf.title_ar : conf.title_en;
+        const contrib = currentLang === 'ar' ? conf.contrib_ar : conf.contrib_en;
+        const venue = currentLang === 'ar' ? conf.venue_ar : conf.venue_en;
+        const btnText = currentLang === 'ar' ? "اطلب النسخة/الملخص عبر واتساب" : "Request Abstract via WhatsApp";
+        const waMsg = encodeURIComponent(`مرحباً الدكتور عز الدين رغيس، أود طلب نسخة/ملخص ورقتكم العلمية المقدمة في الملتقى بعنوان:\n"${title}"`);
+
+        const article = document.createElement('article');
+        article.className = "bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-700";
+        article.innerHTML = `
+          <div class="flex flex-col md:flex-row justify-between gap-4">
+              <div class="space-y-3">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-900/50">
+                      <i class="fa-solid fa-globe mr-1.5" aria-hidden="true"></i> <span>${currentLang === 'ar' ? 'ملتقى دولي' : 'International Conference'}</span>
+                  </span>
+                  <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">${title}</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400"><span class="font-medium">${currentLang === 'ar' ? 'المساهمون:' : 'Contributors:'}</span> ${contrib}</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400 italic font-medium"><i class="fa-regular fa-calendar mr-1.5" aria-hidden="true"></i> <span>${venue}</span></p>
+              </div>
+              <div class="flex-shrink-0 flex flex-wrap gap-2 items-start">
+                  <a href="https://wa.me/213668261708?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-100 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+                      <i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i> <span>${btnText}</span>
+                  </a>
+                  <a href="${conf.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-slate-100 dark:border-slate-800 text-xs font-semibold rounded-lg text-slate-700 dark:text-slate-400 bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 transition-all">
+                      <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> <span>Website</span>
+                  </a>
+              </div>
+          </div>
+        `;
+        intList.appendChild(article);
+      });
+    }
+
+    if (natList) {
+      natList.innerHTML = '';
+      nationalConferences.forEach(conf => {
+        const title = currentLang === 'ar' ? conf.title_ar : conf.title_en;
+        const contrib = currentLang === 'ar' ? conf.contrib_ar : conf.contrib_en;
+        const venue = currentLang === 'ar' ? conf.venue_ar : conf.venue_en;
+        const btnText = currentLang === 'ar' ? "اطلب النسخة/الملخص عبر واتساب" : "Request Abstract via WhatsApp";
+        const waMsg = encodeURIComponent(`مرحباً الدكتور عز الدين رغيس، أود طلب نسخة/ملخص ورقتكم العلمية المقدمة في الملتقى بعنوان:\n"${title}"`);
+
+        const article = document.createElement('article');
+        article.className = "bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden transition-all duration-300 hover:border-emerald-300 dark:hover:border-emerald-700";
+        article.innerHTML = `
+          <div class="flex flex-col md:flex-row justify-between gap-4">
+              <div class="space-y-3">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/50">
+                      <i class="fa-solid fa-flag mr-1.5" aria-hidden="true"></i> <span>${currentLang === 'ar' ? 'ملتقى وطني' : 'National Seminar'}</span>
+                  </span>
+                  <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">${title}</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400"><span class="font-medium">${currentLang === 'ar' ? 'المساهمون:' : 'Contributors:'}</span> ${contrib}</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400 italic font-medium"><i class="fa-regular fa-calendar mr-1.5" aria-hidden="true"></i> <span>${venue}</span></p>
+              </div>
+              <div class="flex-shrink-0 flex flex-wrap gap-2 items-start">
+                  <a href="https://wa.me/213668261708?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-100 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+                      <i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i> <span>${btnText}</span>
+                  </a>
+                  <a href="${conf.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-slate-100 dark:border-slate-800 text-xs font-semibold rounded-lg text-slate-700 dark:text-slate-400 bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 transition-all">
+                      <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> <span>Website</span>
+                  </a>
+              </div>
+          </div>
+        `;
+        natList.appendChild(article);
+      });
+    }
+  }
+
   // Fetch publications and metrics from OpenAlex API using ORCID: 0000-0002-4968-9529
   async function loadOpenAlexData() {
     const orcid = '0000-0002-4968-9529';
@@ -597,6 +788,12 @@
         document.getElementById('stat-hindex').textContent = hIndex;
         document.getElementById('stat-i10index').textContent = i10Index;
         document.getElementById('stat-works').textContent = worksCount;
+
+        // Also update Hero metrics
+        const heroCitations = document.getElementById('hero-citations-val');
+        const heroHIndex = document.getElementById('hero-hindex-val');
+        if (heroCitations) heroCitations.textContent = citations + '+';
+        if (heroHIndex) heroHIndex.textContent = hIndex;
       }
     } catch (e) {
       console.warn("Failed to fetch author metrics from OpenAlex, using default fallbacks.", e);
@@ -645,9 +842,17 @@
       let buttonsHtml = '';
       if (isOA && oaUrl) {
         buttonsHtml += `
-          <a href="${oaUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+          <a href="${oaUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all animate-pulse">
             <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i>
             <span data-i18n="download-oa">${currentLang === 'ar' ? 'تحميل ورقة مفتوحة المصدر' : 'Download Open Access'}</span>
+          </a>
+        `;
+      } else {
+        const textMsg = encodeURIComponent(`مرحباً الدكتور عز الدين رغيس، أود من فضلك طلب نسخة من بحثكم العلمي بعنوان:\n"${title}"`);
+        buttonsHtml += `
+          <a href="https://wa.me/213668261708?text=${textMsg}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+            <i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i>
+            <span data-i18n="request-wa">${currentLang === 'ar' ? 'اطلب النسخة عبر واتساب' : 'Request via WhatsApp'}</span>
           </a>
         `;
       }
@@ -694,11 +899,13 @@
   document.addEventListener('languageChanged', () => {
     renderFiles();
     renderBookings();
+    renderConferences();
   });
 
   // Run initial renders
   renderFiles();
   renderBookings();
+  renderConferences();
   loadOpenAlexData();
 
 })();

@@ -72,7 +72,6 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="text-xl font-bold text-primary-900 dark:text-primary-400 flex items-center gap-2" aria-label="Home">
                         <i class="fa-solid fa-graduation-cap text-primary-600 dark:text-primary-400 text-2xl" aria-hidden="true"></i>
-                        <span class="font-extrabold tracking-tight" data-i18n="dr-title">Dr. Azzeddine Reghais</span>
                     </a>
                 </div>
 
@@ -156,11 +155,24 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-12">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-4 flex justify-center lg:justify-end fade-in-up">
+                    <div class="lg:col-span-4 flex flex-col items-center justify-center lg:items-end gap-6 fade-in-up">
                         <div class="relative group">
                             <div class="absolute -inset-1.5 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" aria-hidden="true"></div>
                             <div class="relative bg-slate-900 p-2 rounded-full w-64 h-64 sm:w-72 sm:h-72 overflow-hidden flex items-center justify-center">
                                 <img src="assets/img/profile.png" alt="Portrait of Dr. Azzeddine Reghais" class="rounded-full w-full h-full object-cover shadow-2xl transition-transform duration-500 group-hover:scale-105" loading="eager">
+                            </div>
+                        </div>
+
+                        <!-- Hero Metrics Display (Citations and h-index) -->
+                        <div class="w-full max-w-xs bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex justify-around text-center shadow-lg">
+                            <div class="space-y-0.5">
+                                <span class="block text-2xl font-black text-accent-400" id="hero-citations-val">134+</span>
+                                <span class="text-xs text-slate-200 font-semibold uppercase tracking-wider" data-i18n="hero-citations-label">Citations</span>
+                            </div>
+                            <div class="w-px bg-white/20"></div>
+                            <div class="space-y-0.5">
+                                <span class="block text-2xl font-black text-accent-400" id="hero-hindex-val">7</span>
+                                <span class="text-xs text-slate-200 font-semibold uppercase tracking-wider" data-i18n="hero-hindex-label">h-index</span>
                             </div>
                         </div>
                     </div>
@@ -645,6 +657,83 @@
             </div>
         </section>
 
+        <!-- Teaching Experience Section -->
+        <section id="teaching" class="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="teaching-title">Teaching Experience</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-xl mx-auto" data-i18n="teaching-desc">Academic lecturing and student guidance contributions at higher education institutions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger-children">
+                    <!-- University of Batna 2 -->
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-primary-50 dark:bg-primary-950/40 flex items-center justify-center text-primary-600 dark:text-primary-400 text-3xl">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="teaching-univ-batna">University of Batna 2</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Algeria | الجزائر</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 pt-2">
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary-600 dark:bg-primary-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        <strong data-i18n="teaching-batna-l1">Lectures & Practical Works (Semesters: 2020-2021)</strong>
+                                    </p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary-600 dark:bg-primary-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        <strong data-i18n="teaching-batna-l2">Lectures & Practical Works (Semesters: 2022-2023)</strong>
+                                    </p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary-600 dark:bg-primary-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        <strong data-i18n="teaching-batna-l3">Lectures, Tutorials & Practicals (Semesters: 2024-2025)</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- University of Biskra -->
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-3xl">
+                                    <i class="fa-solid fa-university"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="teaching-univ-biskra">University of Biskra</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Algeria | الجزائر</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 pt-2">
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        <strong data-i18n="teaching-biskra-l1">Lectures & Directed Tutorials (Semester 1: 2025)</strong>
+                                    </p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="teaching-biskra-desc">Focusing on Environmental Geology, Hydrogeology, and advanced Geochemical assessment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Conferences Section -->
         <section id="conferences" class="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -670,62 +759,17 @@
                 <div class="max-w-4xl mx-auto">
                     <!-- International Conferences Content -->
                     <div id="conf-international" class="conf-tab-content space-y-6 stagger-children">
-                        <article class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-700">
-                            <div class="flex flex-col md:flex-row justify-between gap-4">
-                                <div class="space-y-3">
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-900/50">
-                                        <i class="fa-solid fa-globe mr-1.5" aria-hidden="true"></i> <span data-i18n="conf-int-tag">International Conference</span>
-                                    </span>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="conf1-title">Evaluation of groundwater quality by heavy metal contamination indices (Biskra, north-east Algeria)</h3>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400"><span class="font-medium" data-i18n="conf-contrib">Contributors:</span> REGHAIS Azzeddine, DROUICHE Abdelmalek, ZAHI Faouzi.</p>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 italic font-medium"><i class="fa-regular fa-calendar mr-1.5" aria-hidden="true"></i> <span data-i18n="conf1-venue">The 1st International Hybrid Conference on Climate Change, Georesources and... (2022)</span></p>
-                                </div>
-                                <div class="flex-shrink-0 flex items-start">
-                                    <a href="https://www.researchgate.net/profile/Azzeddine-Reghais" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-teal-100 dark:border-teal-800 text-xs font-semibold rounded-lg text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 hover:bg-teal-100 transition-all">
-                                        <i class="fa-solid fa-download" aria-hidden="true"></i> <span data-i18n="conf-download-abstract">Download Abstract</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-700">
-                            <div class="flex flex-col md:flex-row justify-between gap-4">
-                                <div class="space-y-3">
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-900/50">
-                                        <i class="fa-solid fa-globe mr-1.5" aria-hidden="true"></i> <span data-i18n="conf-int-tag">International Conference</span>
-                                    </span>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="conf2-title">A GIS-based DRASTIC model for assessing aquifer vulnerability. Case study of Biskrawadi - (South-eastern Algeria)</h3>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400"><span class="font-medium" data-i18n="conf-contrib">Contributors:</span> Tarek Drias, Azzeddine Reghais, etc.</p>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 italic font-medium"><i class="fa-regular fa-calendar mr-1.5" aria-hidden="true"></i> <span data-i18n="conf2-venue">The 3rd Integrated Water Resources Management Conference (Batna, Algeria), Dec 2020</span></p>
-                                </div>
-                                <div class="flex-shrink-0 flex items-start">
-                                    <a href="https://www.researchgate.net/publication/357912910_A_GIS-based_DRASTIC_model_for_assessing_aquifer_vulnerability_Case_study_of_Biskrawadi_-_South-eastern_Algeria" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-teal-100 dark:border-teal-800 text-xs font-semibold rounded-lg text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 hover:bg-teal-100 transition-all">
-                                        <i class="fa-solid fa-download" aria-hidden="true"></i> <span data-i18n="conf-download-abstract">Download Abstract</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
+                        <!-- Dynamic layout using standard lists -->
+                        <div id="international-conferences-list" class="space-y-6">
+                            <!-- Injected by JavaScript dynamically -->
+                        </div>
                     </div>
 
                     <!-- National Conferences Content -->
                     <div id="conf-national" class="conf-tab-content hidden space-y-6 stagger-children">
-                        <article class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden transition-all duration-300 hover:border-emerald-300 dark:hover:border-emerald-700">
-                            <div class="flex flex-col md:flex-row justify-between gap-4">
-                                <div class="space-y-3">
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/50">
-                                        <i class="fa-solid fa-flag mr-1.5" aria-hidden="true"></i> <span data-i18n="conf-nat-tag">National Seminar</span>
-                                    </span>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="conf3-title">Slope stability and landslide investigation on RN 77 at PK 23+100 (Texenna municipality, Jijel)</h3>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400"><span class="font-medium" data-i18n="conf-contrib">Contributors:</span> Abdelhamid Khedidja, Brahim Lecheheb, Azzeddine Reghais.</p>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 italic font-medium"><i class="fa-regular fa-calendar mr-1.5" aria-hidden="true"></i> <span data-i18n="conf3-venue">National Geological and Mining Hazards Conference (Jijel, Algeria), 2022</span></p>
-                                </div>
-                                <div class="flex-shrink-0 flex items-start">
-                                    <a href="https://www.researchgate.net/profile/Azzeddine-Reghais" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-teal-100 dark:border-teal-800 text-xs font-semibold rounded-lg text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 hover:bg-teal-100 transition-all">
-                                        <i class="fa-solid fa-download" aria-hidden="true"></i> <span data-i18n="conf-download-abstract">Download Abstract</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
+                        <div id="national-conferences-list" class="space-y-6">
+                            <!-- Injected by JavaScript dynamically -->
+                        </div>
                     </div>
                 </div>
             </div>
