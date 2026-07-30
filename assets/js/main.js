@@ -919,7 +919,7 @@
       const article = document.createElement('article');
       article.className = 'publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm fade-in-up';
 
-      const title = pub.title;
+      const title = pub.title || '';
       const year = pub.year || 'N/A';
       const journal = pub.journal || 'Scientific Journal';
       const authors = pub.authors || 'Azzeddine Reghais';
@@ -1000,8 +1000,23 @@
     const waLinks = document.querySelectorAll('a[href*="wa.me/213668261708"]');
 
     waLinks.forEach(link => {
-      // Don't overwrite the conference specific messages
-      if (link.getAttribute('href').includes('مرحباً الدكتور') || link.getAttribute('href').includes('بحثكم العلمي')) {
+      const rawHref = link.getAttribute('href') || '';
+      let decodedHref = '';
+      try {
+        decodedHref = decodeURIComponent(rawHref);
+      } catch (e) {
+        decodedHref = rawHref;
+      }
+
+      // Don't overwrite the conference or paper specific requested messages
+      if (
+        decodedHref.includes('مرحباً الدكتور') ||
+        decodedHref.includes('بحثكم العلمي') ||
+        decodedHref.includes('الملتقى') ||
+        decodedHref.includes('نسخة') ||
+        decodedHref.includes('Abstract') ||
+        decodedHref.includes('Request')
+      ) {
         return;
       }
       const msg = currentLang === 'ar'
