@@ -199,6 +199,15 @@ html[dir="rtl"] .space-x-5 > :not([hidden]) ~ :not([hidden]) {
   opacity: 0.05;
 }
 
+#hydroCanvas {
+  background: transparent;
+  transition: opacity 0.5s ease;
+}
+
+.dark #hydroCanvas {
+  opacity: 0.25;
+}
+
 /* ==========================================================================
    Scroll-Triggered Fade In Animations
    ========================================================================== */

@@ -72,7 +72,6 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="text-xl font-bold text-primary-900 dark:text-primary-400 flex items-center gap-2" aria-label="Home">
                         <i class="fa-solid fa-graduation-cap text-primary-600 dark:text-primary-400 text-2xl" aria-hidden="true"></i>
-                        <span class="font-extrabold tracking-tight" data-i18n="dr-title">Dr. Azzeddine Reghais</span>
                     </a>
                 </div>
 
@@ -83,6 +82,7 @@
                         <a href="#interests" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-interests">Interests</a>
                         <a href="#projects" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-projects">Projects</a>
                         <a href="#publications" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-publications">Publications</a>
+                        <a href="#conferences" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-conferences">Conferences</a>
                         <a href="#awards" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-awards">Awards</a>
                         <a href="#blog" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-blog">Blog</a>
                         <a href="#students" class="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors" data-i18n="nav-students">Student Portal</a>
@@ -128,6 +128,7 @@
                 <a href="#interests" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-interests">Interests</a>
                 <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-projects">Projects</a>
                 <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-publications">Publications</a>
+                <a href="#conferences" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-conferences">Conferences</a>
                 <a href="#awards" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-awards">Awards</a>
                 <a href="#blog" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-blog">Blog</a>
                 <a href="#students" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-950/40 hover:text-primary-600 transition-all" data-i18n="nav-students">Student Portal</a>
@@ -154,11 +155,24 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-12">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-4 flex justify-center lg:justify-end fade-in-up">
+                    <div class="lg:col-span-4 flex flex-col items-center justify-center lg:items-end gap-6 fade-in-up">
                         <div class="relative group">
                             <div class="absolute -inset-1.5 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" aria-hidden="true"></div>
                             <div class="relative bg-slate-900 p-2 rounded-full w-64 h-64 sm:w-72 sm:h-72 overflow-hidden flex items-center justify-center">
                                 <img src="assets/img/profile.png" alt="Portrait of Dr. Azzeddine Reghais" class="rounded-full w-full h-full object-cover shadow-2xl transition-transform duration-500 group-hover:scale-105" loading="eager">
+                            </div>
+                        </div>
+
+                        <!-- Hero Metrics Display (Citations and h-index) -->
+                        <div class="w-full max-w-xs bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex justify-around text-center shadow-lg">
+                            <div class="space-y-0.5">
+                                <span class="block text-2xl font-black text-accent-400" id="hero-citations-val">134+</span>
+                                <span class="text-xs text-slate-200 font-semibold uppercase tracking-wider" data-i18n="hero-citations-label">Citations</span>
+                            </div>
+                            <div class="w-px bg-white/20"></div>
+                            <div class="space-y-0.5">
+                                <span class="block text-2xl font-black text-accent-400" id="hero-hindex-val">7</span>
+                                <span class="text-xs text-slate-200 font-semibold uppercase tracking-wider" data-i18n="hero-hindex-label">h-index</span>
                             </div>
                         </div>
                     </div>
@@ -178,6 +192,9 @@
                                 <a href="#publications" class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-xl text-slate-900 bg-accent-400 hover:bg-accent-500 shadow-lg shadow-accent-500/20 hover:shadow-accent-500/35 transition-all">
                                     <i class="fa-solid fa-book-open mr-2" aria-hidden="true"></i> <span data-i18n="hero-view-pub">View Publications</span>
                                 </a>
+                                <a href="https://wa.me/213668261708?text=Hello%20Dr.%20Azzeddine%20Reghais,%20I%20am%20interested%20in%20your%20research..." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-sm font-semibold rounded-xl text-white shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/35 transition-all">
+                                    <i class="fa-brands fa-whatsapp mr-2 text-lg" aria-hidden="true"></i> <span data-i18n="hero-whatsapp">WhatsApp Chat</span>
+                                </a>
                                 <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-slate-700 text-sm font-medium rounded-xl text-white hover:bg-slate-800 hover:border-slate-600 transition-all">
                                     <i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i> <span data-i18n="hero-contact-me">Contact Me</span>
                                 </a>
@@ -196,22 +213,92 @@
 
         <!-- About Section -->
         <section id="about" class="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="space-y-8 fade-in-up">
-                    <div class="text-center space-y-2">
-                        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="about-title">About Me</h2>
-                        <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Left: About Text -->
+                    <div class="lg:col-span-7 space-y-8 fade-in-up">
+                        <div class="space-y-2">
+                            <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="about-title">About Me</h2>
+                            <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 rounded" aria-hidden="true"></div>
+                        </div>
+                        <div class="prose prose-lg text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
+                            <p class="text-lg" data-i18n="about-p1">I hold a <strong>PhD in Hydrogeology</strong> from <strong>Jijel University, Algeria</strong>. My academic journey is strongly grounded in sub-surface water sciences and ground mechanical stability.</p>
+                            <p class="text-lg" data-i18n="about-p2">My primary research interests lie at the intersection of modern technology and geoscience. Currently, I am deeply focused on applying <strong>Geographic Information Systems (GIS)</strong> and <strong>Machine Learning (ML)</strong> models to tackle environmental and hydrological challenges. My recent works explore:</p>
+                            <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-400">
+                                <li data-i18n="about-li1">Compositional Data Analysis (CoDA) for advanced hydrochemical modeling.</li>
+                                <li data-i18n="about-li2">Remote Sensing (RS) data integration in arid and semi-arid terrain assessments.</li>
+                                <li data-i18n="about-li3">Predictive Modeling of water resources contamination and geochemical evolution.</li>
+                                <li data-i18n="about-li4">Slope Stability & Landslide Analysis for infrastructure hazard reduction.</li>
+                            </ul>
+                            <p class="text-lg" data-i18n="about-p3">Proficient in data-science tools including <strong>R</strong> and <strong>Python</strong>, I strive to advance scientific methodologies, deliver robust water resource assessments, and contribute actively to global water security and geological hazard mitigation.</p>
+                        </div>
                     </div>
-                    <div class="prose prose-lg text-slate-600 dark:text-slate-300 mx-auto leading-relaxed space-y-4">
-                        <p class="text-lg" data-i18n="about-p1">I hold a <strong>PhD in Hydrogeology</strong> from <strong>Jijel University, Algeria</strong>. My academic journey is strongly grounded in sub-surface water sciences and ground mechanical stability.</p>
-                        <p class="text-lg" data-i18n="about-p2">My primary research interests lie at the intersection of modern technology and geoscience. Currently, I am deeply focused on applying <strong>Geographic Information Systems (GIS)</strong> and <strong>Machine Learning (ML)</strong> models to tackle environmental and hydrological challenges. My recent works explore:</p>
-                        <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-400">
-                            <li data-i18n="about-li1">Compositional Data Analysis (CoDA) for advanced hydrochemical modeling.</li>
-                            <li data-i18n="about-li2">Remote Sensing (RS) data integration in arid and semi-arid terrain assessments.</li>
-                            <li data-i18n="about-li3">Predictive Modeling of water resources contamination and geochemical evolution.</li>
-                            <li data-i18n="about-li4">Slope Stability & Landslide Analysis for infrastructure hazard reduction.</li>
-                        </ul>
-                        <p class="text-lg" data-i18n="about-p3">Proficient in data-science tools including <strong>R</strong> and <strong>Python</strong>, I strive to advance scientific methodologies, deliver robust water resource assessments, and contribute actively to global water security and geological hazard mitigation.</p>
+
+                    <!-- Right: Animated Research Slideshow representing Academic Fields -->
+                    <div class="lg:col-span-5 fade-in-up">
+                        <div class="relative bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-850 rounded-3xl p-6 sm:p-8 shadow-xl overflow-hidden min-h-[420px] flex flex-col justify-between">
+                            <!-- Slideshow Navigation Controls -->
+                            <div class="flex justify-between items-center mb-6 z-10">
+                                <span class="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider" data-i18n="anim-title">Expertise & Fields</span>
+                                <div class="flex gap-1.5">
+                                    <button onclick="prevSlide()" class="p-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-300 transition-all"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                                    <button onclick="nextSlide()" class="p-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-300 transition-all"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Slides Content -->
+                            <div class="relative flex-grow flex items-center justify-center overflow-hidden">
+                                <!-- Slide 1: Hydrogeology & Water Chemistry -->
+                                <div class="research-slide opacity-100 transition-all duration-500 absolute inset-0 flex flex-col items-center justify-center text-center space-y-4">
+                                    <div class="water-droplets-animation flex justify-center items-end gap-3 h-24 mb-2">
+                                        <div class="droplet bg-blue-500 w-4 h-4 rounded-full opacity-65 animate-bounce"></div>
+                                        <div class="droplet bg-blue-600 w-6 h-6 rounded-full opacity-80 animate-bounce" style="animation-delay: 0.2s"></div>
+                                        <div class="droplet bg-blue-400 w-5 h-5 rounded-full opacity-70 animate-bounce" style="animation-delay: 0.4s"></div>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="slide1-title">Hydrogeology & Aquifers</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 max-w-xs" data-i18n="slide1-desc">Modeling deep water reserves, aquifer vulnerability, and chemical mineralisation processes.</p>
+                                </div>
+
+                                <!-- Slide 2: GIS & Remote Sensing -->
+                                <div class="research-slide opacity-0 pointer-events-none transition-all duration-500 absolute inset-0 flex flex-col items-center justify-center text-center space-y-4">
+                                    <div class="gis-satellite-animation relative w-24 h-24 mb-2 flex items-center justify-center">
+                                        <div class="absolute w-16 h-16 rounded-full border-2 border-dashed border-primary-500/50 animate-spin"></div>
+                                        <i class="fa-solid fa-satellite text-4xl text-primary-600 dark:text-primary-400 animate-pulse"></i>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="slide2-title">GIS & Remote Sensing</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 max-w-xs" data-i18n="slide2-desc">Mapping basins, modeling terrain morphometrics, and tracking environmental changes via satellites.</p>
+                                </div>
+
+                                <!-- Slide 3: Machine Learning & Data Science -->
+                                <div class="research-slide opacity-0 pointer-events-none transition-all duration-500 absolute inset-0 flex flex-col items-center justify-center text-center space-y-4">
+                                    <div class="brain-ml-animation relative w-24 h-24 mb-2 flex items-center justify-center">
+                                        <div class="absolute w-12 h-12 bg-indigo-500/10 dark:bg-indigo-400/10 rounded-full animate-ping"></div>
+                                        <i class="fa-solid fa-brain text-4xl text-indigo-600 dark:text-indigo-400"></i>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="slide3-title">Machine Learning & Python</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 max-w-xs" data-i18n="slide3-desc">Employing Random Forest, SVM and composition log-ratio algorithms in R and Python to predict water quality issues.</p>
+                                </div>
+
+                                <!-- Slide 4: Geotechnical & Slope Stability -->
+                                <div class="research-slide opacity-0 pointer-events-none transition-all duration-500 absolute inset-0 flex flex-col items-center justify-center text-center space-y-4">
+                                    <div class="slope-geotech-animation relative w-24 h-20 mb-2 flex items-end justify-center">
+                                        <div class="w-full h-1 bg-slate-300 dark:bg-slate-700 absolute bottom-0"></div>
+                                        <div class="w-20 h-12 bg-slate-200 dark:bg-slate-800 border-t border-r border-slate-300 dark:border-slate-700 transform skew-y-12 absolute bottom-1 origin-bottom-left animate-pulse"></div>
+                                        <i class="fa-solid fa-triangle-exclamation text-xl text-amber-500 absolute top-0 animate-bounce"></i>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="slide4-title">Geotechnics & Slope Stability</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 max-w-xs" data-i18n="slide4-desc">Investigating rock mechanics, landslide triggers, and structural slope safety along RN 77 and other regions.</p>
+                                </div>
+                            </div>
+
+                            <!-- Indicator Dots -->
+                            <div class="flex justify-center gap-1.5 mt-6 z-10">
+                                <span class="slide-dot w-2 h-2 rounded-full bg-primary-600 dark:bg-primary-400 transition-all cursor-pointer" onclick="goToSlide(0)"></span>
+                                <span class="slide-dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all cursor-pointer" onclick="goToSlide(1)"></span>
+                                <span class="slide-dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all cursor-pointer" onclick="goToSlide(2)"></span>
+                                <span class="slide-dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all cursor-pointer" onclick="goToSlide(3)"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -446,13 +533,36 @@
         <!-- Publications Section -->
         <section id="publications" class="py-20 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center space-y-2 mb-16 fade-in-up">
+                <div class="text-center space-y-2 mb-10 fade-in-up">
                     <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="pub-title">Scientific Publications & Peer-Reviewed Articles</h2>
                     <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
                     <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-xl mx-auto" data-i18n="pub-desc">A selection of my peer-reviewed journal articles, conference papers, and active scientific contributions.</p>
                 </div>
 
-                <div class="max-w-5xl mx-auto space-y-6 stagger-children">
+                <!-- Live Research Metrics Block -->
+                <div class="max-w-5xl mx-auto mb-10 fade-in-up">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 bg-gradient-to-br from-primary-950 via-primary-900 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
+                        <div class="text-center space-y-1">
+                            <span class="block text-3xl sm:text-4xl font-extrabold text-accent-400" id="stat-citations">134+</span>
+                            <span class="text-xs sm:text-sm text-slate-300 font-medium" data-i18n="metric-citations">Citations (Live)</span>
+                        </div>
+                        <div class="text-center space-y-1 border-l border-white/10">
+                            <span class="block text-3xl sm:text-4xl font-extrabold text-accent-400" id="stat-hindex">7</span>
+                            <span class="text-xs sm:text-sm text-slate-300 font-medium" data-i18n="metric-hindex">h-index (Live)</span>
+                        </div>
+                        <div class="text-center space-y-1 border-l border-white/10">
+                            <span class="block text-3xl sm:text-4xl font-extrabold text-accent-400" id="stat-i10index">6</span>
+                            <span class="text-xs sm:text-sm text-slate-300 font-medium" data-i18n="metric-i10index">i10-index</span>
+                        </div>
+                        <div class="text-center space-y-1 border-l border-white/10">
+                            <span class="block text-3xl sm:text-4xl font-extrabold text-accent-400" id="stat-works">12</span>
+                            <span class="text-xs sm:text-sm text-slate-300 font-medium" data-i18n="metric-publications">Total Publications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="publications-list" class="max-w-5xl mx-auto space-y-6 stagger-children">
+                    <!-- Fallback Static Publication 1 -->
                     <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="space-y-3">
@@ -461,12 +571,13 @@
                                 <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub1-contrib"><span class="font-medium">Contributors:</span> Moussaoui T, Derdour A, Abdelkarim B, Said B, Hosni A, Reghais A, de-Los-Santos MB.</p>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub1-journal"><span class="font-bold">Journal:</span> Environmental Monitoring and Assessment | Springer</p>
                             </div>
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 flex gap-2">
                                 <a href="https://doi.org/10.1007/s10661-024-13433-0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.1007/s10661-024-13433-0</a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Fallback Static Publication 2 (Open Access) -->
                     <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="space-y-3">
@@ -475,12 +586,16 @@
                                 <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub2-contrib"><span class="font-medium">Contributors:</span> Drouiche Abdelmalek, Reghais Azzeddine, Ahmed Mohamed, Zahi Faouzi, Wael F. Galal, Saad S. Alarifi, Musaab A.A. Mohammed.</p>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub2-journal"><span class="font-bold">Journal:</span> Journal of King Saud University - Science | Elsevier</p>
                             </div>
-                            <div class="flex-shrink-0">
-                                <a href="https://doi.org/10.1016/j.jksus.2024.103463" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.1016/j.jksus.2024.103463</a>
+                            <div class="flex-shrink-0 flex flex-wrap gap-2">
+                                <a href="https://jksus.org/content/185/2024/36/10/pdf/10.1016_j.jksus.2024.103463.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+                                    <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i> <span data-i18n="download-oa">Download Open Access</span>
+                                </a>
+                                <a href="https://doi.org/10.1016/j.jksus.2024.103463" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Fallback Static Publication 3 -->
                     <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="space-y-3">
@@ -489,12 +604,13 @@
                                 <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub3-contrib"><span class="font-medium">Contributors:</span> Faouzi Zahi, Abdelmalek Drouiche, Fethi Medjani, Reghais Azzeddine, Mohamed Djidel.</p>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub3-journal"><span class="font-bold">Journal:</span> Environmental Monitoring and Assessment | Springer</p>
                             </div>
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 flex gap-2">
                                 <a href="https://doi.org/10.1007/s10661-024-13019-w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.1007/s10661-024-13019-w</a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Fallback Static Publication 4 (Open Access) -->
                     <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="space-y-3">
@@ -503,12 +619,16 @@
                                 <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub4-contrib"><span class="font-medium">Contributors:</span> Bezai Abderrahim, Nafaa Brinis, Azzeddine Reghais, Samir Djenba, Khadidja Bouzid.</p>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub4-journal"><span class="font-bold">Journal:</span> Geomatics, Landmanagement and Landscape</p>
                             </div>
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 flex flex-wrap gap-2">
+                                <a href="https://gll.urk.edu.pl/pdf-189408-117044?filename=Hydrochemical analysis.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+                                    <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i> <span data-i18n="download-oa">Download Open Access</span>
+                                </a>
                                 <a href="https://doi.org/10.15576/GLL/2024.3.03" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.15576/GLL/2024.3.03</a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Fallback Static Publication 5 -->
                     <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="space-y-3">
@@ -517,38 +637,146 @@
                                 <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub5-contrib"><span class="font-medium">Contributors:</span> Reghais Azzeddine, Drouiche Abdelmalek.</p>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub5-journal"><span class="font-bold">Journal:</span> Journal of African Earth Sciences | Elsevier</p>
                             </div>
-                            <div class="flex-shrink-0">
-                                <a href="https://doi.org/10.1016/j.jafrearsci.2023.105162" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI: 10.1016/j.jafrearsci.2023.105162</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
-                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                            <div class="space-y-3">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800"><i class="fa-solid fa-users mr-1" aria-hidden="true"></i> <span data-i18n="pub6-type">Conference Paper & Presentation &mdash; 2022</span></span>
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-indigo-600 transition-colors" data-i18n="pub6-title">Slope stability and landslide investigation on RN 77 at PK 23+100 (Texenna municipality, Jijel)</h3>
-                                <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub6-desc">The studied landslide is located in the municipality of Texenna, 25 km southeast of the wilaya of Jijel, Algeria. Focuses on structural faults and mechanical triggers.</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 pt-1" data-i18n="pub6-contrib"><span class="font-medium">Contributors:</span> Abdelhamid Khedidja, Brahim Lecheheb, Azzeddine Reghais.</p>
-                            </div>
-                            <div class="flex-shrink-0">
-                                <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i> <span data-i18n="pub6-badge">Texenna Project</span></span>
+                            <div class="flex-shrink-0 flex gap-2">
+                                <a href="https://doi.org/10.1016/j.jafrearsci.2023.105162" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
                             </div>
                         </div>
                     </article>
                 </div>
 
-                <div class="text-center mt-12">
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
                     <a href="https://scholar.google.com/citations?user=ovT7Ao4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-900 dark:bg-primary-600 hover:bg-primary-800 dark:hover:bg-primary-500 text-white font-semibold text-sm rounded-xl shadow-md transition-all">
                         <span data-i18n="pub-scholar-btn">See full bibliography on Google Scholar</span>
                         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Azzeddine-Reghais" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-sm rounded-xl transition-all">
+                        <span data-i18n="pub-rg-btn">View ResearchGate Profile</span>
+                        <i class="ai ai-researchgate" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- Teaching Experience Section -->
+        <section id="teaching" class="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-16 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="teaching-title">Teaching Experience</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-xl mx-auto" data-i18n="teaching-desc">Academic lecturing and student guidance contributions at higher education institutions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger-children">
+                    <!-- University of Batna 2 -->
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-primary-50 dark:bg-primary-950/40 flex items-center justify-center text-primary-600 dark:text-primary-400 text-3xl">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="teaching-univ-batna">University of Batna 2</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Algeria | الجزائر</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 pt-2">
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary-600 dark:bg-primary-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        <strong data-i18n="teaching-batna-l1">Lectures & Practical Works (Semesters: 2020-2021)</strong>
+                                    </p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary-600 dark:bg-primary-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        <strong data-i18n="teaching-batna-l2">Lectures & Practical Works (Semesters: 2022-2023)</strong>
+                                    </p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary-600 dark:bg-primary-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        <strong data-i18n="teaching-batna-l3">Lectures, Tutorials & Practicals (Semesters: 2024-2025)</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- University of Biskra -->
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-3xl">
+                                    <i class="fa-solid fa-university"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="teaching-univ-biskra">University of Biskra</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Algeria | الجزائر</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 pt-2">
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        <strong data-i18n="teaching-biskra-l1">Lectures & Directed Tutorials (Semester 1: 2025)</strong>
+                                    </p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 mt-2 shrink-0"></div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="teaching-biskra-desc">Focusing on Environmental Geology, Hydrogeology, and advanced Geochemical assessment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conferences Section -->
+        <section id="conferences" class="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-12 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="conf-title">Conferences & Seminars</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-xl mx-auto" data-i18n="conf-desc">Presentations and lectures at prestigious international and national scientific gatherings.</p>
+                </div>
+
+                <!-- Tabs Controller -->
+                <div class="max-w-4xl mx-auto mb-10 fade-in-up">
+                    <div class="flex justify-center bg-slate-100 dark:bg-slate-800 p-1.5 rounded-2xl max-w-md mx-auto">
+                        <button onclick="switchConfTab('international')" id="tabConfIntBtn" class="w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all bg-white dark:bg-slate-900 text-primary-700 dark:text-primary-300 shadow-sm">
+                            <i class="fa-solid fa-globe mr-1.5" aria-hidden="true"></i> <span data-i18n="conf-tab-int">International Conferences</span>
+                        </button>
+                        <button onclick="switchConfTab('national')" id="tabConfNatBtn" class="w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">
+                            <i class="fa-solid fa-flag mr-1.5" aria-hidden="true"></i> <span data-i18n="conf-tab-nat">National Conferences</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Contents Container -->
+                <div class="max-w-4xl mx-auto">
+                    <!-- International Conferences Content -->
+                    <div id="conf-international" class="conf-tab-content space-y-6 stagger-children">
+                        <!-- Dynamic layout using standard lists -->
+                        <div id="international-conferences-list" class="space-y-6">
+                            <!-- Injected by JavaScript dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- National Conferences Content -->
+                    <div id="conf-national" class="conf-tab-content hidden space-y-6 stagger-children">
+                        <div id="national-conferences-list" class="space-y-6">
+                            <!-- Injected by JavaScript dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Awards & Certifications Section -->
-        <section id="awards" class="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+        <section id="awards" class="py-20 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center space-y-2 mb-16 fade-in-up">
                     <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="awards-title">Awards, Certifications & Education</h2>
@@ -888,6 +1116,18 @@
                                 <div class="space-y-1">
                                     <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-i18n="contact-phone-label">Phone / WhatsApp</h4>
                                     <p class="text-slate-800 dark:text-slate-200 font-semibold"><a href="tel:+213668261708" class="hover:text-amber-600 transition-colors" dir="ltr">+213 (0) 668 26 17 08</a></p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl flex-shrink-0" aria-hidden="true"><i class="fa-brands fa-whatsapp text-2xl"></i></div>
+                                <div class="space-y-1">
+                                    <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-i18n="contact-whatsapp-label">WhatsApp Chat</h4>
+                                    <p class="text-slate-800 dark:text-slate-200 font-semibold">
+                                        <a href="https://wa.me/213668261708?text=Hello%20Dr.%20Azzeddine%20Reghais,%20I%20am%20interested%20in%20your%20research..." target="_blank" rel="noopener noreferrer" class="hover:text-emerald-600 transition-colors flex items-center gap-1.5">
+                                            <span data-i18n="contact-whatsapp-btn">Chat on WhatsApp</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
