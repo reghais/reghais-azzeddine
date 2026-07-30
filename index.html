@@ -638,151 +638,157 @@
                     </div>
                 </div>
 
-                <!-- Publications Tabs Controller -->
-                <div class="max-w-4xl mx-auto mb-10 fade-in-up">
-                    <div class="flex justify-center bg-slate-100 dark:bg-slate-800 p-1.5 rounded-2xl max-w-md mx-auto">
-                        <button onclick="switchPubTab('articles')" id="tabPubArticlesBtn" class="w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all bg-white dark:bg-slate-900 text-primary-700 dark:text-primary-300 shadow-sm">
-                            <i class="fa-solid fa-file-lines mr-1.5" aria-hidden="true"></i> <span data-i18n="pub-tab-articles">Articles & Publications</span>
-                        </button>
-                        <button onclick="switchPubTab('books')" id="tabPubBooksBtn" class="w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">
-                            <i class="fa-solid fa-book mr-1.5" aria-hidden="true"></i> <span data-i18n="pub-tab-books">Scientific Books</span>
-                        </button>
+                <!-- Articles List Container -->
+                <div class="max-w-5xl mx-auto">
+                    <div id="publications-list" class="space-y-6 stagger-children">
+                        <!-- Fallback Static Publication 1 -->
+                        <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2024</span></span>
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 32 Citations</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub1-title">A novel comprehensive approach to soil and water conservation: integrating morphometric analysis, WSA, PCA, and CoDA-PCA in the Naama sub-basins case study, Southwest of Algeria</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub1-contrib"><span class="font-medium">Contributors:</span> Moussaoui T, Derdour A, Abdelkarim B, Said B, Hosni A, Reghais A, de-Los-Santos MB.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub1-journal"><span class="font-bold">Journal:</span> Environmental Monitoring and Assessment | Springer</p>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-wrap gap-2">
+                                    <a href="https://wa.me/213668261708?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%85%D8%B1%20%D8%B9%D8%B2%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D8%B1%D8%BA%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D9%85%D9%86%20%D9%81%D8%B6%D9%84%D9%83%20%D8%B7%D9%84%D8%A8%20%D9%86%D8%B3%D8%AE%D8%A9%20%D9%85%D9%86%20%D8%A8%D8%AD%D8%AB%D9%83%D9%85%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%20%D8%A8%D8%B9%D9%86%D9%88%D8%A7%D9%86%3A%0A%22A%20novel%20comprehensive%20approach%20to%20soil%20and%20water%20conservation%3A%20integrating%20morphometric%20analysis%2C%20WSA%2C%20PCA%2C%20and%20CoDA-PCA%22" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-100 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all"><i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i> <span>Request via WhatsApp</span></a>
+                                    <a href="https://doi.org/10.1007/s10661-024-13433-0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Fallback Static Publication 2 (Open Access) -->
+                        <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2024</span></span>
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 20 Citations</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub2-title">Groundwater quality assessment using revised classical diagrams and compositional data analysis (CoDa): Case study of Wadi Ranyah, Saudi Arabia</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub2-contrib"><span class="font-medium">Contributors:</span> Drouiche Abdelmalek, Reghais Azzeddine, Ahmed Mohamed, Zahi Faouzi, Wael F. Galal, Saad S. Alarifi, Musaab A.A. Mohammed.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub2-journal"><span class="font-bold">Journal:</span> Journal of King Saud University - Science | Elsevier</p>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-wrap gap-2">
+                                    <a href="https://jksus.org/content/185/2024/36/10/pdf/10.1016_j.jksus.2024.103463.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+                                        <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i> <span data-i18n="download-oa">Download Open Access</span>
+                                    </a>
+                                    <a href="https://doi.org/10.1016/j.jksus.2024.103463" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Fallback Static Publication 3 -->
+                        <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2024</span></span>
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 28 Citations</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub3-title">Hydrogeochemical processes controlling surface water quality for irrigation in a Mediterranean wetland ecosystem, Northeast Algeria</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub3-contrib"><span class="font-medium">Contributors:</span> Faouzi Zahi, Abdelmalek Drouiche, Fethi Medjani, Reghais Azzeddine, Mohamed Djidel.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub3-journal"><span class="font-bold">Journal:</span> Environmental Monitoring and Assessment | Springer</p>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-wrap gap-2">
+                                    <a href="https://wa.me/213668261708?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%85%D8%B1%20%D8%B9%D8%B2%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D8%B1%D8%BA%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D9%85%D9%86%20%D9%81%D8%B6%D9%84%D9%83%20%D8%B7%D9%84%D8%A8%20%D9%86%D8%B3%D8%AE%D8%A9%20%D9%85%D9%86%20%D8%A8%D8%AD%D8%AB%D9%83%D9%85%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%20%D8%A8%D8%B9%D9%86%D9%88%D8%A7%D9%86%3A%0A%22Hydrogeochemical%20processes%20controlling%20surface%20water%20quality%22" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-100 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all"><i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i> <span>Request via WhatsApp</span></a>
+                                    <a href="https://doi.org/10.1007/s10661-024-13019-w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Fallback Static Publication 4 (Open Access) -->
+                        <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2024</span></span>
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 1 Citation</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub4-title">Hydrochemical analysis and groundwater quality assessment for irrigation in the Remila Plain, Khenchela, Northeast Algeria</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub4-contrib"><span class="font-medium">Contributors:</span> Bezai Abderrahim, Nafaa Brinis, Azzeddine Reghais, Samir Djenba, Khadidja Bouzid.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub4-journal"><span class="font-bold">Journal:</span> Geomatics, Landmanagement and Landscape</p>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-wrap gap-2">
+                                    <a href="https://gll.urk.edu.pl/pdf-189408-117044?filename=Hydrochemical analysis.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+                                        <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i> <span data-i18n="download-oa">Download Open Access</span>
+                                    </a>
+                                    <a href="https://doi.org/10.15576/GLL/2024.3.03" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Fallback Static Publication 5 -->
+                        <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2023</span></span>
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 26 Citations</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub5-title">Compositional data analysis (CoDA) and geochemical signatures of the terminal complex aquifer in an arid zone (northeastern Algeria)</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub5-contrib"><span class="font-medium">Contributors:</span> Reghais Azzeddine, Drouiche Abdelmalek.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub5-journal"><span class="font-bold">Journal:</span> Journal of African Earth Sciences | Elsevier</p>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-wrap gap-2">
+                                    <a href="https://wa.me/213668261708?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%85%D8%B1%20%D8%B9%D8%B2%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D8%B1%D8%BA%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D9%85%D9%86%20%D9%81%D8%B6%D9%84%D9%83%20%D8%B7%D9%84%D8%A8%20%D9%86%D8%B3%D8%AE%D8%A9%20%D9%85%D9%86%20%D8%A8%D8%AD%D8%AB%D9%83%D9%85%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%20%D8%A8%D8%B9%D9%86%D9%88%D8%A7%D9%86%3A%0A%22Compositional%20data%20analysis%20(CoDA)%20and%20geochemical%20signatures%22" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <!-- Tab Contents Container -->
-                <div class="max-w-5xl mx-auto">
-                    <!-- Articles Tab Content -->
-                    <div id="pub-articles-tab" class="pub-tab-content space-y-6">
-                        <div id="publications-list" class="space-y-6 stagger-children">
-                            <!-- Fallback Static Publication 1 -->
-                            <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
-                                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                                    <div class="space-y-3">
-                                        <div class="flex flex-wrap gap-2 items-center">
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2024</span></span>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 32 Citations</span>
-                                        </div>
-                                        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub1-title">A novel comprehensive approach to soil and water conservation: integrating morphometric analysis, WSA, PCA, and CoDA-PCA in the Naama sub-basins case study, Southwest of Algeria</h3>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub1-contrib"><span class="font-medium">Contributors:</span> Moussaoui T, Derdour A, Abdelkarim B, Said B, Hosni A, Reghais A, de-Los-Santos MB.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub1-journal"><span class="font-bold">Journal:</span> Environmental Monitoring and Assessment | Springer</p>
-                                    </div>
-                                    <div class="flex-shrink-0 flex flex-wrap gap-2">
-                                        <a href="https://wa.me/213668261708?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%85%D8%B1%20%D8%B9%D8%B2%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D8%B1%D8%BA%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D9%85%D9%86%20%D9%81%D8%B6%D9%84%D9%83%20%D8%B7%D9%84%D8%A8%20%D9%86%D8%B3%D8%AE%D8%A9%20%D9%85%D9%86%20%D8%A8%D8%AD%D8%AB%D9%83%D9%85%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%20%D8%A8%D8%B9%D9%86%D9%88%D8%A7%D9%86%3A%0A%22A%20novel%20comprehensive%20approach%20to%20soil%20and%20water%20conservation%3A%20integrating%20morphometric%20analysis%2C%20WSA%2C%20PCA%2C%20and%20CoDA-PCA%22" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-100 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all"><i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i> <span>Request via WhatsApp</span></a>
-                                        <a href="https://doi.org/10.1007/s10661-024-13433-0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
-                                    </div>
-                                </div>
-                            </article>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
+                    <a href="https://scholar.google.com/citations?user=ovT7Ao4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-900 dark:bg-primary-600 hover:bg-primary-800 dark:hover:bg-primary-500 text-white font-semibold text-sm rounded-xl shadow-md transition-all">
+                        <span data-i18n="pub-scholar-btn">See full bibliography on Google Scholar</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Azzeddine-Reghais" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-sm rounded-xl transition-all">
+                        <span data-i18n="pub-rg-btn">View ResearchGate Profile</span>
+                        <i class="ai ai-researchgate" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-                            <!-- Fallback Static Publication 2 (Open Access) -->
-                            <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
-                                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                                    <div class="space-y-3">
-                                        <div class="flex flex-wrap gap-2 items-center">
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2024</span></span>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 20 Citations</span>
-                                        </div>
-                                        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub2-title">Groundwater quality assessment using revised classical diagrams and compositional data analysis (CoDa): Case study of Wadi Ranyah, Saudi Arabia</h3>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub2-contrib"><span class="font-medium">Contributors:</span> Drouiche Abdelmalek, Reghais Azzeddine, Ahmed Mohamed, Zahi Faouzi, Wael F. Galal, Saad S. Alarifi, Musaab A.A. Mohammed.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub2-journal"><span class="font-bold">Journal:</span> Journal of King Saud University - Science | Elsevier</p>
-                                    </div>
-                                    <div class="flex-shrink-0 flex flex-wrap gap-2">
-                                        <a href="https://jksus.org/content/185/2024/36/10/pdf/10.1016_j.jksus.2024.103463.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
-                                            <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i> <span data-i18n="download-oa">Download Open Access</span>
-                                        </a>
-                                        <a href="https://doi.org/10.1016/j.jksus.2024.103463" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
-                                    </div>
-                                </div>
-                            </article>
+        <!-- Scientific Books Section -->
+        <section id="books" class="py-12 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-2 mb-10 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="book-section-title">Scientific Books & Monographs</h2>
+                    <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
+                </div>
 
-                            <!-- Fallback Static Publication 3 -->
-                            <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
-                                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                                    <div class="space-y-3">
-                                        <div class="flex flex-wrap gap-2 items-center">
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2024</span></span>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 28 Citations</span>
-                                        </div>
-                                        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub3-title">Hydrogeochemical processes controlling surface water quality for irrigation in a Mediterranean wetland ecosystem, Northeast Algeria</h3>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub3-contrib"><span class="font-medium">Contributors:</span> Faouzi Zahi, Abdelmalek Drouiche, Fethi Medjani, Reghais Azzeddine, Mohamed Djidel.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub3-journal"><span class="font-bold">Journal:</span> Environmental Monitoring and Assessment | Springer</p>
-                                    </div>
-                                    <div class="flex-shrink-0 flex flex-wrap gap-2">
-                                        <a href="https://wa.me/213668261708?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%85%D8%B1%20%D8%B9%D8%B2%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D8%B1%D8%BA%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D9%85%D9%86%20%D9%81%D8%B6%D9%84%D9%83%20%D8%B7%D9%84%D8%A8%20%D9%86%D8%B3%D8%AE%D8%A9%20%D9%85%D9%86%20%D8%A8%D8%AD%D8%AB%D9%83%D9%85%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%20%D8%A8%D8%B9%D9%86%D9%88%D8%A7%D9%86%3A%0A%22Hydrogeochemical%20processes%20controlling%20surface%20water%20quality%22" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-100 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all"><i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i> <span>Request via WhatsApp</span></a>
-                                        <a href="https://doi.org/10.1007/s10661-024-13019-w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <!-- Fallback Static Publication 4 (Open Access) -->
-                            <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
-                                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                                    <div class="space-y-3">
-                                        <div class="flex flex-wrap gap-2 items-center">
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2024</span></span>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 1 Citation</span>
-                                        </div>
-                                        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub4-title">Hydrochemical analysis and groundwater quality assessment for irrigation in the Remila Plain, Khenchela, Northeast Algeria</h3>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub4-contrib"><span class="font-medium">Contributors:</span> Bezai Abderrahim, Nafaa Brinis, Azzeddine Reghais, Samir Djenba, Khadidja Bouzid.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub4-journal"><span class="font-bold">Journal:</span> Geomatics, Landmanagement and Landscape</p>
-                                    </div>
-                                    <div class="flex-shrink-0 flex flex-wrap gap-2">
-                                        <a href="https://gll.urk.edu.pl/pdf-189408-117044?filename=Hydrochemical analysis.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
-                                            <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i> <span data-i18n="download-oa">Download Open Access</span>
-                                        </a>
-                                        <a href="https://doi.org/10.15576/GLL/2024.3.03" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <!-- Fallback Static Publication 5 -->
-                            <article class="publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
-                                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                                    <div class="space-y-3">
-                                        <div class="flex flex-wrap gap-2 items-center">
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800"><i class="fa-solid fa-journal-whills mr-1" aria-hidden="true"></i> <span>Journal Article — 2023</span></span>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50"><i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> 26 Citations</span>
-                                        </div>
-                                        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-i18n="pub5-title">Compositional data analysis (CoDA) and geochemical signatures of the terminal complex aquifer in an arid zone (northeastern Algeria)</h3>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="pub5-contrib"><span class="font-medium">Contributors:</span> Reghais Azzeddine, Drouiche Abdelmalek.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 italic" data-i18n="pub5-journal"><span class="font-bold">Journal:</span> Journal of African Earth Sciences | Elsevier</p>
-                                    </div>
-                                    <div class="flex-shrink-0 flex flex-wrap gap-2">
-                                        <a href="https://wa.me/213668261708?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%85%D8%B1%20%D8%B9%D8%B2%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D8%B1%D8%BA%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D9%85%D9%86%20%D9%81%D8%B6%D9%84%D9%83%20%D8%B7%D9%84%D8%A8%20%D9%86%D8%B3%D8%AE%D8%A9%20%D9%85%D9%86%20%D8%A8%D8%AD%D8%AB%D9%83%D9%85%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%20%D8%A8%D8%B9%D9%86%D9%88%D8%A7%D9%86%3A%0A%22Compositional%20data%20analysis%20(CoDA)%20and%20geochemical%20signatures%22" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-100 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all"><i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i> <span>Request via WhatsApp</span></a>
-                                        <a href="https://doi.org/10.1016/j.jafrearsci.2023.105162" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI Link</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-
-                    <!-- Books Tab Content -->
-                    <div id="pub-books-tab" class="pub-tab-content hidden space-y-6">
-                        <div class="bg-gradient-to-r from-primary-50/50 to-blue-50/50 dark:from-slate-900/40 dark:to-slate-950/40 rounded-2xl p-6 sm:p-8 border border-primary-100/60 dark:border-slate-800 shadow-sm">
-                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                                <div class="space-y-3">
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-100 dark:bg-primary-950/40 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-900/50">
-                                        <i class="fa-solid fa-book-open mr-1.5" aria-hidden="true"></i>
-                                        <span data-i18n="book-tag">Academic Book / Book Chapter</span>
-                                    </span>
-                                    <h4 class="text-2xl font-black text-slate-900 dark:text-slate-100 hover:text-primary-600 transition-colors" data-i18n="book-title">Biosphere & Environmental Safety</h4>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400">
-                                        <span class="font-medium" data-i18n="book-isbn-label">ISBN:</span> 978-963-449-285-6
-                                    </p>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 italic">
-                                        <span class="font-bold" data-i18n="book-publisher-label">Publisher & Venue:</span> May 5 ICEEE, Óbuda University, Budapest, Hungary (2022)
-                                    </p>
-                                </div>
-                                <div class="flex-shrink-0 flex flex-wrap gap-2">
-                                    <a href="https://kti.rkk.uni-obuda.hu/vi-international-2022-symposium-biosphere-on-online-safety-environmental/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-3 bg-primary-900 dark:bg-primary-600 hover:bg-primary-800 dark:hover:bg-primary-500 text-white font-bold text-xs rounded-xl shadow-md hover:shadow-lg transition-all">
-                                        <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
-                                        <span data-i18n="book-btn">View Book Venue</span>
-                                    </a>
-                                </div>
+                <div class="max-w-5xl mx-auto space-y-6">
+                    <div class="bg-gradient-to-r from-primary-50/50 to-blue-50/50 dark:from-slate-900/40 dark:to-slate-950/40 rounded-2xl p-6 sm:p-8 border border-primary-100/60 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                            <div class="space-y-3">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-100 dark:bg-primary-950/40 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-900/50">
+                                    <i class="fa-solid fa-book-open mr-1.5" aria-hidden="true"></i>
+                                    <span data-i18n="book-tag">Academic Book / Book Chapter</span>
+                                </span>
+                                <h4 class="text-2xl font-black text-slate-900 dark:text-slate-100 hover:text-primary-600 transition-colors" data-i18n="book-title">Biosphere & Environmental Safety</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">
+                                    <span class="font-medium" data-i18n="book-isbn-label">ISBN:</span> 978-963-449-285-6
+                                </p>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 italic">
+                                    <span class="font-bold" data-i18n="book-publisher-label">Publisher & Venue:</span> May 5 ICEEE, Óbuda University, Budapest, Hungary (2022)
+                                </p>
+                            </div>
+                            <div class="flex-shrink-0 flex flex-wrap gap-2">
+                                <a href="https://kti.rkk.uni-obuda.hu/vi-international-2022-symposium-biosphere-on-online-safety-environmental/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-3 bg-primary-900 dark:bg-primary-600 hover:bg-primary-800 dark:hover:bg-primary-500 text-white font-bold text-xs rounded-xl shadow-md hover:shadow-lg transition-all">
+                                    <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
+                                    <span data-i18n="book-btn">View Book Venue</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
                     <a href="https://scholar.google.com/citations?user=ovT7Ao4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-900 dark:bg-primary-600 hover:bg-primary-800 dark:hover:bg-primary-500 text-white font-semibold text-sm rounded-xl shadow-md transition-all">
