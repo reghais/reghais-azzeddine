@@ -900,12 +900,17 @@
     "Remila Plain": "https://gll.urk.edu.pl/pdf-189408-117044?filename=Hydrochemical%20analysis.pdf",
     "Mediterranean coastal aquifer": "https://doi.org/10.1016/j.ejrh.2026.103200",
     "DRASTIC method": "https://www.mdpi.com/2076-3417/12/18/9205/pdf",
-    "Naama sub-basins": "https://doi.org/10.1007/s10661-024-13433-0"
+    "Tadjenanet-Chelghoum": "https://www.acquesotterranee.net/acque/article/download/644/496"
   };
 
   function renderDynamicPublications(publications) {
     const pubListContainer = document.getElementById('publications-list');
     if (!pubListContainer) return;
+
+    if (!publications || publications.length === 0) {
+      console.warn("No publications fetched, leaving static fallbacks intact.");
+      return;
+    }
 
     pubListContainer.innerHTML = '';
     const currentLang = localStorage.getItem('portfolio-lang') || 'en';
@@ -936,7 +941,7 @@
         buttonsHtml += `
           <a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
             <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i>
-            <span data-i18n="download-oa">${currentLang === 'ar' ? 'تحميل ورقة مفتوحة المصدر' : 'Download Open Access'}</span>
+            <span>${currentLang === 'ar' ? 'تحميل ورقة مفتوحة المصدر' : 'Download Open Access'}</span>
           </a>
         `;
       } else {
@@ -944,7 +949,7 @@
         buttonsHtml += `
           <a href="https://wa.me/213668261708?text=${textMsg}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-100 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
             <i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i>
-            <span data-i18n="request-wa">${currentLang === 'ar' ? 'طلب البحث عبر واتساب' : 'Request via WhatsApp'}</span>
+            <span>${currentLang === 'ar' ? 'طلب البحث عبر واتساب' : 'Request via WhatsApp'}</span>
           </a>
         `;
       }
@@ -953,18 +958,18 @@
         buttonsHtml += `
           <a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all">
             <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            <span data-i18n="view-source">${currentLang === 'ar' ? 'رابط المصدر' : 'View Source'}</span>
+            <span>${currentLang === 'ar' ? 'رابط المصدر / DOI' : 'View Source / DOI'}</span>
           </a>
         `;
       }
 
       // Citations count badge
       const citations = pub.citations || 0;
-      const citationBadge = citations > 0 ? `
+      const citationBadge = `
         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50">
           <i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> ${citations} ${currentLang === 'ar' ? 'اقتباس' : 'Citations'}
         </span>
-      ` : '';
+      `;
 
       article.innerHTML = `
         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
