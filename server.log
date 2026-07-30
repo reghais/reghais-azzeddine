@@ -1,0 +1,8 @@
+127.0.0.1 - - [30/Jul/2026 08:35:24] "HEAD / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jul/2026 08:36:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jul/2026 08:36:16] "GET /assets/css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jul/2026 08:36:16] "GET /assets/js/i18n.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jul/2026 08:36:16] "GET /assets/img/profile.png HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jul/2026 08:36:16] "GET /assets/js/theme.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jul/2026 08:36:16] "GET /assets/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jul/2026 08:36:18] "GET /assets/data/scholar_stats.json HTTP/1.1" 200 -

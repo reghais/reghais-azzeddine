@@ -1,0 +1,217 @@
+{
+  "stats": {
+    "citations": 196,
+    "h_index": 8,
+    "i10_index": 7,
+    "works_count": 23
+  },
+  "publications": [
+    {
+      "title": "Cultivating sustainability: a multi-assessment of groundwater quality and irrigation suitability in the arid agricultural district of Dzira (Ksour Mountains, Algeria)",
+      "authors": "A Hosni, A Derdour, T Nouri, T Moussaoui, F Zahi, A Reghais, ...",
+      "journal": "Environmental monitoring and assessment 196 (10), 886 , 2024",
+      "citations": 32,
+      "year": 2024,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Hydrogeochemical processes controlling surface water quality for irrigation in a Mediterranean wetland ecosystem, Northeast Algeria",
+      "authors": "F Zahi, A Drouiche, F Medjani, R Azzeddine, M Djidel",
+      "journal": "Environmental Monitoring and Assessment 196 (10), 881 , 2024",
+      "citations": 28,
+      "year": 2024,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Hydrogeochemical evaluation of the Terminal Complex aquifer system in an arid area: a case study from the Biskra region, north-east Algeria",
+      "authors": "A Reghais, A Drouiche, F Zahi, TH Debieche",
+      "journal": "Environmental Earth Sciences 82 (7), 182 , 2023",
+      "citations": 28,
+      "year": 2023,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Compositional data analysis (CoDA) and geochemical signatures of the terminal complex aquifer in an arid zone (northeastern Algeria)",
+      "authors": "R Azzeddine, D Abdelmalek, U Ewuzie, Z Faouzi, D Taha-Hocine",
+      "journal": "Journal of African Earth Sciences 210, 105162 , 2024",
+      "citations": 26,
+      "year": 2024,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Groundwater quality assessment using revised classical diagrams and compositional data analysis (CoDa): case study of Wadi Ranyah, Saudi Arabia",
+      "authors": "D Abdelmalek, R Azzeddine, A Mohamed, Z Faouzi, WF Galal, SS Alarifi, ...",
+      "journal": "Journal of King Saud University-Science 36 (10), 103463 , 2024",
+      "citations": 20,
+      "year": 2024,
+      "link": "",
+      "is_oa": true
+    },
+    {
+      "title": "Risk assessment of potentially toxic elements and mapping of groundwater pollution indices using soft computer models in an agricultural area, Northeast Algeria",
+      "authors": "A Reghais, A Drouiche, F Zahi, U Ewuzie, TH Debieche, T Drias",
+      "journal": "Journal of Hazardous Materials 491, 137991 , 2025",
+      "citations": 18,
+      "year": 2025,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "A novel comprehensive approach to soil and water conservation: integrating morphometric analysis, WSA, PCA, and CoDA-PCA in the Naama sub-basins case study, Southwest of Algeria",
+      "authors": "T Moussaoui, A Derdour, B Abdelkarim, B Said, A Hosni, A Reghais, ...",
+      "journal": "Environmental Monitoring and Assessment 196 (12), 1258 , 2024",
+      "citations": 13,
+      "year": 2024,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Integrating water quality indices and multivariate statistics for groundwater assessment in a Mediterranean coastal aquifer, Northeast Algeria",
+      "authors": "F Zahi, A Drouiche, F Medjani, A Reghais, MAEA Rahman, I Mecibah, ...",
+      "journal": "Journal of Hydrology: Regional Studies 64, 103200 , 2026",
+      "citations": 8,
+      "year": 2026,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Hybridization of DRASTIC method to assess future groundwater vulnerability scenarios: Case of the Tebessa-Morsott alluvial aquifer (Northeastern Algeria)",
+      "authors": "A Boufekane, M Belloula, G Busico, T Drias, A Reghais, D Maizi",
+      "journal": "Applied Sciences 12 (18), 9205 , 2022",
+      "citations": 8,
+      "year": 2022,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Assessment of groundwater vulnerability to pollution using DRASTIC and the SI methods: case of the alluvial aquifer in Tadjenanet-Chelghoum laid (East Algeria)",
+      "authors": "A Khedidja, T Drias, A Reghais",
+      "journal": "Acque Sotterranee 12 (2), 37 , 2023",
+      "citations": 5,
+      "year": 2023,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Assessment of groundwater quality for irrigation and drinking using water quality indexes in the Upper Sebaou Valley (Tizi Ouzou-eastern Algeria)",
+      "authors": "A Sabrina, M Zineb, R Azzeddine, K Ramdane, D Haythem, A Laafer",
+      "journal": "Jordan Journal of Earth &amp; Environmental Sciences 16 (1) , 2025",
+      "citations": 3,
+      "year": 2025,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Water resources and physicochemical properties of the Mio-Pliocene aquifer complex in the M’leta Plain, Western Algeria",
+      "authors": "M Khelifa, A Khedidja, H Mansour, R Azzeddine",
+      "journal": "Journal of Water and Land Development , 2024",
+      "citations": 2,
+      "year": 2024,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Etude du fonctionnement hydrodynamique et hydrochimique de la nappe du Complexe Terminal de la region de Biskra, Sud-est Algèrien",
+      "authors": "A Reghais",
+      "journal": "University of Jijel , 2023",
+      "citations": 2,
+      "year": 2023,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Analysis of Relationships between Rainfall, Stream Flow, and Climate Indices Using the Wavelet Method: the Case of Wadi Khemis, Northwestern Algeria",
+      "authors": "K Timi, K Baba-Hamed, A Bouanani, A Reghais",
+      "journal": "Doklady Earth Sciences 525 (2), 31 , 2025",
+      "citations": 1,
+      "year": 2025,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Chemical and microbiological analysis of groundwater quality in the Sidi Rached Plain, Northern Algeria",
+      "authors": "S Zamiche, A Reghais",
+      "journal": "Euro-Mediterranean Journal for Environmental Integration 10 (4), 2309-2322 , 2025",
+      "citations": 1,
+      "year": 2025,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Hydrochemical analysis and groundwater quality assessment for irrigation in the Remila Plain, Khenchela, Northeast Algeria.",
+      "authors": "A Bezai, N Brinis, A Reghais, S Djenba, K Bouzid",
+      "journal": "Geomatics, Landmanagement &amp; Landscape , 2024",
+      "citations": 1,
+      "year": 2024,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Assessing groundwater quality in northern Algeria using geochemical and index approaches",
+      "authors": "Z Samira, R Azzeddine",
+      "journal": "STUDIES IN ENGINEERING AND EXACT SCIENCES Учредители: South Florida … , 2024",
+      "citations": 0,
+      "year": 2024,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "STATISTICAL APPROACH TO THE MONITORING OF GROUNDWATER QUALITY FOR DRINKING IN NORTHERN ALGERIA",
+      "authors": "Z SAMIRA, R AZZEDDINE",
+      "journal": "BRAZILIAN APPLIED SCIENCE REVIEW Учредители: South Florida Publishing LLC 8 … , 2024",
+      "citations": 0,
+      "year": 2024,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Risk assessment of Heavy Metals in the Complex Terminal aquifer data from biskra, south-est Algeria",
+      "authors": "DTH Reghais Azzeddine* , Drouiche Abdelmalek, Zahi Faouzi",
+      "journal": "Biosphere &amp;Environmental Safety , 2022",
+      "citations": 0,
+      "year": 2022,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Evaluation of groundwater quality by heavy metal contamination indices (Biskra, north-east Algeria).",
+      "authors": "DTH REGHAIS Azzeddine*1, DROUICHE Abdelmalek1, ZAHI Faouzi1",
+      "journal": "The 1st International Hybrid Conference on Climate Change, Georesources and … , 2022",
+      "citations": 0,
+      "year": 2022,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Evaluation of the salinity of groundwater used in irrigation and its risks on agricultural areas: Region of El-Ghrous(Biskra, Algeria)",
+      "authors": "ZFDTH REGHAIS.A, DROUICHE.A",
+      "journal": "Colloque Maghrébin sur l’Eau et l’Environnement dans les Zones Arides et … , 2021",
+      "citations": 0,
+      "year": 2021,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "Contribution à l&#39;étude du dimensionnement des périmètres de protection du Lac du Barrage de Fontaine des Gazelles (Wilaya Biskra, sud-est Algérien)",
+      "authors": "NBFH A. REGHAIS, F. MAACHI",
+      "journal": "The 3 rd Integrated Water Resources Management ConferenceAt: ALGERIA , 2020",
+      "citations": 0,
+      "year": 2020,
+      "link": "",
+      "is_oa": false
+    },
+    {
+      "title": "A GIS-based DRASTIC model for assessing aquifer vulnerability. Case study of Biskrawadi - (South-eastern Algeria)",
+      "authors": "HF Tarek Drias , Boukhenissa Farès , Basli Aleddine , Reghais Azeddine",
+      "journal": "The 3 rd Integrated Water Resources Management ConferenceAt: Batna Algeria , 2020",
+      "citations": 0,
+      "year": 2020,
+      "link": "",
+      "is_oa": false
+    }
+  ]
+}

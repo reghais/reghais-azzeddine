@@ -251,7 +251,13 @@ const translations = {
     "booking-placeholder-details": "Brief explanation of guidance needed...",
     "purpose-advising": "Academic Advising / Office Hours",
     "purpose-thesis": "Master/PhD Thesis Revision",
-    "purpose-exam": "Exam Review & Grades"
+    "purpose-exam": "Exam Review & Grades",
+    "book-section-title": "Scientific Books & Monographs",
+    "book-tag": "Academic Book / Book Chapter",
+    "book-title": "Biosphere & Environmental Safety",
+    "book-isbn-label": "ISBN:",
+    "book-publisher-label": "Publisher & Venue:",
+    "book-btn": "View Book Venue"
   },
   ar: {
     "nav-about": "من أنا",
@@ -500,7 +506,13 @@ const translations = {
     "booking-placeholder-details": "اكتب لمحة بسيطة وموجزة عن موضوع الاستشارة الأكاديمية...",
     "purpose-advising": "إرشاد أكاديمي / ساعات مكتبية",
     "purpose-thesis": "مراجعة مذكرة التخرج (ماستر / دكتوراه)",
-    "purpose-exam": "مراجعة أوراق الامتحانات والنقاط"
+    "purpose-exam": "مراجعة أوراق الامتحانات والنقاط",
+    "book-section-title": "الكتب والمؤلفات العلمية",
+    "book-tag": "كتاب أكاديمي / فصل في كتاب",
+    "book-title": "Biosphere & Environmental Safety (السلامة البيئية والغلاف الحيوي)",
+    "book-isbn-label": "الرقم الدولي الموحد للكتاب (ISBN):",
+    "book-publisher-label": "دار النشر والمؤتمر:",
+    "book-btn": "عرض موقع النشر"
   }
 };
 

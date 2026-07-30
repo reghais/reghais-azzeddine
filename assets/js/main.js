@@ -768,81 +768,144 @@
     }
   }
 
-  // Fetch publications and metrics from OpenAlex API using ORCID: 0000-0002-4968-9529
-  async function loadOpenAlexData() {
-    const orcid = '0000-0002-4968-9529';
-    const authorUrl = `https://api.openalex.org/authors/https://orcid.org/${orcid}`;
-    const worksUrl = `https://api.openalex.org/works?filter=author.orcid:${orcid}&sort=publication_year:desc,cited_by_count:desc`;
+  // Fetch publications and metrics from Google Scholar automated JSON, with OpenAlex API fallback
+  async function loadScholarData() {
+    let scholarLoaded = false;
+    const currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
     try {
-      // 1. Fetch Author Metrics
-      const authorRes = await fetch(authorUrl);
-      if (authorRes.ok) {
-        const authorData = await authorRes.json();
-        const citations = authorData.cited_by_count || 134;
-        const hIndex = (authorData.summary_stats && authorData.summary_stats.h_index) || 7;
-        const i10Index = (authorData.summary_stats && authorData.summary_stats.i10_index) || 6;
-        const worksCount = authorData.works_count || 12;
-
-        document.getElementById('stat-citations').textContent = citations + '+';
-        document.getElementById('stat-hindex').textContent = hIndex;
-        document.getElementById('stat-i10index').textContent = i10Index;
-        document.getElementById('stat-works').textContent = worksCount;
-
-        // Also update Hero metrics
-        const heroCitations = document.getElementById('hero-citations-val');
-        const heroHIndex = document.getElementById('hero-hindex-val');
-        if (heroCitations) heroCitations.textContent = citations + '+';
-        if (heroHIndex) heroHIndex.textContent = hIndex;
-      }
-    } catch (e) {
-      console.warn("Failed to fetch author metrics from OpenAlex, using default fallbacks.", e);
-    }
-
-    try {
-      // 2. Fetch Works (Publications)
-      const worksRes = await fetch(worksUrl);
-      if (worksRes.ok) {
-        const worksData = await worksRes.json();
-        if (worksData.results && worksData.results.length > 0) {
-          renderDynamicPublications(worksData.results);
+      const response = await fetch('assets/data/scholar_stats.json');
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.stats) {
+          updateUIMetrics(data.stats);
+          if (data.publications && data.publications.length > 0) {
+            renderDynamicPublications(data.publications);
+            scholarLoaded = true;
+          }
         }
       }
     } catch (e) {
-      console.warn("Failed to fetch works from OpenAlex, using static list.", e);
+      console.warn("Could not load Google Scholar JSON, trying fallback...", e);
+    }
+
+    if (!scholarLoaded) {
+      // Fallback to OpenAlex ORCID: 0000-0002-4968-9529
+      const orcid = '0000-0002-4968-9529';
+      const authorUrl = `https://api.openalex.org/authors/https://orcid.org/${orcid}`;
+      const worksUrl = `https://api.openalex.org/works?filter=author.orcid:${orcid}&sort=publication_year:desc,cited_by_count:desc`;
+
+      try {
+        const authorRes = await fetch(authorUrl);
+        if (authorRes.ok) {
+          const authorData = await authorRes.json();
+          const stats = {
+            citations: authorData.cited_by_count || 196,
+            h_index: (authorData.summary_stats && authorData.summary_stats.h_index) || 8,
+            i10_index: (authorData.summary_stats && authorData.summary_stats.i10_index) || 7,
+            works_count: authorData.works_count || 23
+          };
+          updateUIMetrics(stats);
+        }
+      } catch (e) {
+        console.warn("Failed to fetch author metrics from OpenAlex fallback.", e);
+      }
+
+      try {
+        const worksRes = await fetch(worksUrl);
+        if (worksRes.ok) {
+          const worksData = await worksRes.json();
+          if (worksData.results && worksData.results.length > 0) {
+            // Map OpenAlex structure to our simple structure
+            const mappedPubs = worksData.results.map(work => {
+              const journal = (work.primary_location && work.primary_location.source && work.primary_location.source.display_name) || 'Scientific Journal';
+              const authors = (work.authorships && work.authorships.length > 0)
+                ? work.authorships.map(a => a.author.display_name).join(', ')
+                : 'Azzeddine Reghais';
+              return {
+                title: work.title,
+                authors: authors,
+                journal: journal,
+                citations: work.cited_by_count || 0,
+                year: work.publication_year,
+                link: work.doi || `https://doi.org/${work.id.split('/').pop()}`,
+                is_oa: work.open_access && work.open_access.is_oa
+              };
+            });
+            renderDynamicPublications(mappedPubs);
+          }
+        }
+      } catch (e) {
+        console.warn("Failed to fetch works from OpenAlex fallback.", e);
+      }
     }
   }
 
-  function renderDynamicPublications(works) {
+  function updateUIMetrics(stats) {
+    const citations = stats.citations || 196;
+    const hIndex = stats.h_index || 8;
+    const i10Index = stats.i10_index || 7;
+    const worksCount = stats.works_count || 23;
+
+    // Direct stat indicators
+    const statCit = document.getElementById('stat-citations');
+    const statHi = document.getElementById('stat-hindex');
+    const statI10 = document.getElementById('stat-i10index');
+    const statWrks = document.getElementById('stat-works');
+
+    if (statCit) statCit.textContent = citations + '+';
+    if (statHi) statHi.textContent = hIndex;
+    if (statI10) statI10.textContent = i10Index;
+    if (statWrks) statWrks.textContent = worksCount;
+
+    // Hero stat indicators
+    const heroCit = document.getElementById('hero-citations-val');
+    const heroHi = document.getElementById('hero-hindex-val');
+    if (heroCit) heroCit.textContent = citations + '+';
+    if (heroHi) heroHi.textContent = hIndex;
+  }
+
+  // Exact PDF download mappings for the researcher's open access works
+  const openAccessPdfMappings = {
+    "Wadi Ranyah": "https://jksus.org/content/185/2024/36/10/pdf/10.1016_j.jksus.2024.103463.pdf",
+    "Remila Plain": "https://gll.urk.edu.pl/pdf-189408-117044?filename=Hydrochemical%20analysis.pdf",
+    "Mediterranean coastal aquifer": "https://doi.org/10.1016/j.ejrh.2026.103200",
+    "DRASTIC method": "https://www.mdpi.com/2076-3417/12/18/9205/pdf",
+    "Naama sub-basins": "https://doi.org/10.1007/s10661-024-13433-0"
+  };
+
+  function renderDynamicPublications(publications) {
     const pubListContainer = document.getElementById('publications-list');
     if (!pubListContainer) return;
 
     pubListContainer.innerHTML = '';
     const currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
-    works.forEach((work, idx) => {
+    publications.forEach((pub) => {
       const article = document.createElement('article');
       article.className = 'publication-card bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-slate-800 shadow-sm fade-in-up';
 
-      const title = work.title;
-      const year = work.publication_year;
-      const journal = (work.primary_location && work.primary_location.source && work.primary_location.source.display_name) || 'Scientific Journal';
+      const title = pub.title;
+      const year = pub.year || 'N/A';
+      const journal = pub.journal || 'Scientific Journal';
+      const authors = pub.authors || 'Azzeddine Reghais';
 
-      // Extract authors
-      let authorsList = 'Azzeddine Reghais';
-      if (work.authorships && work.authorships.length > 0) {
-        authorsList = work.authorships.map(a => a.author.display_name).join(', ');
+      // Check open access status by analyzing title matches or is_oa flag
+      let isOA = pub.is_oa || false;
+      let downloadUrl = pub.link || '';
+
+      for (const [key, pdfUrl] of Object.entries(openAccessPdfMappings)) {
+        if (title.toLowerCase().includes(key.toLowerCase())) {
+          isOA = true;
+          downloadUrl = pdfUrl;
+          break;
+        }
       }
 
-      // Check Open Access status
-      const isOA = work.open_access && work.open_access.is_oa;
-      const oaUrl = work.open_access && work.open_access.oa_url;
-      const doi = work.doi || `https://doi.org/${work.id.split('/').pop()}`;
-
       let buttonsHtml = '';
-      if (isOA && oaUrl) {
+      if (isOA && downloadUrl) {
         buttonsHtml += `
-          <a href="${oaUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all animate-pulse">
+          <a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
             <i class="fa-solid fa-file-pdf text-emerald-600" aria-hidden="true"></i>
             <span data-i18n="download-oa">${currentLang === 'ar' ? 'تحميل ورقة مفتوحة المصدر' : 'Download Open Access'}</span>
           </a>
@@ -850,22 +913,24 @@
       } else {
         const textMsg = encodeURIComponent(`مرحباً الدكتور عز الدين رغيس، أود من فضلك طلب نسخة من بحثكم العلمي بعنوان:\n"${title}"`);
         buttonsHtml += `
-          <a href="https://wa.me/213668261708?text=${textMsg}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
+          <a href="https://wa.me/213668261708?text=${textMsg}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-emerald-100 dark:border-emerald-800 text-xs font-semibold rounded-lg text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 transition-all">
             <i class="fa-brands fa-whatsapp text-emerald-600 text-sm" aria-hidden="true"></i>
-            <span data-i18n="request-wa">${currentLang === 'ar' ? 'اطلب النسخة عبر واتساب' : 'Request via WhatsApp'}</span>
+            <span data-i18n="request-wa">${currentLang === 'ar' ? 'طلب البحث عبر واتساب' : 'Request via WhatsApp'}</span>
           </a>
         `;
       }
 
-      buttonsHtml += `
-        <a href="${doi}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all">
-          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          <span>DOI Link</span>
-        </a>
-      `;
+      if (pub.link) {
+        buttonsHtml += `
+          <a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 border border-primary-100 dark:border-primary-800 text-xs font-semibold rounded-lg text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 transition-all">
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            <span data-i18n="view-source">${currentLang === 'ar' ? 'رابط المصدر' : 'View Source'}</span>
+          </a>
+        `;
+      }
 
-      // Citations count
-      const citations = work.cited_by_count || 0;
+      // Citations count badge
+      const citations = pub.citations || 0;
       const citationBadge = citations > 0 ? `
         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50">
           <i class="fa-solid fa-quote-left mr-1 text-amber-500" aria-hidden="true"></i> ${citations} ${currentLang === 'ar' ? 'اقتباس' : 'Citations'}
@@ -883,7 +948,7 @@
               ${citationBadge}
             </div>
             <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">${title}</h3>
-            <p class="text-sm text-slate-500 dark:text-slate-400"><span class="font-medium">${currentLang === 'ar' ? 'المساهمون:' : 'Contributors:'}</span> ${authorsList}</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400"><span class="font-medium">${currentLang === 'ar' ? 'المساهمون:' : 'Contributors:'}</span> ${authors}</p>
             <p class="text-sm text-slate-600 dark:text-slate-400 italic"><span class="font-bold">${currentLang === 'ar' ? 'المجلة:' : 'Journal:'}</span> ${journal}</p>
           </div>
           <div class="flex-shrink-0 flex flex-wrap gap-2">
@@ -895,17 +960,37 @@
     });
   }
 
+  // Dynamic WhatsApp Messages based on Language
+  function updateWhatsAppLinks() {
+    const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    const waLinks = document.querySelectorAll('a[href*="wa.me/213668261708"]');
+
+    waLinks.forEach(link => {
+      // Don't overwrite the conference specific messages
+      if (link.getAttribute('href').includes('مرحباً الدكتور') || link.getAttribute('href').includes('بحثكم العلمي')) {
+        return;
+      }
+      const msg = currentLang === 'ar'
+        ? encodeURIComponent("مرحباً الدكتور عز الدين رغيس، أود التواصل معك بخصوص أبحاثك الأكاديمية واهتماماتك العلمية...")
+        : encodeURIComponent("Hello Dr. Azzeddine Reghais, I am interested in your research and academic works...");
+      link.href = `https://wa.me/213668261708?text=${msg}`;
+    });
+  }
+
   // Re-render components if language selection changes
   document.addEventListener('languageChanged', () => {
     renderFiles();
     renderBookings();
     renderConferences();
+    loadScholarData();
+    updateWhatsAppLinks();
   });
 
   // Run initial renders
   renderFiles();
   renderBookings();
   renderConferences();
-  loadOpenAlexData();
+  loadScholarData();
+  updateWhatsAppLinks();
 
 })();
