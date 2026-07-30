@@ -257,7 +257,9 @@ const translations = {
     "book-title": "Biosphere & Environmental Safety",
     "book-isbn-label": "ISBN:",
     "book-publisher-label": "Publisher & Venue:",
-    "book-btn": "View Book Venue"
+    "book-btn": "View Book Venue",
+    "pub-tab-articles": "Articles & Publications",
+    "pub-tab-books": "Scientific Books"
   },
   ar: {
     "nav-about": "من أنا",
@@ -512,7 +514,9 @@ const translations = {
     "book-title": "Biosphere & Environmental Safety (السلامة البيئية والغلاف الحيوي)",
     "book-isbn-label": "الرقم الدولي الموحد للكتاب (ISBN):",
     "book-publisher-label": "دار النشر والمؤتمر:",
-    "book-btn": "عرض موقع النشر"
+    "book-btn": "عرض موقع النشر",
+    "pub-tab-articles": "الأبحاث والمقالات العلمية",
+    "pub-tab-books": "الكتب والمؤلفات العلمية"
   }
 };
 

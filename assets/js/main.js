@@ -222,6 +222,35 @@
      Student Portal System: Schedule, Files & Appointments
      ------------------------------------------------------------------------ */
 
+  // Switch Publications Tabs (Articles & Books)
+  window.switchPubTab = function (tabId) {
+    // Hide all publications contents
+    document.querySelectorAll('#publications .pub-tab-content').forEach(content => {
+      content.classList.add('hidden');
+    });
+
+    // Remove active styles from publication buttons
+    const btnArticles = document.getElementById('tabPubArticlesBtn');
+    const btnBooks = document.getElementById('tabPubBooksBtn');
+
+    if (btnArticles && btnBooks) {
+      btnArticles.className = "w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
+      btnBooks.className = "w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
+    }
+
+    // Show active content
+    const selectedContent = document.getElementById('pub-' + tabId + '-tab');
+    if (selectedContent) {
+      selectedContent.classList.remove('hidden');
+    }
+
+    // Apply active style
+    const activeBtn = document.getElementById(tabId === 'articles' ? 'tabPubArticlesBtn' : 'tabPubBooksBtn');
+    if (activeBtn) {
+      activeBtn.className = "w-1/2 py-2.5 text-sm font-bold rounded-xl transition-all bg-white dark:bg-slate-900 text-primary-700 dark:text-primary-300 shadow-sm";
+    }
+  };
+
   // Switch Conference Tabs (Separating International & National)
   window.switchConfTab = function (tabId) {
     // Hide all conference contents
