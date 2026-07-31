@@ -1,0 +1,39 @@
+name: Update Google Scholar Stats Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at midnight UTC
+  workflow_dispatch:      # Allows manual trigger via the Actions tab
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write     # Gives write permissions to push the updated json file
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Fetch Scholar Data
+        run: |
+          python3 scripts/fetch_scholar.py
+
+      - name: Check for Changes
+        id: git-check
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add assets/data/scholar_stats.json
+          git diff --quiet && git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and Push Changes
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git commit -m "chore(auto): update Google Scholar statistics [skip ci]"
+          git push origin HEAD:${{ github.ref }}

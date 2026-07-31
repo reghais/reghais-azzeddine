@@ -105,6 +105,19 @@ html[dir="rtl"] .space-x-5 > :not([hidden]) ~ :not([hidden]) {
 }
 
 /* ==========================================================================
+   Circular Metrics Badges with Glow
+   ========================================================================== */
+.metric-circle-badge {
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.metric-circle-badge:hover {
+  transform: scale(1.08) rotate(2deg);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.15), 0 8px 10px -6px rgba(245, 158, 11, 0.15);
+}
+
+/* ==========================================================================
    Academic Cards - Enhanced Hover Effects
    ========================================================================== */
 .academic-btn {
