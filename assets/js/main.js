@@ -384,6 +384,27 @@
 
   function handleSelectedFiles(filesList) {
     if (filesList.length === 0) return;
+
+    const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    const promptMsg = currentLang === 'ar'
+      ? "الرجاء إدخال كلمة المرور لإضافة محاضرة أو ملفات جديدة:\n(تلميح: كلمة المرور المطلوبة تبدأ بـ Ch...)"
+      : "Please enter the password to add a new lecture or file:\n(Hint: starts with Ch...)";
+    const successMsg = currentLang === 'ar'
+      ? "تم التحقق بنجاح! جاري إضافة الملف..."
+      : "Authorized successfully! Adding the file...";
+    const errorMsg = currentLang === 'ar'
+      ? "كلمة المرور غير صحيحة. تم رفض الوصول."
+      : "Incorrect password. Access denied.";
+
+    const enteredPassword = prompt(promptMsg);
+    if (enteredPassword === null) return;
+    if (enteredPassword !== "Chihab2020") {
+      alert(errorMsg);
+      return;
+    }
+
+    alert(successMsg);
+
     const currentFiles = getUploadedFiles();
 
     for (let i = 0; i < filesList.length; i++) {
@@ -454,10 +475,16 @@
           </div>
           <p class="text-xs text-slate-500 dark:text-slate-400 italic pt-1">${purposeText}</p>
         </div>
-        <button onclick="cancelBooking(${booking.id})" class="text-xs font-bold text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 p-1 flex items-center gap-1">
-          <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
-          <span data-i18n="booking-cancel">${currentLang === 'ar' ? 'إلغاء' : 'Cancel'}</span>
-        </button>
+        <div class="flex flex-col gap-2 items-end">
+          <button onclick="sendBookingToWhatsApp(${booking.id})" class="text-xs font-bold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 p-1 flex items-center gap-1 transition-all">
+            <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>
+            <span>${currentLang === 'ar' ? 'واتساب' : 'WhatsApp'}</span>
+          </button>
+          <button onclick="cancelBooking(${booking.id})" class="text-xs font-bold text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 p-1 flex items-center gap-1 transition-all">
+            <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+            <span data-i18n="booking-cancel">${currentLang === 'ar' ? 'إلغاء' : 'Cancel'}</span>
+          </button>
+        </div>
       `;
       bookingsContainer.appendChild(card);
     });
@@ -467,6 +494,41 @@
     const bookings = getBookings().filter(b => b.id !== bookingId);
     saveBookings(bookings);
     renderBookings();
+  };
+
+  window.sendBookingToWhatsApp = function(bookingId) {
+    const bookings = getBookings();
+    const booking = bookings.find(b => b.id === bookingId);
+    if (!booking) return;
+
+    const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    const purposeText = window.translations[currentLang]["purpose-" + booking.purpose] || booking.purpose;
+
+    let textMsg = "";
+    if (currentLang === 'ar') {
+      textMsg = `مرحباً الدكتور عز الدين رغيس، لقد قمت بحجز موعد إرشاد أكاديمي عبر موقعكم الإلكتروني:\n\n` +
+                `👤 الاسم الكامل: ${booking.name}\n` +
+                `📧 البريد الإلكتروني: ${booking.email}\n` +
+                `🎯 الغرض من الحجز: ${purposeText}\n` +
+                `📅 تاريخ الموعد: ${booking.date}\n` +
+                `⏰ التوقيت / الحصة: ${booking.slot}\n`;
+      if (booking.details) {
+        textMsg += `📝 تفاصيل أو موضوع الحجز: ${booking.details}\n`;
+      }
+    } else {
+      textMsg = `Hello Dr. Azzeddine Reghais, I have booked an academic appointment via your website:\n\n` +
+                `👤 Full Name: ${booking.name}\n` +
+                `📧 Email: ${booking.email}\n` +
+                `🎯 Purpose: ${purposeText}\n` +
+                `📅 Appointment Date: ${booking.date}\n` +
+                `⏰ Time Slot: ${booking.slot}\n`;
+      if (booking.details) {
+        textMsg += `📝 Details / Topic: ${booking.details}\n`;
+      }
+    }
+
+    const waUrl = `https://wa.me/213668261708?text=${encodeURIComponent(textMsg)}`;
+    window.open(waUrl, '_blank');
   };
 
   const bookingForm = document.getElementById('portalBookingForm');
@@ -509,9 +571,10 @@
         return;
       }
 
+      const newBookingId = Date.now();
       const bookings = getBookings();
       bookings.push({
-        id: Date.now(),
+        id: newBookingId,
         name,
         email,
         purpose,
@@ -523,10 +586,14 @@
       saveBookings(bookings);
       bookingForm.reset();
       showFeedback(
-        currentLang === 'ar' ? 'تم حجز الموعد بنجاح واهتمام!' : 'Appointment booked successfully!',
+        currentLang === 'ar' ? 'تم تسجيل الحجز بنجاح! جاري تحويلك إلى واتساب لإرسال تفاصيل الموعد...' : 'Appointment registered successfully! Redirecting to WhatsApp to send appointment details...',
         'success'
       );
       renderBookings();
+
+      setTimeout(() => {
+        window.sendBookingToWhatsApp(newBookingId);
+      }, 1500);
     });
   }
 
@@ -1004,11 +1071,378 @@
     });
   }
 
+  const reviewerCerts = [
+    {
+      title_en: "Reviewer Certificate (February 2026)",
+      title_ar: "شهادة تقييم (فبراير 2026)",
+      issuer_en: "Springer / Elsevier Journals",
+      issuer_ar: "مجلات سبرينجر وإلزيفير",
+      date: "2026",
+      pdf: "assets/pdf/reviewer_certificates/Reviewer Certificate 03 February 2026.pdf",
+      verify: "https://www.webofscience.com"
+    },
+    {
+      title_en: "Reviewer Certificate (October 2025)",
+      title_ar: "شهادة تقييم (أكتوبر 2025)",
+      issuer_en: "Springer / Elsevier Journals",
+      issuer_ar: "مجلات سبرينجر وإلزيفير",
+      date: "2025",
+      pdf: "assets/pdf/reviewer_certificates/Reviewer Certificate 06 October 2025.pdf",
+      verify: "https://www.webofscience.com"
+    },
+    {
+      title_en: "Reviewer Certificate (September 2025)",
+      title_ar: "شهادة تقييم (سبتمبر 2025)",
+      issuer_en: "Springer / Elsevier Journals",
+      issuer_ar: "مجلات سبرينجر وإلزيفير",
+      date: "2025",
+      pdf: "assets/pdf/reviewer_certificates/Reviewer Certificate 11 September 2025.pdf",
+      verify: "https://www.webofscience.com"
+    },
+    {
+      title_en: "Reviewer Certificate (August 2025)",
+      title_ar: "شهادة تقييم (أغسطس 2025)",
+      issuer_en: "Springer / Elsevier Journals",
+      issuer_ar: "مجلات سبرينجر وإلزيفير",
+      date: "2025",
+      pdf: "assets/pdf/reviewer_certificates/Reviewer Certificate 16 August 2025.pdf",
+      verify: "https://www.webofscience.com"
+    },
+    {
+      title_en: "Reviewer Certificate (June 2025)",
+      title_ar: "شهادة تقييم (يونيو 2025)",
+      issuer_en: "Springer / Elsevier Journals",
+      issuer_ar: "مجلات سبرينجر وإلزيفير",
+      date: "2025",
+      pdf: "assets/pdf/reviewer_certificates/Reviewer Certificate 09 June 2025.pdf",
+      verify: "https://www.webofscience.com"
+    }
+  ];
+
+  const professionalCerts = [
+    {
+      title_en: "UNESCO Open Learning: GGRETA03 Groundwater SDC",
+      title_ar: "اليونسكو للتعليم المفتوح: المياه الجوفية GGRETA03",
+      issuer_en: "UNESCO",
+      issuer_ar: "منظمة اليونسكو",
+      date: "2025",
+      pdf: "assets/pdf/certifications/SDC GGRETA03 Certificate _ UNESCO Open Learning.pdf",
+      verify: "https://openlearning.unesco.org"
+    },
+    {
+      title_en: "The Basics of R for Ecologists",
+      title_ar: "أساسيات لغة R لعلماء البيئة",
+      issuer_en: "DataCamp / Ecologist Portal",
+      issuer_ar: "بوابة علماء البيئة",
+      date: "2024",
+      pdf: "assets/pdf/certifications/certificate-of-completion-for-the-basics-of-r-for-ecologists.pdf",
+      verify: "https://www.datacamp.com"
+    },
+    {
+      title_en: "Coursera: Spatial Data Analysis",
+      title_ar: "كورسيرات: تحليل البيانات المكانية",
+      issuer_en: "Coursera / Imperial College London",
+      issuer_ar: "كورسيرا / إمبريال كوليدج لندن",
+      date: "2024",
+      pdf: "assets/pdf/certifications/Coursera U8PESZAY6K25.pdf",
+      verify: "https://www.coursera.org"
+    },
+    {
+      title_en: "Coursera: GIS & Remote Sensing",
+      title_ar: "كورسيرات: نظم المعلومات الجغرافية والاستشعار عن بعد",
+      issuer_en: "Coursera / UCDavis",
+      issuer_ar: "كورسيرا / جامعة كاليفورنيا ديفيس",
+      date: "2023",
+      pdf: "assets/pdf/certifications/Coursera 8DMZPQLFDR3V.pdf",
+      verify: "https://www.coursera.org"
+    },
+    {
+      title_en: "Introduction to the Tidyverse",
+      title_ar: "مقدمة في مكتبات Tidyverse في R",
+      issuer_en: "DataCamp",
+      issuer_ar: "داتا كامب",
+      date: "2024",
+      pdf: "assets/pdf/certifications/Introduction to the Tidyverse.pdf",
+      verify: "https://www.datacamp.com"
+    },
+    {
+      title_en: "Intermediate R",
+      title_ar: "مستوى متوسط في لغة R",
+      issuer_en: "DataCamp",
+      issuer_ar: "داتا كامب",
+      date: "2024",
+      pdf: "assets/pdf/certifications/Intermediate R.pdf",
+      verify: "https://www.datacamp.com"
+    },
+    {
+      title_en: "Publons Academy Graduation Certificate",
+      title_ar: "شهادة التخرج من أكاديمية بوبلونز",
+      issuer_en: "Web of Science",
+      issuer_ar: "شبكة العلوم (Web of Science)",
+      date: "2023",
+      pdf: "assets/pdf/certifications/Publons Academy Graduation Certificate.pdf",
+      verify: "https://publons.com"
+    },
+    {
+      title_en: "Coursera: Ground Water Hydrology",
+      title_ar: "كورسيرات: هيدرولوجيا المياه الجوفية",
+      issuer_en: "Coursera / University of Geneva",
+      issuer_ar: "كورسيرا / جامعة جنيف",
+      date: "2023",
+      pdf: "assets/pdf/certifications/Coursera G55TAPA9RAVQ.pdf",
+      verify: "https://www.coursera.org"
+    },
+    {
+      title_en: "Building Trust and Engagement in Peer Review",
+      title_ar: "بناء الثقة والمشاركة في عملية التحكيم العلمي",
+      issuer_en: "Researcher Academy / Elsevier",
+      issuer_ar: "أكاديمية الباحثين / إلسيفير",
+      date: "2024",
+      pdf: "assets/pdf/certifications/building-trust-engagement-peer-review-certificate.pdf",
+      verify: "https://researcheracademy.elsevier.com"
+    },
+    {
+      title_en: "Coursera: Introduction to GIS Data",
+      title_ar: "كورسيرات: مقدمة في بيانات نظم المعلومات الجغرافية",
+      issuer_en: "Coursera / Toronto University",
+      issuer_ar: "كورسيرا / جامعة تورنتو",
+      date: "2023",
+      pdf: "assets/pdf/certifications/Coursera BMYKPJEFEKUR.pdf",
+      verify: "https://www.coursera.org"
+    },
+    {
+      title_en: "Intro to Data Visualization in R for Ecologists",
+      title_ar: "مقدمة في تمثيل البيانات بلغة R لعلماء البيئة",
+      issuer_en: "DataCamp / Ecologist Portal",
+      issuer_ar: "بوابة علماء البيئة",
+      date: "2024",
+      pdf: "assets/pdf/certifications/certificate-of-completion-for-intro-to-data-visualization-in-r-for-ecologists.pdf",
+      verify: "https://www.datacamp.com"
+    },
+    {
+      title_en: "Geospatial Analysis with QGIS",
+      title_ar: "التحليل الجيومكاني باستخدام برنامج QGIS",
+      issuer_en: "QGIS Academy",
+      issuer_ar: "أكاديمية QGIS",
+      date: "2023",
+      pdf: "assets/pdf/certifications/Geospatial.pdf",
+      verify: "https://qgis.org"
+    },
+    {
+      title_en: "Avoiding Critical Language Errors in Your Research Paper",
+      title_ar: "تجنب الأخطاء اللغوية القاتلة في ورقتك البحثية",
+      issuer_en: "Researcher Academy / Elsevier",
+      issuer_ar: "أكاديمية الباحثين / إلسيفير",
+      date: "2024",
+      pdf: "assets/pdf/certifications/certificate-of-completion-for-how-to-avoid-critical-language-errors-in-your-research-paper.pdf",
+      verify: "https://researcheracademy.elsevier.com"
+    },
+    {
+      title_en: "SWAT Online Training (Soil & Water Assessment Tool)",
+      title_ar: "تدريب SWAT الإلكتروني (أداة تقييم التربة والمياه)",
+      issuer_en: "SWAT Community / Texas A&M",
+      issuer_ar: "مجتمع SWAT / جامعة تكساس",
+      date: "2023",
+      pdf: "assets/pdf/certifications/SWAT_Online_Training.pdf",
+      verify: "https://swat.tamu.edu"
+    },
+    {
+      title_en: "Coursera: Satellite Imagery & Remote Sensing",
+      title_ar: "كورسيرات: صور الأقمار الصناعية والاستشعار عن بعد",
+      issuer_en: "Coursera / University of Colorado",
+      issuer_ar: "كورسيرا / جامعة كولورادو",
+      date: "2023",
+      pdf: "assets/pdf/certifications/Coursera YSF2P6PXND5Z.pdf",
+      verify: "https://www.coursera.org"
+    },
+    {
+      title_en: "Certificate of Completion",
+      title_ar: "شهادة إتمام وتفوق",
+      issuer_en: "Jijel University",
+      issuer_ar: "جامعة جيجل",
+      date: "2022",
+      pdf: "assets/pdf/certifications/Certificate of Completion Azzeddine Reghais.pdf",
+      verify: "https://www.univ-jijel.dz"
+    },
+    {
+      title_en: "Publons Academy Mentor Certificate",
+      title_ar: "شهادة موجه (Mentor) من أكاديمية بوبلونز",
+      issuer_en: "Web of Science",
+      issuer_ar: "شبكة العلوم (Web of Science)",
+      date: "2024",
+      pdf: "assets/pdf/certifications/Publons Academy Mentor Certificate.pdf",
+      verify: "https://publons.com"
+    },
+    {
+      title_en: "Intermediate Data Visualization with ggplot2",
+      title_ar: "تمثيل البيانات المتقدم باستخدام ggplot2 في R",
+      issuer_en: "DataCamp",
+      issuer_ar: "داتا كامب",
+      date: "2024",
+      pdf: "assets/pdf/certifications/Intermediate Data Visualization with ggplot2.pdf",
+      verify: "https://www.datacamp.com"
+    },
+    {
+      title_en: "Introduction to ggplot2",
+      title_ar: "مقدمة في تمثيل البيانات ggplot2",
+      issuer_en: "DataCamp",
+      issuer_ar: "داتا كامب",
+      date: "2024",
+      pdf: "assets/pdf/certifications/Introduction ggplot2.pdf",
+      verify: "https://www.datacamp.com"
+    }
+  ];
+
+  function renderCertifications() {
+    const container = document.getElementById('professional-certs-list');
+    if (!container) return;
+    const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    container.innerHTML = '';
+
+    professionalCerts.forEach(cert => {
+      const title = currentLang === 'ar' ? cert.title_ar : cert.title_en;
+      const issuer = currentLang === 'ar' ? cert.issuer_ar : cert.issuer_en;
+      const downloadText = currentLang === 'ar' ? "تحميل الشهادة" : "Download PDF";
+      const verifyText = currentLang === 'ar' ? "رابط موقع الشهادة" : "Verify Credential";
+
+      const div = document.createElement('div');
+      div.className = "bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-primary-400 dark:hover:border-primary-700 transition-all duration-300";
+      div.innerHTML = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-100 dark:bg-primary-950/40 text-primary-700 dark:text-primary-400">
+              <i class="fa-solid fa-certificate mr-1" aria-hidden="true"></i> <span>${issuer}</span>
+            </span>
+            <span class="text-xs font-semibold text-slate-400">${cert.date}</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900 dark:text-slate-100 line-clamp-2">${title}</h4>
+        </div>
+        <div class="flex gap-2 mt-6">
+          <a href="${cert.pdf}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-primary-900 dark:bg-primary-600 hover:bg-primary-800 dark:hover:bg-primary-500 text-white font-bold text-xs rounded-xl transition-all shadow-sm">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            <span>${downloadText}</span>
+          </a>
+          <a href="${cert.verify}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs rounded-xl transition-all shadow-sm">
+            <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
+            <span>${verifyText}</span>
+          </a>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function renderReviewerCerts() {
+    const container = document.getElementById('reviewer-certs-list');
+    if (!container) return;
+    const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    container.innerHTML = '';
+
+    reviewerCerts.forEach(cert => {
+      const title = currentLang === 'ar' ? cert.title_ar : cert.title_en;
+      const issuer = currentLang === 'ar' ? cert.issuer_ar : cert.issuer_en;
+      const downloadText = currentLang === 'ar' ? "تحميل الشهادة" : "Download PDF";
+      const verifyText = currentLang === 'ar' ? "رابط موقع الشهادة" : "Verify Review";
+
+      const div = document.createElement('div');
+      div.className = "bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-amber-400 dark:hover:border-amber-700 transition-all duration-300";
+      div.innerHTML = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400">
+              <i class="fa-solid fa-star mr-1" aria-hidden="true"></i> <span>${issuer}</span>
+            </span>
+            <span class="text-xs font-semibold text-slate-400">${cert.date}</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900 dark:text-slate-100 line-clamp-2">${title}</h4>
+        </div>
+        <div class="flex gap-2 mt-6">
+          <a href="${cert.pdf}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl transition-all shadow-sm">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            <span>${downloadText}</span>
+          </a>
+          <a href="${cert.verify}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs rounded-xl transition-all shadow-sm">
+            <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
+            <span>${verifyText}</span>
+          </a>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  // Switch Awards/Certifications Section Tabs
+  window.switchAwardsTab = function(tabId) {
+    // Hide all awards tab content containers
+    document.querySelectorAll('.awards-tab-content').forEach(content => {
+      content.classList.add('hidden');
+    });
+
+    // Reset button states
+    const btnEdu = document.getElementById('tabAwardsEducationBtn');
+    const btnCerts = document.getElementById('tabAwardsCertsBtn');
+    const btnReview = document.getElementById('tabAwardsReviewBtn');
+
+    const defaultBtnClass = "flex-grow sm:flex-initial px-4 py-2.5 text-sm font-bold rounded-xl transition-all text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
+    const activeBtnClass = "flex-grow sm:flex-initial px-4 py-2.5 text-sm font-bold rounded-xl transition-all bg-white dark:bg-slate-900 text-primary-700 dark:text-primary-300 shadow-sm";
+
+    if (btnEdu && btnCerts && btnReview) {
+      btnEdu.className = defaultBtnClass;
+      btnCerts.className = defaultBtnClass;
+      btnReview.className = defaultBtnClass;
+
+      if (tabId === 'education') {
+        btnEdu.className = activeBtnClass;
+        document.getElementById('awards-education-content').classList.remove('hidden');
+      } else if (tabId === 'certs') {
+        btnCerts.className = activeBtnClass;
+        document.getElementById('awards-certs-content').classList.remove('hidden');
+      } else if (tabId === 'review') {
+        btnReview.className = activeBtnClass;
+        document.getElementById('awards-review-content').classList.remove('hidden');
+      }
+    }
+  };
+
+  window.downloadBlogPDF = function(title, pdfUrl) {
+    const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    const promptMsg = currentLang === 'ar'
+      ? "الرجاء إدخال كلمة المرور للوصول إلى ملف الـ PDF:\n(تلميح: كلمة المرور المطلوبة تبدأ بـ Ch...)"
+      : "Please enter the password to access the PDF file:\n(Hint: starts with Ch...)";
+    const successMsg = currentLang === 'ar'
+      ? "تم التحقق من كلمة المرور بنجاح! جاري تحميل الملف..."
+      : "Password verified successfully! Downloading file...";
+    const errorMsg = currentLang === 'ar'
+      ? "كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى."
+      : "Incorrect password. Please try again.";
+
+    const enteredPassword = prompt(promptMsg);
+
+    if (enteredPassword === null) {
+      return;
+    }
+
+    if (enteredPassword === "Chihab2020") {
+      alert(successMsg);
+      const link = document.createElement('a');
+      link.href = pdfUrl || "assets/pdf/certifications/Certificate of Completion Azzeddine Reghais.pdf";
+      link.target = "_blank";
+      link.download = pdfUrl ? pdfUrl.split('/').pop() : "Article_Document.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert(errorMsg);
+    }
+  };
+
   // Re-render components if language selection changes
   document.addEventListener('languageChanged', () => {
     renderFiles();
     renderBookings();
     renderConferences();
+    renderCertifications();
+    renderReviewerCerts();
     loadScholarData();
     updateWhatsAppLinks();
   });
@@ -1017,6 +1451,8 @@
   renderFiles();
   renderBookings();
   renderConferences();
+  renderCertifications();
+  renderReviewerCerts();
   loadScholarData();
   updateWhatsAppLinks();
 

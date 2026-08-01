@@ -922,81 +922,95 @@
         </section>
 
         <!-- Awards & Certifications Section -->
-        <section id="awards" class="py-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center space-y-2 mb-16 fade-in-up">
-                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="awards-title">Awards, Certifications & Education</h2>
+        <section id="awards" class="py-16 bg-slate-50 dark:bg-slate-950/70 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center space-y-2 mb-12 fade-in-up">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight sm:text-4xl" data-i18n="awards-title">Reviewer Impact & Professional Certifications</h2>
                     <div class="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto rounded" aria-hidden="true"></div>
-                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-md mx-auto" data-i18n="awards-desc">Academic milestones, scientific certifications, and professional recognitions.</p>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-2xl mx-auto text-lg" data-i18n="awards-desc">International peer-review credentials, academic certifications, and advanced specialized training.</p>
                 </div>
 
-                <div class="timeline fade-in-up">
+                <!-- Three Tabs Controller for Awards, Certifications and Peer Review -->
+                <div class="max-w-5xl mx-auto mb-12 fade-in-up">
+                    <div class="flex flex-wrap justify-center bg-slate-100 dark:bg-slate-800 p-1.5 rounded-2xl max-w-2xl mx-auto gap-1">
+                        <button onclick="switchAwardsTab('education')" id="tabAwardsEducationBtn" class="flex-grow sm:flex-initial px-4 py-2.5 text-sm font-bold rounded-xl transition-all bg-white dark:bg-slate-900 text-primary-700 dark:text-primary-300 shadow-sm">
+                            <i class="fa-solid fa-graduation-cap mr-1.5" aria-hidden="true"></i> <span data-i18n="awards-tab-edu">Awards & Education</span>
+                        </button>
+                        <button onclick="switchAwardsTab('certs')" id="tabAwardsCertsBtn" class="flex-grow sm:flex-initial px-4 py-2.5 text-sm font-bold rounded-xl transition-all text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">
+                            <i class="fa-solid fa-certificate mr-1.5" aria-hidden="true"></i> <span data-i18n="awards-tab-certs">Professional Certifications</span>
+                        </button>
+                        <button onclick="switchAwardsTab('review')" id="tabAwardsReviewBtn" class="flex-grow sm:flex-initial px-4 py-2.5 text-sm font-bold rounded-xl transition-all text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">
+                            <i class="fa-solid fa-star mr-1.5" aria-hidden="true"></i> <span data-i18n="awards-tab-review">Peer Review & Evaluation</span>
+                        </button>
+                    </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot" aria-hidden="true"></div>
-                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
-                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-100 dark:bg-primary-950/40 text-primary-700 dark:text-primary-400 w-fit">
-                                    <i class="fa-solid fa-graduation-cap mr-1.5" aria-hidden="true"></i> <span data-i18n="award1-tag">PhD Degree</span>
-                                </span>
-                                <span class="text-xs font-semibold text-slate-500">2020</span>
+                <!-- Tab 1: Awards & Education Content -->
+                <div id="awards-education-content" class="awards-tab-content space-y-6 max-w-5xl mx-auto fade-in-up">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-100 dark:bg-primary-950/40 text-primary-700 dark:text-primary-400 w-fit">
+                                        <i class="fa-solid fa-graduation-cap mr-1.5" aria-hidden="true"></i> <span data-i18n="award1-tag">PhD Degree</span>
+                                    </span>
+                                    <span class="text-xs font-semibold text-slate-400">2020</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award1-title">PhD in Hydrogeology</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award1-desc">University of Jijel, Algeria &mdash; Geological Engineering Laboratory (LGG)</p>
                             </div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award1-title">PhD in Hydrogeology</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award1-desc">University of Jijel, Algeria &mdash; Geological Engineering Laboratory (LGG)</p>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot" aria-hidden="true"></div>
-                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
-                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 w-fit">
-                                    <i class="fa-solid fa-award mr-1.5" aria-hidden="true"></i> <span data-i18n="award2-tag">Recognition</span>
-                                </span>
-                                <span class="text-xs font-semibold text-slate-500">2024</span>
+                        <div class="timeline-item">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 w-fit">
+                                        <i class="fa-solid fa-award mr-1.5" aria-hidden="true"></i> <span data-i18n="award2-tag">Recognition</span>
+                                    </span>
+                                    <span class="text-xs font-semibold text-slate-400">2024</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award2-title">Peer Reviewer &mdash; Springer & Elsevier</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award2-desc">Active peer reviewer for international journals in hydrogeology and environmental sciences.</p>
                             </div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award2-title">Peer Reviewer &mdash; Springer & Elsevier</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award2-desc">Active peer reviewer for international journals in hydrogeology and environmental sciences.</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot" aria-hidden="true"></div>
-                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
-                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 w-fit">
-                                    <i class="fa-solid fa-certificate mr-1.5" aria-hidden="true"></i> <span data-i18n="award3-tag">Certification</span>
-                                </span>
-                                <span class="text-xs font-semibold text-slate-500">2023</span>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award3-title">Advanced GIS & Remote Sensing</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award3-desc">Certified proficiency in QGIS, ArcGIS, Google Earth Engine, and satellite imagery processing.</p>
+                <!-- Tab 2: Professional Certifications Content -->
+                <div id="awards-certs-content" class="awards-tab-content hidden space-y-6 max-w-5xl mx-auto fade-in-up">
+                    <div class="flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-3 mb-6">
+                        <div class="bg-primary-100 dark:bg-primary-950/40 p-2.5 rounded-xl text-primary-600 dark:text-primary-400">
+                            <i class="fa-solid fa-graduation-cap text-xl" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100" data-i18n="sub-cert-title">Specialized Credentials & Certifications</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="sub-cert-desc">Official certifications in GIS, Remote Sensing, Data Manipulation in R, and Academic Research Writing.</p>
                         </div>
                     </div>
+                    <!-- Professional Certs dynamic container -->
+                    <div id="professional-certs-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Populated dynamically by JS -->
+                    </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot" aria-hidden="true"></div>
-                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
-                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-400 w-fit">
-                                    <i class="fa-solid fa-code mr-1.5" aria-hidden="true"></i> <span data-i18n="award4-tag">Skills</span>
-                                </span>
-                                <span class="text-xs font-semibold text-slate-500">Ongoing</span>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="award4-title">Data Science with R & Python</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="award4-desc">Continuous learning in scientific computing: Random Forest, SVM, PCA, and CoDA methods.</p>
+                <!-- Tab 3: Peer Review & Evaluation Content -->
+                <div id="awards-review-content" class="awards-tab-content hidden space-y-6 max-w-5xl mx-auto fade-in-up">
+                    <div class="flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-3 mb-6">
+                        <div class="bg-amber-100 dark:bg-amber-950/40 p-2.5 rounded-xl text-amber-600 dark:text-amber-400">
+                            <i class="fa-solid fa-star text-xl" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100" data-i18n="sub-reviewer-title">Peer Reviewer Impact</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="sub-reviewer-desc">Verified review certificates for top international WoS/Scopus indexed scientific journals with Impact Factors.</p>
                         </div>
                     </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" aria-hidden="true"></div>
-                        <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
-                            <p class="text-sm text-slate-500 dark:text-slate-400 italic text-center">
-                                <i class="fa-solid fa-plus mr-1.5" aria-hidden="true"></i> <span data-i18n="awards-more">More certifications and awards will be added here.</span>
-                            </p>
-                        </div>
+                    <!-- Reviewer Certs dynamic container -->
+                    <div id="reviewer-certs-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Populated dynamically by JS -->
                     </div>
-
                 </div>
             </div>
         </section>
@@ -1024,6 +1038,13 @@
                                 <span><i class="fa-regular fa-calendar mr-1" aria-hidden="true"></i> <span data-i18n="blog-coming-soon">Coming soon</span></span>
                                 <span><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> <span data-i18n="blog1-time">6 min read</span></span>
                             </div>
+                            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                                <span class="text-xs text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-lock text-primary-500"></i> <span data-i18n="blog-pdf-locked">Protected PDF Document (Chihab2020)</span></span>
+                                <button onclick="downloadBlogPDF('Why CoDA matters in geochemistry', 'assets/pdf/certifications/Publons Academy Graduation Certificate.pdf')" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary-900 dark:bg-primary-600 hover:bg-primary-800 dark:hover:bg-primary-500 text-white font-bold text-xs rounded-lg transition-all shadow-sm">
+                                    <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                                    <span data-i18n="blog-download-pdf">Download Article PDF</span>
+                                </button>
+                            </div>
                         </div>
                     </article>
 
@@ -1039,6 +1060,13 @@
                                 <span><i class="fa-regular fa-calendar mr-1" aria-hidden="true"></i> <span data-i18n="blog-coming-soon">Coming soon</span></span>
                                 <span><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> <span data-i18n="blog2-time">8 min read</span></span>
                             </div>
+                            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                                <span class="text-xs text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-lock text-emerald-500"></i> <span data-i18n="blog-pdf-locked">Protected PDF Document (Chihab2020)</span></span>
+                                <button onclick="downloadBlogPDF('Practical satellite indices for arid basins', 'assets/pdf/certifications/Geospatial.pdf')" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-900 dark:bg-emerald-600 hover:bg-emerald-800 dark:hover:bg-emerald-500 text-white font-bold text-xs rounded-lg transition-all shadow-sm">
+                                    <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                                    <span data-i18n="blog-download-pdf">Download Article PDF</span>
+                                </button>
+                            </div>
                         </div>
                     </article>
 
@@ -1053,6 +1081,13 @@
                             <div class="flex items-center justify-between mt-4 text-xs text-slate-500 dark:text-slate-400">
                                 <span><i class="fa-regular fa-calendar mr-1" aria-hidden="true"></i> <span data-i18n="blog-coming-soon">Coming soon</span></span>
                                 <span><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> <span data-i18n="blog3-time">5 min read</span></span>
+                            </div>
+                            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                                <span class="text-xs text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-lock text-indigo-500"></i> <span data-i18n="blog-pdf-locked">Protected PDF Document (Chihab2020)</span></span>
+                                <button onclick="downloadBlogPDF('R vs. Python for hydro data pipelines', 'assets/pdf/certifications/SWAT_Online_Training.pdf')" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-900 dark:bg-indigo-600 hover:bg-indigo-800 dark:hover:bg-indigo-500 text-white font-bold text-xs rounded-lg transition-all shadow-sm">
+                                    <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                                    <span data-i18n="blog-download-pdf">Download Article PDF</span>
+                                </button>
                             </div>
                         </div>
                     </article>
